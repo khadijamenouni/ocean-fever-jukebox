@@ -33,7 +33,12014 @@ const analyser = new Tone.Analyser("waveform", 128);
 Tone.Destination.connect(analyser);
 const canvasCtx = visualizerCanvas.getContext("2d");
 
-let oceanData = [];
+let oceanData = [
+    {
+        "time": 0.0,
+        "date": "25 Mar 2007",
+        "warmth_raw": 35.28,
+        "normalized": 0.67
+    },
+    {
+        "time": 0.03,
+        "date": "25 Mar 2007",
+        "warmth_raw": 35.24,
+        "normalized": 0.67
+    },
+    {
+        "time": 0.07,
+        "date": "25 Mar 2007",
+        "warmth_raw": 35.23,
+        "normalized": 0.66
+    },
+    {
+        "time": 0.1,
+        "date": "25 Mar 2007",
+        "warmth_raw": 35.22,
+        "normalized": 0.66
+    },
+    {
+        "time": 0.13,
+        "date": "25 Mar 2007",
+        "warmth_raw": 35.22,
+        "normalized": 0.66
+    },
+    {
+        "time": 0.17,
+        "date": "25 Mar 2007",
+        "warmth_raw": 35.15,
+        "normalized": 0.65
+    },
+    {
+        "time": 0.2,
+        "date": "26 Mar 2007",
+        "warmth_raw": 35.23,
+        "normalized": 0.66
+    },
+    {
+        "time": 0.23,
+        "date": "26 Mar 2007",
+        "warmth_raw": 35.27,
+        "normalized": 0.67
+    },
+    {
+        "time": 0.27,
+        "date": "26 Mar 2007",
+        "warmth_raw": 35.22,
+        "normalized": 0.66
+    },
+    {
+        "time": 0.3,
+        "date": "26 Mar 2007",
+        "warmth_raw": 35.08,
+        "normalized": 0.64
+    },
+    {
+        "time": 0.33,
+        "date": "26 Mar 2007",
+        "warmth_raw": 35.21,
+        "normalized": 0.66
+    },
+    {
+        "time": 0.37,
+        "date": "26 Mar 2007",
+        "warmth_raw": 35.07,
+        "normalized": 0.64
+    },
+    {
+        "time": 0.4,
+        "date": "27 Mar 2007",
+        "warmth_raw": 35.04,
+        "normalized": 0.64
+    },
+    {
+        "time": 0.43,
+        "date": "27 Mar 2007",
+        "warmth_raw": 34.98,
+        "normalized": 0.63
+    },
+    {
+        "time": 0.47,
+        "date": "27 Mar 2007",
+        "warmth_raw": 35.0,
+        "normalized": 0.63
+    },
+    {
+        "time": 0.5,
+        "date": "27 Mar 2007",
+        "warmth_raw": 35.07,
+        "normalized": 0.64
+    },
+    {
+        "time": 0.53,
+        "date": "27 Mar 2007",
+        "warmth_raw": 35.1,
+        "normalized": 0.65
+    },
+    {
+        "time": 0.57,
+        "date": "27 Mar 2007",
+        "warmth_raw": 35.03,
+        "normalized": 0.64
+    },
+    {
+        "time": 0.6,
+        "date": "28 Mar 2007",
+        "warmth_raw": 34.69,
+        "normalized": 0.59
+    },
+    {
+        "time": 0.63,
+        "date": "28 Mar 2007",
+        "warmth_raw": 34.84,
+        "normalized": 0.61
+    },
+    {
+        "time": 0.67,
+        "date": "28 Mar 2007",
+        "warmth_raw": 34.91,
+        "normalized": 0.62
+    },
+    {
+        "time": 0.7,
+        "date": "28 Mar 2007",
+        "warmth_raw": 34.84,
+        "normalized": 0.61
+    },
+    {
+        "time": 0.73,
+        "date": "28 Mar 2007",
+        "warmth_raw": 34.94,
+        "normalized": 0.62
+    },
+    {
+        "time": 0.77,
+        "date": "28 Mar 2007",
+        "warmth_raw": 34.95,
+        "normalized": 0.63
+    },
+    {
+        "time": 0.8,
+        "date": "29 Mar 2007",
+        "warmth_raw": 35.04,
+        "normalized": 0.64
+    },
+    {
+        "time": 0.83,
+        "date": "29 Mar 2007",
+        "warmth_raw": 35.1,
+        "normalized": 0.65
+    },
+    {
+        "time": 0.87,
+        "date": "29 Mar 2007",
+        "warmth_raw": 35.04,
+        "normalized": 0.64
+    },
+    {
+        "time": 0.9,
+        "date": "29 Mar 2007",
+        "warmth_raw": 35.02,
+        "normalized": 0.64
+    },
+    {
+        "time": 0.93,
+        "date": "29 Mar 2007",
+        "warmth_raw": 34.97,
+        "normalized": 0.63
+    },
+    {
+        "time": 0.97,
+        "date": "30 Mar 2007",
+        "warmth_raw": 35.06,
+        "normalized": 0.64
+    },
+    {
+        "time": 1.0,
+        "date": "30 Mar 2007",
+        "warmth_raw": 35.05,
+        "normalized": 0.64
+    },
+    {
+        "time": 1.03,
+        "date": "30 Mar 2007",
+        "warmth_raw": 35.11,
+        "normalized": 0.65
+    },
+    {
+        "time": 1.07,
+        "date": "30 Mar 2007",
+        "warmth_raw": 35.15,
+        "normalized": 0.65
+    },
+    {
+        "time": 1.1,
+        "date": "30 Mar 2007",
+        "warmth_raw": 35.28,
+        "normalized": 0.67
+    },
+    {
+        "time": 1.13,
+        "date": "30 Mar 2007",
+        "warmth_raw": 35.43,
+        "normalized": 0.69
+    },
+    {
+        "time": 1.17,
+        "date": "31 Mar 2007",
+        "warmth_raw": 35.36,
+        "normalized": 0.68
+    },
+    {
+        "time": 1.2,
+        "date": "31 Mar 2007",
+        "warmth_raw": 35.39,
+        "normalized": 0.69
+    },
+    {
+        "time": 1.23,
+        "date": "31 Mar 2007",
+        "warmth_raw": 35.32,
+        "normalized": 0.68
+    },
+    {
+        "time": 1.27,
+        "date": "31 Mar 2007",
+        "warmth_raw": 35.48,
+        "normalized": 0.7
+    },
+    {
+        "time": 1.3,
+        "date": "31 Mar 2007",
+        "warmth_raw": 35.38,
+        "normalized": 0.68
+    },
+    {
+        "time": 1.33,
+        "date": "31 Mar 2007",
+        "warmth_raw": 35.42,
+        "normalized": 0.69
+    },
+    {
+        "time": 1.37,
+        "date": "01 Apr 2007",
+        "warmth_raw": 35.36,
+        "normalized": 0.68
+    },
+    {
+        "time": 1.4,
+        "date": "01 Apr 2007",
+        "warmth_raw": 35.21,
+        "normalized": 0.66
+    },
+    {
+        "time": 1.43,
+        "date": "01 Apr 2007",
+        "warmth_raw": 35.18,
+        "normalized": 0.66
+    },
+    {
+        "time": 1.47,
+        "date": "01 Apr 2007",
+        "warmth_raw": 35.12,
+        "normalized": 0.65
+    },
+    {
+        "time": 1.5,
+        "date": "01 Apr 2007",
+        "warmth_raw": 35.27,
+        "normalized": 0.67
+    },
+    {
+        "time": 1.53,
+        "date": "01 Apr 2007",
+        "warmth_raw": 35.2,
+        "normalized": 0.66
+    },
+    {
+        "time": 1.57,
+        "date": "02 Apr 2007",
+        "warmth_raw": 35.28,
+        "normalized": 0.67
+    },
+    {
+        "time": 1.6,
+        "date": "02 Apr 2007",
+        "warmth_raw": 35.35,
+        "normalized": 0.68
+    },
+    {
+        "time": 1.63,
+        "date": "02 Apr 2007",
+        "warmth_raw": 35.45,
+        "normalized": 0.69
+    },
+    {
+        "time": 1.67,
+        "date": "02 Apr 2007",
+        "warmth_raw": 35.44,
+        "normalized": 0.69
+    },
+    {
+        "time": 1.7,
+        "date": "02 Apr 2007",
+        "warmth_raw": 35.48,
+        "normalized": 0.7
+    },
+    {
+        "time": 1.73,
+        "date": "02 Apr 2007",
+        "warmth_raw": 35.48,
+        "normalized": 0.7
+    },
+    {
+        "time": 1.77,
+        "date": "03 Apr 2007",
+        "warmth_raw": 35.35,
+        "normalized": 0.68
+    },
+    {
+        "time": 1.8,
+        "date": "03 Apr 2007",
+        "warmth_raw": 35.34,
+        "normalized": 0.68
+    },
+    {
+        "time": 1.83,
+        "date": "03 Apr 2007",
+        "warmth_raw": 35.18,
+        "normalized": 0.66
+    },
+    {
+        "time": 1.87,
+        "date": "03 Apr 2007",
+        "warmth_raw": 35.16,
+        "normalized": 0.65
+    },
+    {
+        "time": 1.9,
+        "date": "03 Apr 2007",
+        "warmth_raw": 35.17,
+        "normalized": 0.66
+    },
+    {
+        "time": 1.93,
+        "date": "03 Apr 2007",
+        "warmth_raw": 34.93,
+        "normalized": 0.62
+    },
+    {
+        "time": 1.97,
+        "date": "04 Apr 2007",
+        "warmth_raw": 34.89,
+        "normalized": 0.62
+    },
+    {
+        "time": 2.0,
+        "date": "04 Apr 2007",
+        "warmth_raw": 34.83,
+        "normalized": 0.61
+    },
+    {
+        "time": 2.03,
+        "date": "04 Apr 2007",
+        "warmth_raw": 34.87,
+        "normalized": 0.62
+    },
+    {
+        "time": 2.07,
+        "date": "04 Apr 2007",
+        "warmth_raw": 34.84,
+        "normalized": 0.61
+    },
+    {
+        "time": 2.1,
+        "date": "04 Apr 2007",
+        "warmth_raw": 34.76,
+        "normalized": 0.6
+    },
+    {
+        "time": 2.13,
+        "date": "04 Apr 2007",
+        "warmth_raw": 34.68,
+        "normalized": 0.59
+    },
+    {
+        "time": 2.17,
+        "date": "05 Apr 2007",
+        "warmth_raw": 34.59,
+        "normalized": 0.58
+    },
+    {
+        "time": 2.2,
+        "date": "05 Apr 2007",
+        "warmth_raw": 34.5,
+        "normalized": 0.57
+    },
+    {
+        "time": 2.23,
+        "date": "05 Apr 2007",
+        "warmth_raw": 34.42,
+        "normalized": 0.55
+    },
+    {
+        "time": 2.27,
+        "date": "05 Apr 2007",
+        "warmth_raw": 34.34,
+        "normalized": 0.54
+    },
+    {
+        "time": 2.3,
+        "date": "05 Apr 2007",
+        "warmth_raw": 34.23,
+        "normalized": 0.53
+    },
+    {
+        "time": 2.33,
+        "date": "06 Apr 2007",
+        "warmth_raw": 34.19,
+        "normalized": 0.52
+    },
+    {
+        "time": 2.37,
+        "date": "06 Apr 2007",
+        "warmth_raw": 34.16,
+        "normalized": 0.52
+    },
+    {
+        "time": 2.4,
+        "date": "06 Apr 2007",
+        "warmth_raw": 34.22,
+        "normalized": 0.53
+    },
+    {
+        "time": 2.43,
+        "date": "06 Apr 2007",
+        "warmth_raw": 34.25,
+        "normalized": 0.53
+    },
+    {
+        "time": 2.47,
+        "date": "06 Apr 2007",
+        "warmth_raw": 33.82,
+        "normalized": 0.47
+    },
+    {
+        "time": 2.5,
+        "date": "06 Apr 2007",
+        "warmth_raw": 33.83,
+        "normalized": 0.47
+    },
+    {
+        "time": 2.53,
+        "date": "07 Apr 2007",
+        "warmth_raw": 33.84,
+        "normalized": 0.48
+    },
+    {
+        "time": 2.57,
+        "date": "07 Apr 2007",
+        "warmth_raw": 33.84,
+        "normalized": 0.48
+    },
+    {
+        "time": 2.6,
+        "date": "07 Apr 2007",
+        "warmth_raw": 33.87,
+        "normalized": 0.48
+    },
+    {
+        "time": 2.63,
+        "date": "07 Apr 2007",
+        "warmth_raw": 33.93,
+        "normalized": 0.49
+    },
+    {
+        "time": 2.67,
+        "date": "07 Apr 2007",
+        "warmth_raw": 33.76,
+        "normalized": 0.46
+    },
+    {
+        "time": 2.7,
+        "date": "07 Apr 2007",
+        "warmth_raw": 33.76,
+        "normalized": 0.46
+    },
+    {
+        "time": 2.73,
+        "date": "08 Apr 2007",
+        "warmth_raw": 33.74,
+        "normalized": 0.46
+    },
+    {
+        "time": 2.77,
+        "date": "08 Apr 2007",
+        "warmth_raw": 33.8,
+        "normalized": 0.47
+    },
+    {
+        "time": 2.8,
+        "date": "08 Apr 2007",
+        "warmth_raw": 33.77,
+        "normalized": 0.47
+    },
+    {
+        "time": 2.83,
+        "date": "08 Apr 2007",
+        "warmth_raw": 33.71,
+        "normalized": 0.46
+    },
+    {
+        "time": 2.87,
+        "date": "08 Apr 2007",
+        "warmth_raw": 33.75,
+        "normalized": 0.46
+    },
+    {
+        "time": 2.9,
+        "date": "08 Apr 2007",
+        "warmth_raw": 33.82,
+        "normalized": 0.47
+    },
+    {
+        "time": 2.93,
+        "date": "09 Apr 2007",
+        "warmth_raw": 33.77,
+        "normalized": 0.47
+    },
+    {
+        "time": 2.97,
+        "date": "09 Apr 2007",
+        "warmth_raw": 33.69,
+        "normalized": 0.46
+    },
+    {
+        "time": 3.0,
+        "date": "09 Apr 2007",
+        "warmth_raw": 33.55,
+        "normalized": 0.44
+    },
+    {
+        "time": 3.03,
+        "date": "09 Apr 2007",
+        "warmth_raw": 33.5,
+        "normalized": 0.43
+    },
+    {
+        "time": 3.07,
+        "date": "09 Apr 2007",
+        "warmth_raw": 33.52,
+        "normalized": 0.43
+    },
+    {
+        "time": 3.1,
+        "date": "09 Apr 2007",
+        "warmth_raw": 33.61,
+        "normalized": 0.44
+    },
+    {
+        "time": 3.13,
+        "date": "10 Apr 2007",
+        "warmth_raw": 33.57,
+        "normalized": 0.44
+    },
+    {
+        "time": 3.17,
+        "date": "10 Apr 2007",
+        "warmth_raw": 33.62,
+        "normalized": 0.45
+    },
+    {
+        "time": 3.2,
+        "date": "10 Apr 2007",
+        "warmth_raw": 33.63,
+        "normalized": 0.45
+    },
+    {
+        "time": 3.23,
+        "date": "10 Apr 2007",
+        "warmth_raw": 33.71,
+        "normalized": 0.46
+    },
+    {
+        "time": 3.27,
+        "date": "10 Apr 2007",
+        "warmth_raw": 33.83,
+        "normalized": 0.47
+    },
+    {
+        "time": 3.3,
+        "date": "11 Apr 2007",
+        "warmth_raw": 33.77,
+        "normalized": 0.47
+    },
+    {
+        "time": 3.33,
+        "date": "11 Apr 2007",
+        "warmth_raw": 33.87,
+        "normalized": 0.48
+    },
+    {
+        "time": 3.37,
+        "date": "11 Apr 2007",
+        "warmth_raw": 33.83,
+        "normalized": 0.47
+    },
+    {
+        "time": 3.4,
+        "date": "11 Apr 2007",
+        "warmth_raw": 33.95,
+        "normalized": 0.49
+    },
+    {
+        "time": 3.43,
+        "date": "11 Apr 2007",
+        "warmth_raw": 33.87,
+        "normalized": 0.48
+    },
+    {
+        "time": 3.47,
+        "date": "11 Apr 2007",
+        "warmth_raw": 33.9,
+        "normalized": 0.48
+    },
+    {
+        "time": 3.5,
+        "date": "12 Apr 2007",
+        "warmth_raw": 33.85,
+        "normalized": 0.48
+    },
+    {
+        "time": 3.53,
+        "date": "12 Apr 2007",
+        "warmth_raw": 34.06,
+        "normalized": 0.51
+    },
+    {
+        "time": 3.57,
+        "date": "12 Apr 2007",
+        "warmth_raw": 34.08,
+        "normalized": 0.51
+    },
+    {
+        "time": 3.6,
+        "date": "12 Apr 2007",
+        "warmth_raw": 34.04,
+        "normalized": 0.5
+    },
+    {
+        "time": 3.63,
+        "date": "12 Apr 2007",
+        "warmth_raw": 34.05,
+        "normalized": 0.5
+    },
+    {
+        "time": 3.67,
+        "date": "12 Apr 2007",
+        "warmth_raw": 34.09,
+        "normalized": 0.51
+    },
+    {
+        "time": 3.7,
+        "date": "13 Apr 2007",
+        "warmth_raw": 34.1,
+        "normalized": 0.51
+    },
+    {
+        "time": 3.73,
+        "date": "13 Apr 2007",
+        "warmth_raw": 34.11,
+        "normalized": 0.51
+    },
+    {
+        "time": 3.77,
+        "date": "13 Apr 2007",
+        "warmth_raw": 34.11,
+        "normalized": 0.51
+    },
+    {
+        "time": 3.8,
+        "date": "13 Apr 2007",
+        "warmth_raw": 34.32,
+        "normalized": 0.54
+    },
+    {
+        "time": 3.83,
+        "date": "13 Apr 2007",
+        "warmth_raw": 34.37,
+        "normalized": 0.55
+    },
+    {
+        "time": 3.87,
+        "date": "13 Apr 2007",
+        "warmth_raw": 34.38,
+        "normalized": 0.55
+    },
+    {
+        "time": 3.9,
+        "date": "14 Apr 2007",
+        "warmth_raw": 34.33,
+        "normalized": 0.54
+    },
+    {
+        "time": 3.93,
+        "date": "14 Apr 2007",
+        "warmth_raw": 34.1,
+        "normalized": 0.51
+    },
+    {
+        "time": 3.97,
+        "date": "14 Apr 2007",
+        "warmth_raw": 33.91,
+        "normalized": 0.49
+    },
+    {
+        "time": 4.0,
+        "date": "14 Apr 2007",
+        "warmth_raw": 34.22,
+        "normalized": 0.53
+    },
+    {
+        "time": 4.03,
+        "date": "14 Apr 2007",
+        "warmth_raw": 34.19,
+        "normalized": 0.52
+    },
+    {
+        "time": 4.07,
+        "date": "14 Apr 2007",
+        "warmth_raw": 34.2,
+        "normalized": 0.52
+    },
+    {
+        "time": 4.1,
+        "date": "15 Apr 2007",
+        "warmth_raw": 34.18,
+        "normalized": 0.52
+    },
+    {
+        "time": 4.13,
+        "date": "15 Apr 2007",
+        "warmth_raw": 34.31,
+        "normalized": 0.54
+    },
+    {
+        "time": 4.17,
+        "date": "15 Apr 2007",
+        "warmth_raw": 34.19,
+        "normalized": 0.52
+    },
+    {
+        "time": 4.2,
+        "date": "15 Apr 2007",
+        "warmth_raw": 34.27,
+        "normalized": 0.53
+    },
+    {
+        "time": 4.23,
+        "date": "15 Apr 2007",
+        "warmth_raw": 34.33,
+        "normalized": 0.54
+    },
+    {
+        "time": 4.27,
+        "date": "16 Apr 2007",
+        "warmth_raw": 34.15,
+        "normalized": 0.52
+    },
+    {
+        "time": 4.3,
+        "date": "16 Apr 2007",
+        "warmth_raw": 34.09,
+        "normalized": 0.51
+    },
+    {
+        "time": 4.33,
+        "date": "16 Apr 2007",
+        "warmth_raw": 34.13,
+        "normalized": 0.51
+    },
+    {
+        "time": 4.37,
+        "date": "16 Apr 2007",
+        "warmth_raw": 34.15,
+        "normalized": 0.52
+    },
+    {
+        "time": 4.4,
+        "date": "16 Apr 2007",
+        "warmth_raw": 34.08,
+        "normalized": 0.51
+    },
+    {
+        "time": 4.43,
+        "date": "16 Apr 2007",
+        "warmth_raw": 34.22,
+        "normalized": 0.53
+    },
+    {
+        "time": 4.47,
+        "date": "17 Apr 2007",
+        "warmth_raw": 34.28,
+        "normalized": 0.54
+    },
+    {
+        "time": 4.5,
+        "date": "17 Apr 2007",
+        "warmth_raw": 34.22,
+        "normalized": 0.53
+    },
+    {
+        "time": 4.53,
+        "date": "17 Apr 2007",
+        "warmth_raw": 34.11,
+        "normalized": 0.51
+    },
+    {
+        "time": 4.57,
+        "date": "17 Apr 2007",
+        "warmth_raw": 34.23,
+        "normalized": 0.53
+    },
+    {
+        "time": 4.6,
+        "date": "17 Apr 2007",
+        "warmth_raw": 34.29,
+        "normalized": 0.54
+    },
+    {
+        "time": 4.63,
+        "date": "17 Apr 2007",
+        "warmth_raw": 34.2,
+        "normalized": 0.52
+    },
+    {
+        "time": 4.67,
+        "date": "18 Apr 2007",
+        "warmth_raw": 34.08,
+        "normalized": 0.51
+    },
+    {
+        "time": 4.7,
+        "date": "18 Apr 2007",
+        "warmth_raw": 34.07,
+        "normalized": 0.51
+    },
+    {
+        "time": 4.73,
+        "date": "18 Apr 2007",
+        "warmth_raw": 34.08,
+        "normalized": 0.51
+    },
+    {
+        "time": 4.77,
+        "date": "18 Apr 2007",
+        "warmth_raw": 34.16,
+        "normalized": 0.52
+    },
+    {
+        "time": 4.8,
+        "date": "18 Apr 2007",
+        "warmth_raw": 34.27,
+        "normalized": 0.53
+    },
+    {
+        "time": 4.83,
+        "date": "18 Apr 2007",
+        "warmth_raw": 34.33,
+        "normalized": 0.54
+    },
+    {
+        "time": 4.87,
+        "date": "19 Apr 2007",
+        "warmth_raw": 34.32,
+        "normalized": 0.54
+    },
+    {
+        "time": 4.9,
+        "date": "19 Apr 2007",
+        "warmth_raw": 34.32,
+        "normalized": 0.54
+    },
+    {
+        "time": 4.93,
+        "date": "19 Apr 2007",
+        "warmth_raw": 34.3,
+        "normalized": 0.54
+    },
+    {
+        "time": 4.97,
+        "date": "19 Apr 2007",
+        "warmth_raw": 33.96,
+        "normalized": 0.49
+    },
+    {
+        "time": 5.0,
+        "date": "19 Apr 2007",
+        "warmth_raw": 33.94,
+        "normalized": 0.49
+    },
+    {
+        "time": 5.03,
+        "date": "19 Apr 2007",
+        "warmth_raw": 34.0,
+        "normalized": 0.5
+    },
+    {
+        "time": 5.07,
+        "date": "20 Apr 2007",
+        "warmth_raw": 34.0,
+        "normalized": 0.5
+    },
+    {
+        "time": 5.1,
+        "date": "20 Apr 2007",
+        "warmth_raw": 33.89,
+        "normalized": 0.48
+    },
+    {
+        "time": 5.13,
+        "date": "20 Apr 2007",
+        "warmth_raw": 33.75,
+        "normalized": 0.46
+    },
+    {
+        "time": 5.17,
+        "date": "20 Apr 2007",
+        "warmth_raw": 33.65,
+        "normalized": 0.45
+    },
+    {
+        "time": 5.2,
+        "date": "20 Apr 2007",
+        "warmth_raw": 33.64,
+        "normalized": 0.45
+    },
+    {
+        "time": 5.23,
+        "date": "20 Apr 2007",
+        "warmth_raw": 33.6,
+        "normalized": 0.44
+    },
+    {
+        "time": 5.27,
+        "date": "21 Apr 2007",
+        "warmth_raw": 33.5,
+        "normalized": 0.43
+    },
+    {
+        "time": 5.3,
+        "date": "21 Apr 2007",
+        "warmth_raw": 33.49,
+        "normalized": 0.43
+    },
+    {
+        "time": 5.33,
+        "date": "21 Apr 2007",
+        "warmth_raw": 33.37,
+        "normalized": 0.41
+    },
+    {
+        "time": 5.37,
+        "date": "21 Apr 2007",
+        "warmth_raw": 33.49,
+        "normalized": 0.43
+    },
+    {
+        "time": 5.4,
+        "date": "21 Apr 2007",
+        "warmth_raw": 33.6,
+        "normalized": 0.44
+    },
+    {
+        "time": 5.43,
+        "date": "22 Apr 2007",
+        "warmth_raw": 33.47,
+        "normalized": 0.43
+    },
+    {
+        "time": 5.47,
+        "date": "22 Apr 2007",
+        "warmth_raw": 33.43,
+        "normalized": 0.42
+    },
+    {
+        "time": 5.5,
+        "date": "22 Apr 2007",
+        "warmth_raw": 33.45,
+        "normalized": 0.42
+    },
+    {
+        "time": 5.53,
+        "date": "22 Apr 2007",
+        "warmth_raw": 33.46,
+        "normalized": 0.42
+    },
+    {
+        "time": 5.57,
+        "date": "22 Apr 2007",
+        "warmth_raw": 33.51,
+        "normalized": 0.43
+    },
+    {
+        "time": 5.6,
+        "date": "22 Apr 2007",
+        "warmth_raw": 33.37,
+        "normalized": 0.41
+    },
+    {
+        "time": 5.63,
+        "date": "23 Apr 2007",
+        "warmth_raw": 33.28,
+        "normalized": 0.4
+    },
+    {
+        "time": 5.67,
+        "date": "23 Apr 2007",
+        "warmth_raw": 33.39,
+        "normalized": 0.41
+    },
+    {
+        "time": 5.7,
+        "date": "23 Apr 2007",
+        "warmth_raw": 33.4,
+        "normalized": 0.42
+    },
+    {
+        "time": 5.73,
+        "date": "23 Apr 2007",
+        "warmth_raw": 33.42,
+        "normalized": 0.42
+    },
+    {
+        "time": 5.77,
+        "date": "23 Apr 2007",
+        "warmth_raw": 33.36,
+        "normalized": 0.41
+    },
+    {
+        "time": 5.8,
+        "date": "23 Apr 2007",
+        "warmth_raw": 33.3,
+        "normalized": 0.4
+    },
+    {
+        "time": 5.83,
+        "date": "24 Apr 2007",
+        "warmth_raw": 33.28,
+        "normalized": 0.4
+    },
+    {
+        "time": 5.87,
+        "date": "24 Apr 2007",
+        "warmth_raw": 33.29,
+        "normalized": 0.4
+    },
+    {
+        "time": 5.9,
+        "date": "24 Apr 2007",
+        "warmth_raw": 33.16,
+        "normalized": 0.38
+    },
+    {
+        "time": 5.93,
+        "date": "24 Apr 2007",
+        "warmth_raw": 33.21,
+        "normalized": 0.39
+    },
+    {
+        "time": 5.97,
+        "date": "24 Apr 2007",
+        "warmth_raw": 33.26,
+        "normalized": 0.4
+    },
+    {
+        "time": 6.0,
+        "date": "24 Apr 2007",
+        "warmth_raw": 33.04,
+        "normalized": 0.37
+    },
+    {
+        "time": 6.03,
+        "date": "25 Apr 2007",
+        "warmth_raw": 32.96,
+        "normalized": 0.36
+    },
+    {
+        "time": 6.07,
+        "date": "25 Apr 2007",
+        "warmth_raw": 32.99,
+        "normalized": 0.36
+    },
+    {
+        "time": 6.1,
+        "date": "25 Apr 2007",
+        "warmth_raw": 33.04,
+        "normalized": 0.37
+    },
+    {
+        "time": 6.13,
+        "date": "25 Apr 2007",
+        "warmth_raw": 32.91,
+        "normalized": 0.35
+    },
+    {
+        "time": 6.17,
+        "date": "25 Apr 2007",
+        "warmth_raw": 33.12,
+        "normalized": 0.38
+    },
+    {
+        "time": 6.2,
+        "date": "25 Apr 2007",
+        "warmth_raw": 33.05,
+        "normalized": 0.37
+    },
+    {
+        "time": 6.23,
+        "date": "26 Apr 2007",
+        "warmth_raw": 32.94,
+        "normalized": 0.35
+    },
+    {
+        "time": 6.27,
+        "date": "26 Apr 2007",
+        "warmth_raw": 32.99,
+        "normalized": 0.36
+    },
+    {
+        "time": 6.3,
+        "date": "26 Apr 2007",
+        "warmth_raw": 33.06,
+        "normalized": 0.37
+    },
+    {
+        "time": 6.33,
+        "date": "26 Apr 2007",
+        "warmth_raw": 33.06,
+        "normalized": 0.37
+    },
+    {
+        "time": 6.37,
+        "date": "26 Apr 2007",
+        "warmth_raw": 33.08,
+        "normalized": 0.37
+    },
+    {
+        "time": 6.4,
+        "date": "27 Apr 2007",
+        "warmth_raw": 33.41,
+        "normalized": 0.42
+    },
+    {
+        "time": 6.43,
+        "date": "27 Apr 2007",
+        "warmth_raw": 33.38,
+        "normalized": 0.41
+    },
+    {
+        "time": 6.47,
+        "date": "27 Apr 2007",
+        "warmth_raw": 33.21,
+        "normalized": 0.39
+    },
+    {
+        "time": 6.5,
+        "date": "27 Apr 2007",
+        "warmth_raw": 33.22,
+        "normalized": 0.39
+    },
+    {
+        "time": 6.53,
+        "date": "27 Apr 2007",
+        "warmth_raw": 33.06,
+        "normalized": 0.37
+    },
+    {
+        "time": 6.57,
+        "date": "27 Apr 2007",
+        "warmth_raw": 33.06,
+        "normalized": 0.37
+    },
+    {
+        "time": 6.6,
+        "date": "28 Apr 2007",
+        "warmth_raw": 33.11,
+        "normalized": 0.38
+    },
+    {
+        "time": 6.63,
+        "date": "28 Apr 2007",
+        "warmth_raw": 33.12,
+        "normalized": 0.38
+    },
+    {
+        "time": 6.67,
+        "date": "28 Apr 2007",
+        "warmth_raw": 33.11,
+        "normalized": 0.38
+    },
+    {
+        "time": 6.7,
+        "date": "28 Apr 2007",
+        "warmth_raw": 33.13,
+        "normalized": 0.38
+    },
+    {
+        "time": 6.73,
+        "date": "28 Apr 2007",
+        "warmth_raw": 33.31,
+        "normalized": 0.4
+    },
+    {
+        "time": 6.77,
+        "date": "28 Apr 2007",
+        "warmth_raw": 33.23,
+        "normalized": 0.39
+    },
+    {
+        "time": 6.8,
+        "date": "29 Apr 2007",
+        "warmth_raw": 33.24,
+        "normalized": 0.39
+    },
+    {
+        "time": 6.83,
+        "date": "29 Apr 2007",
+        "warmth_raw": 33.28,
+        "normalized": 0.4
+    },
+    {
+        "time": 6.87,
+        "date": "29 Apr 2007",
+        "warmth_raw": 33.27,
+        "normalized": 0.4
+    },
+    {
+        "time": 6.9,
+        "date": "29 Apr 2007",
+        "warmth_raw": 33.35,
+        "normalized": 0.41
+    },
+    {
+        "time": 6.93,
+        "date": "29 Apr 2007",
+        "warmth_raw": 33.34,
+        "normalized": 0.41
+    },
+    {
+        "time": 6.97,
+        "date": "29 Apr 2007",
+        "warmth_raw": 33.35,
+        "normalized": 0.41
+    },
+    {
+        "time": 7.0,
+        "date": "30 Apr 2007",
+        "warmth_raw": 33.32,
+        "normalized": 0.4
+    },
+    {
+        "time": 7.03,
+        "date": "30 Apr 2007",
+        "warmth_raw": 33.34,
+        "normalized": 0.41
+    },
+    {
+        "time": 7.07,
+        "date": "30 Apr 2007",
+        "warmth_raw": 33.29,
+        "normalized": 0.4
+    },
+    {
+        "time": 7.1,
+        "date": "30 Apr 2007",
+        "warmth_raw": 33.39,
+        "normalized": 0.41
+    },
+    {
+        "time": 7.13,
+        "date": "30 Apr 2007",
+        "warmth_raw": 33.5,
+        "normalized": 0.43
+    },
+    {
+        "time": 7.17,
+        "date": "30 Apr 2007",
+        "warmth_raw": 33.35,
+        "normalized": 0.41
+    },
+    {
+        "time": 7.2,
+        "date": "01 May 2007",
+        "warmth_raw": 33.52,
+        "normalized": 0.43
+    },
+    {
+        "time": 7.23,
+        "date": "01 May 2007",
+        "warmth_raw": 33.67,
+        "normalized": 0.45
+    },
+    {
+        "time": 7.27,
+        "date": "01 May 2007",
+        "warmth_raw": 33.54,
+        "normalized": 0.43
+    },
+    {
+        "time": 7.3,
+        "date": "01 May 2007",
+        "warmth_raw": 33.51,
+        "normalized": 0.43
+    },
+    {
+        "time": 7.33,
+        "date": "01 May 2007",
+        "warmth_raw": 33.46,
+        "normalized": 0.42
+    },
+    {
+        "time": 7.37,
+        "date": "02 May 2007",
+        "warmth_raw": 33.44,
+        "normalized": 0.42
+    },
+    {
+        "time": 7.4,
+        "date": "02 May 2007",
+        "warmth_raw": 33.3,
+        "normalized": 0.4
+    },
+    {
+        "time": 7.43,
+        "date": "02 May 2007",
+        "warmth_raw": 33.21,
+        "normalized": 0.39
+    },
+    {
+        "time": 7.47,
+        "date": "02 May 2007",
+        "warmth_raw": 33.34,
+        "normalized": 0.41
+    },
+    {
+        "time": 7.5,
+        "date": "02 May 2007",
+        "warmth_raw": 33.42,
+        "normalized": 0.42
+    },
+    {
+        "time": 7.53,
+        "date": "02 May 2007",
+        "warmth_raw": 33.37,
+        "normalized": 0.41
+    },
+    {
+        "time": 7.57,
+        "date": "03 May 2007",
+        "warmth_raw": 33.45,
+        "normalized": 0.42
+    },
+    {
+        "time": 7.6,
+        "date": "03 May 2007",
+        "warmth_raw": 33.47,
+        "normalized": 0.43
+    },
+    {
+        "time": 7.63,
+        "date": "03 May 2007",
+        "warmth_raw": 33.39,
+        "normalized": 0.41
+    },
+    {
+        "time": 7.67,
+        "date": "03 May 2007",
+        "warmth_raw": 33.41,
+        "normalized": 0.42
+    },
+    {
+        "time": 7.7,
+        "date": "03 May 2007",
+        "warmth_raw": 33.38,
+        "normalized": 0.41
+    },
+    {
+        "time": 7.73,
+        "date": "03 May 2007",
+        "warmth_raw": 33.4,
+        "normalized": 0.42
+    },
+    {
+        "time": 7.77,
+        "date": "04 May 2007",
+        "warmth_raw": 33.49,
+        "normalized": 0.43
+    },
+    {
+        "time": 7.8,
+        "date": "04 May 2007",
+        "warmth_raw": 33.63,
+        "normalized": 0.45
+    },
+    {
+        "time": 7.83,
+        "date": "04 May 2007",
+        "warmth_raw": 33.66,
+        "normalized": 0.45
+    },
+    {
+        "time": 7.87,
+        "date": "04 May 2007",
+        "warmth_raw": 33.73,
+        "normalized": 0.46
+    },
+    {
+        "time": 7.9,
+        "date": "04 May 2007",
+        "warmth_raw": 33.75,
+        "normalized": 0.46
+    },
+    {
+        "time": 7.93,
+        "date": "04 May 2007",
+        "warmth_raw": 33.79,
+        "normalized": 0.47
+    },
+    {
+        "time": 7.97,
+        "date": "05 May 2007",
+        "warmth_raw": 33.93,
+        "normalized": 0.49
+    },
+    {
+        "time": 8.0,
+        "date": "05 May 2007",
+        "warmth_raw": 34.15,
+        "normalized": 0.52
+    },
+    {
+        "time": 8.03,
+        "date": "05 May 2007",
+        "warmth_raw": 34.35,
+        "normalized": 0.54
+    },
+    {
+        "time": 8.07,
+        "date": "05 May 2007",
+        "warmth_raw": 34.4,
+        "normalized": 0.55
+    },
+    {
+        "time": 8.1,
+        "date": "05 May 2007",
+        "warmth_raw": 34.43,
+        "normalized": 0.56
+    },
+    {
+        "time": 8.13,
+        "date": "05 May 2007",
+        "warmth_raw": 34.45,
+        "normalized": 0.56
+    },
+    {
+        "time": 8.17,
+        "date": "06 May 2007",
+        "warmth_raw": 34.56,
+        "normalized": 0.57
+    },
+    {
+        "time": 8.2,
+        "date": "06 May 2007",
+        "warmth_raw": 34.39,
+        "normalized": 0.55
+    },
+    {
+        "time": 8.23,
+        "date": "06 May 2007",
+        "warmth_raw": 34.26,
+        "normalized": 0.53
+    },
+    {
+        "time": 8.27,
+        "date": "06 May 2007",
+        "warmth_raw": 34.31,
+        "normalized": 0.54
+    },
+    {
+        "time": 8.3,
+        "date": "06 May 2007",
+        "warmth_raw": 34.23,
+        "normalized": 0.53
+    },
+    {
+        "time": 8.33,
+        "date": "06 May 2007",
+        "warmth_raw": 34.42,
+        "normalized": 0.55
+    },
+    {
+        "time": 8.37,
+        "date": "07 May 2007",
+        "warmth_raw": 34.35,
+        "normalized": 0.54
+    },
+    {
+        "time": 8.4,
+        "date": "07 May 2007",
+        "warmth_raw": 34.34,
+        "normalized": 0.54
+    },
+    {
+        "time": 8.43,
+        "date": "07 May 2007",
+        "warmth_raw": 34.38,
+        "normalized": 0.55
+    },
+    {
+        "time": 8.47,
+        "date": "07 May 2007",
+        "warmth_raw": 34.39,
+        "normalized": 0.55
+    },
+    {
+        "time": 8.5,
+        "date": "07 May 2007",
+        "warmth_raw": 34.31,
+        "normalized": 0.54
+    },
+    {
+        "time": 8.53,
+        "date": "07 May 2007",
+        "warmth_raw": 34.34,
+        "normalized": 0.54
+    },
+    {
+        "time": 8.57,
+        "date": "08 May 2007",
+        "warmth_raw": 34.35,
+        "normalized": 0.54
+    },
+    {
+        "time": 8.6,
+        "date": "08 May 2007",
+        "warmth_raw": 34.37,
+        "normalized": 0.55
+    },
+    {
+        "time": 8.63,
+        "date": "08 May 2007",
+        "warmth_raw": 34.42,
+        "normalized": 0.55
+    },
+    {
+        "time": 8.67,
+        "date": "08 May 2007",
+        "warmth_raw": 34.33,
+        "normalized": 0.54
+    },
+    {
+        "time": 8.7,
+        "date": "08 May 2007",
+        "warmth_raw": 34.44,
+        "normalized": 0.56
+    },
+    {
+        "time": 8.73,
+        "date": "09 May 2007",
+        "warmth_raw": 34.36,
+        "normalized": 0.55
+    },
+    {
+        "time": 8.77,
+        "date": "09 May 2007",
+        "warmth_raw": 34.39,
+        "normalized": 0.55
+    },
+    {
+        "time": 8.8,
+        "date": "09 May 2007",
+        "warmth_raw": 34.44,
+        "normalized": 0.56
+    },
+    {
+        "time": 8.83,
+        "date": "09 May 2007",
+        "warmth_raw": 34.4,
+        "normalized": 0.55
+    },
+    {
+        "time": 8.87,
+        "date": "09 May 2007",
+        "warmth_raw": 34.37,
+        "normalized": 0.55
+    },
+    {
+        "time": 8.9,
+        "date": "09 May 2007",
+        "warmth_raw": 34.37,
+        "normalized": 0.55
+    },
+    {
+        "time": 8.93,
+        "date": "10 May 2007",
+        "warmth_raw": 34.36,
+        "normalized": 0.55
+    },
+    {
+        "time": 8.97,
+        "date": "10 May 2007",
+        "warmth_raw": 34.4,
+        "normalized": 0.55
+    },
+    {
+        "time": 9.0,
+        "date": "10 May 2007",
+        "warmth_raw": 34.16,
+        "normalized": 0.52
+    },
+    {
+        "time": 9.03,
+        "date": "10 May 2007",
+        "warmth_raw": 34.43,
+        "normalized": 0.56
+    },
+    {
+        "time": 9.07,
+        "date": "10 May 2007",
+        "warmth_raw": 34.48,
+        "normalized": 0.56
+    },
+    {
+        "time": 9.1,
+        "date": "10 May 2007",
+        "warmth_raw": 34.59,
+        "normalized": 0.58
+    },
+    {
+        "time": 9.13,
+        "date": "11 May 2007",
+        "warmth_raw": 34.63,
+        "normalized": 0.58
+    },
+    {
+        "time": 9.17,
+        "date": "11 May 2007",
+        "warmth_raw": 34.69,
+        "normalized": 0.59
+    },
+    {
+        "time": 9.2,
+        "date": "11 May 2007",
+        "warmth_raw": 34.74,
+        "normalized": 0.6
+    },
+    {
+        "time": 9.23,
+        "date": "11 May 2007",
+        "warmth_raw": 34.83,
+        "normalized": 0.61
+    },
+    {
+        "time": 9.27,
+        "date": "11 May 2007",
+        "warmth_raw": 34.88,
+        "normalized": 0.62
+    },
+    {
+        "time": 9.3,
+        "date": "11 May 2007",
+        "warmth_raw": 34.9,
+        "normalized": 0.62
+    },
+    {
+        "time": 9.33,
+        "date": "12 May 2007",
+        "warmth_raw": 35.06,
+        "normalized": 0.64
+    },
+    {
+        "time": 9.37,
+        "date": "12 May 2007",
+        "warmth_raw": 34.94,
+        "normalized": 0.62
+    },
+    {
+        "time": 9.4,
+        "date": "12 May 2007",
+        "warmth_raw": 34.8,
+        "normalized": 0.61
+    },
+    {
+        "time": 9.43,
+        "date": "12 May 2007",
+        "warmth_raw": 34.84,
+        "normalized": 0.61
+    },
+    {
+        "time": 9.47,
+        "date": "12 May 2007",
+        "warmth_raw": 34.84,
+        "normalized": 0.61
+    },
+    {
+        "time": 9.5,
+        "date": "12 May 2007",
+        "warmth_raw": 34.75,
+        "normalized": 0.6
+    },
+    {
+        "time": 9.53,
+        "date": "13 May 2007",
+        "warmth_raw": 34.87,
+        "normalized": 0.62
+    },
+    {
+        "time": 9.57,
+        "date": "13 May 2007",
+        "warmth_raw": 34.77,
+        "normalized": 0.6
+    },
+    {
+        "time": 9.6,
+        "date": "13 May 2007",
+        "warmth_raw": 34.93,
+        "normalized": 0.62
+    },
+    {
+        "time": 9.63,
+        "date": "13 May 2007",
+        "warmth_raw": 34.82,
+        "normalized": 0.61
+    },
+    {
+        "time": 9.67,
+        "date": "13 May 2007",
+        "warmth_raw": 34.79,
+        "normalized": 0.6
+    },
+    {
+        "time": 9.7,
+        "date": "14 May 2007",
+        "warmth_raw": 34.74,
+        "normalized": 0.6
+    },
+    {
+        "time": 9.73,
+        "date": "14 May 2007",
+        "warmth_raw": 34.82,
+        "normalized": 0.61
+    },
+    {
+        "time": 9.77,
+        "date": "14 May 2007",
+        "warmth_raw": 34.8,
+        "normalized": 0.61
+    },
+    {
+        "time": 9.8,
+        "date": "14 May 2007",
+        "warmth_raw": 34.77,
+        "normalized": 0.6
+    },
+    {
+        "time": 9.83,
+        "date": "14 May 2007",
+        "warmth_raw": 34.65,
+        "normalized": 0.59
+    },
+    {
+        "time": 9.87,
+        "date": "14 May 2007",
+        "warmth_raw": 34.65,
+        "normalized": 0.59
+    },
+    {
+        "time": 9.9,
+        "date": "15 May 2007",
+        "warmth_raw": 34.63,
+        "normalized": 0.58
+    },
+    {
+        "time": 9.93,
+        "date": "15 May 2007",
+        "warmth_raw": 34.53,
+        "normalized": 0.57
+    },
+    {
+        "time": 9.97,
+        "date": "15 May 2007",
+        "warmth_raw": 34.5,
+        "normalized": 0.57
+    },
+    {
+        "time": 10.0,
+        "date": "15 May 2007",
+        "warmth_raw": 34.33,
+        "normalized": 0.54
+    },
+    {
+        "time": 10.03,
+        "date": "15 May 2007",
+        "warmth_raw": 34.3,
+        "normalized": 0.54
+    },
+    {
+        "time": 10.07,
+        "date": "15 May 2007",
+        "warmth_raw": 34.18,
+        "normalized": 0.52
+    },
+    {
+        "time": 10.1,
+        "date": "16 May 2007",
+        "warmth_raw": 34.06,
+        "normalized": 0.51
+    },
+    {
+        "time": 10.13,
+        "date": "16 May 2007",
+        "warmth_raw": 34.1,
+        "normalized": 0.51
+    },
+    {
+        "time": 10.17,
+        "date": "16 May 2007",
+        "warmth_raw": 34.03,
+        "normalized": 0.5
+    },
+    {
+        "time": 10.2,
+        "date": "16 May 2007",
+        "warmth_raw": 33.99,
+        "normalized": 0.5
+    },
+    {
+        "time": 10.23,
+        "date": "16 May 2007",
+        "warmth_raw": 33.97,
+        "normalized": 0.49
+    },
+    {
+        "time": 10.27,
+        "date": "16 May 2007",
+        "warmth_raw": 33.97,
+        "normalized": 0.49
+    },
+    {
+        "time": 10.3,
+        "date": "17 May 2007",
+        "warmth_raw": 33.93,
+        "normalized": 0.49
+    },
+    {
+        "time": 10.33,
+        "date": "17 May 2007",
+        "warmth_raw": 33.88,
+        "normalized": 0.48
+    },
+    {
+        "time": 10.37,
+        "date": "17 May 2007",
+        "warmth_raw": 33.98,
+        "normalized": 0.49
+    },
+    {
+        "time": 10.4,
+        "date": "17 May 2007",
+        "warmth_raw": 33.94,
+        "normalized": 0.49
+    },
+    {
+        "time": 10.43,
+        "date": "17 May 2007",
+        "warmth_raw": 33.86,
+        "normalized": 0.48
+    },
+    {
+        "time": 10.47,
+        "date": "17 May 2007",
+        "warmth_raw": 33.75,
+        "normalized": 0.46
+    },
+    {
+        "time": 10.5,
+        "date": "18 May 2007",
+        "warmth_raw": 33.82,
+        "normalized": 0.47
+    },
+    {
+        "time": 10.53,
+        "date": "18 May 2007",
+        "warmth_raw": 33.75,
+        "normalized": 0.46
+    },
+    {
+        "time": 10.57,
+        "date": "18 May 2007",
+        "warmth_raw": 33.67,
+        "normalized": 0.45
+    },
+    {
+        "time": 10.6,
+        "date": "18 May 2007",
+        "warmth_raw": 33.87,
+        "normalized": 0.48
+    },
+    {
+        "time": 10.63,
+        "date": "18 May 2007",
+        "warmth_raw": 33.79,
+        "normalized": 0.47
+    },
+    {
+        "time": 10.67,
+        "date": "19 May 2007",
+        "warmth_raw": 33.78,
+        "normalized": 0.47
+    },
+    {
+        "time": 10.7,
+        "date": "19 May 2007",
+        "warmth_raw": 33.75,
+        "normalized": 0.46
+    },
+    {
+        "time": 10.73,
+        "date": "19 May 2007",
+        "warmth_raw": 33.7,
+        "normalized": 0.46
+    },
+    {
+        "time": 10.77,
+        "date": "19 May 2007",
+        "warmth_raw": 33.84,
+        "normalized": 0.48
+    },
+    {
+        "time": 10.8,
+        "date": "19 May 2007",
+        "warmth_raw": 33.89,
+        "normalized": 0.48
+    },
+    {
+        "time": 10.83,
+        "date": "19 May 2007",
+        "warmth_raw": 33.97,
+        "normalized": 0.49
+    },
+    {
+        "time": 10.87,
+        "date": "20 May 2007",
+        "warmth_raw": 33.96,
+        "normalized": 0.49
+    },
+    {
+        "time": 10.9,
+        "date": "20 May 2007",
+        "warmth_raw": 33.87,
+        "normalized": 0.48
+    },
+    {
+        "time": 10.93,
+        "date": "20 May 2007",
+        "warmth_raw": 33.79,
+        "normalized": 0.47
+    },
+    {
+        "time": 10.97,
+        "date": "20 May 2007",
+        "warmth_raw": 33.77,
+        "normalized": 0.47
+    },
+    {
+        "time": 11.0,
+        "date": "20 May 2007",
+        "warmth_raw": 33.68,
+        "normalized": 0.45
+    },
+    {
+        "time": 11.03,
+        "date": "20 May 2007",
+        "warmth_raw": 33.65,
+        "normalized": 0.45
+    },
+    {
+        "time": 11.07,
+        "date": "21 May 2007",
+        "warmth_raw": 33.69,
+        "normalized": 0.46
+    },
+    {
+        "time": 11.1,
+        "date": "21 May 2007",
+        "warmth_raw": 33.57,
+        "normalized": 0.44
+    },
+    {
+        "time": 11.13,
+        "date": "21 May 2007",
+        "warmth_raw": 33.6,
+        "normalized": 0.44
+    },
+    {
+        "time": 11.17,
+        "date": "21 May 2007",
+        "warmth_raw": 33.3,
+        "normalized": 0.4
+    },
+    {
+        "time": 11.2,
+        "date": "21 May 2007",
+        "warmth_raw": 33.16,
+        "normalized": 0.38
+    },
+    {
+        "time": 11.23,
+        "date": "21 May 2007",
+        "warmth_raw": 33.19,
+        "normalized": 0.39
+    },
+    {
+        "time": 11.27,
+        "date": "22 May 2007",
+        "warmth_raw": 33.14,
+        "normalized": 0.38
+    },
+    {
+        "time": 11.3,
+        "date": "22 May 2007",
+        "warmth_raw": 33.05,
+        "normalized": 0.37
+    },
+    {
+        "time": 11.33,
+        "date": "22 May 2007",
+        "warmth_raw": 33.02,
+        "normalized": 0.36
+    },
+    {
+        "time": 11.37,
+        "date": "22 May 2007",
+        "warmth_raw": 33.0,
+        "normalized": 0.36
+    },
+    {
+        "time": 11.4,
+        "date": "22 May 2007",
+        "warmth_raw": 33.12,
+        "normalized": 0.38
+    },
+    {
+        "time": 11.43,
+        "date": "22 May 2007",
+        "warmth_raw": 33.13,
+        "normalized": 0.38
+    },
+    {
+        "time": 11.47,
+        "date": "23 May 2007",
+        "warmth_raw": 33.2,
+        "normalized": 0.39
+    },
+    {
+        "time": 11.5,
+        "date": "23 May 2007",
+        "warmth_raw": 33.06,
+        "normalized": 0.37
+    },
+    {
+        "time": 11.53,
+        "date": "23 May 2007",
+        "warmth_raw": 33.05,
+        "normalized": 0.37
+    },
+    {
+        "time": 11.57,
+        "date": "23 May 2007",
+        "warmth_raw": 32.9,
+        "normalized": 0.35
+    },
+    {
+        "time": 11.6,
+        "date": "23 May 2007",
+        "warmth_raw": 32.79,
+        "normalized": 0.33
+    },
+    {
+        "time": 11.63,
+        "date": "23 May 2007",
+        "warmth_raw": 32.7,
+        "normalized": 0.32
+    },
+    {
+        "time": 11.67,
+        "date": "24 May 2007",
+        "warmth_raw": 32.8,
+        "normalized": 0.33
+    },
+    {
+        "time": 11.7,
+        "date": "24 May 2007",
+        "warmth_raw": 32.57,
+        "normalized": 0.3
+    },
+    {
+        "time": 11.73,
+        "date": "24 May 2007",
+        "warmth_raw": 32.51,
+        "normalized": 0.29
+    },
+    {
+        "time": 11.77,
+        "date": "24 May 2007",
+        "warmth_raw": 32.39,
+        "normalized": 0.28
+    },
+    {
+        "time": 11.8,
+        "date": "24 May 2007",
+        "warmth_raw": 32.44,
+        "normalized": 0.29
+    },
+    {
+        "time": 11.83,
+        "date": "25 May 2007",
+        "warmth_raw": 32.34,
+        "normalized": 0.27
+    },
+    {
+        "time": 11.87,
+        "date": "25 May 2007",
+        "warmth_raw": 32.54,
+        "normalized": 0.3
+    },
+    {
+        "time": 11.9,
+        "date": "25 May 2007",
+        "warmth_raw": 32.47,
+        "normalized": 0.29
+    },
+    {
+        "time": 11.93,
+        "date": "25 May 2007",
+        "warmth_raw": 32.53,
+        "normalized": 0.3
+    },
+    {
+        "time": 11.97,
+        "date": "25 May 2007",
+        "warmth_raw": 32.27,
+        "normalized": 0.26
+    },
+    {
+        "time": 12.0,
+        "date": "25 May 2007",
+        "warmth_raw": 32.26,
+        "normalized": 0.26
+    },
+    {
+        "time": 12.03,
+        "date": "26 May 2007",
+        "warmth_raw": 32.4,
+        "normalized": 0.28
+    },
+    {
+        "time": 12.07,
+        "date": "26 May 2007",
+        "warmth_raw": 32.43,
+        "normalized": 0.28
+    },
+    {
+        "time": 12.1,
+        "date": "26 May 2007",
+        "warmth_raw": 32.42,
+        "normalized": 0.28
+    },
+    {
+        "time": 12.13,
+        "date": "26 May 2007",
+        "warmth_raw": 32.27,
+        "normalized": 0.26
+    },
+    {
+        "time": 12.17,
+        "date": "26 May 2007",
+        "warmth_raw": 32.3,
+        "normalized": 0.27
+    },
+    {
+        "time": 12.2,
+        "date": "26 May 2007",
+        "warmth_raw": 32.39,
+        "normalized": 0.28
+    },
+    {
+        "time": 12.23,
+        "date": "27 May 2007",
+        "warmth_raw": 32.21,
+        "normalized": 0.25
+    },
+    {
+        "time": 12.27,
+        "date": "27 May 2007",
+        "warmth_raw": 32.14,
+        "normalized": 0.24
+    },
+    {
+        "time": 12.3,
+        "date": "27 May 2007",
+        "warmth_raw": 32.13,
+        "normalized": 0.24
+    },
+    {
+        "time": 12.33,
+        "date": "27 May 2007",
+        "warmth_raw": 32.16,
+        "normalized": 0.25
+    },
+    {
+        "time": 12.37,
+        "date": "27 May 2007",
+        "warmth_raw": 32.14,
+        "normalized": 0.24
+    },
+    {
+        "time": 12.4,
+        "date": "27 May 2007",
+        "warmth_raw": 32.04,
+        "normalized": 0.23
+    },
+    {
+        "time": 12.43,
+        "date": "28 May 2007",
+        "warmth_raw": 32.06,
+        "normalized": 0.23
+    },
+    {
+        "time": 12.47,
+        "date": "28 May 2007",
+        "warmth_raw": 32.19,
+        "normalized": 0.25
+    },
+    {
+        "time": 12.5,
+        "date": "28 May 2007",
+        "warmth_raw": 32.35,
+        "normalized": 0.27
+    },
+    {
+        "time": 12.53,
+        "date": "28 May 2007",
+        "warmth_raw": 32.26,
+        "normalized": 0.26
+    },
+    {
+        "time": 12.57,
+        "date": "28 May 2007",
+        "warmth_raw": 32.2,
+        "normalized": 0.25
+    },
+    {
+        "time": 12.6,
+        "date": "28 May 2007",
+        "warmth_raw": 32.31,
+        "normalized": 0.27
+    },
+    {
+        "time": 12.63,
+        "date": "29 May 2007",
+        "warmth_raw": 32.29,
+        "normalized": 0.26
+    },
+    {
+        "time": 12.67,
+        "date": "29 May 2007",
+        "warmth_raw": 32.35,
+        "normalized": 0.27
+    },
+    {
+        "time": 12.7,
+        "date": "29 May 2007",
+        "warmth_raw": 32.39,
+        "normalized": 0.28
+    },
+    {
+        "time": 12.73,
+        "date": "29 May 2007",
+        "warmth_raw": 32.26,
+        "normalized": 0.26
+    },
+    {
+        "time": 12.77,
+        "date": "29 May 2007",
+        "warmth_raw": 32.2,
+        "normalized": 0.25
+    },
+    {
+        "time": 12.8,
+        "date": "30 May 2007",
+        "warmth_raw": 32.36,
+        "normalized": 0.27
+    },
+    {
+        "time": 12.83,
+        "date": "30 May 2007",
+        "warmth_raw": 32.43,
+        "normalized": 0.28
+    },
+    {
+        "time": 12.87,
+        "date": "30 May 2007",
+        "warmth_raw": 32.36,
+        "normalized": 0.27
+    },
+    {
+        "time": 12.9,
+        "date": "30 May 2007",
+        "warmth_raw": 32.35,
+        "normalized": 0.27
+    },
+    {
+        "time": 12.93,
+        "date": "30 May 2007",
+        "warmth_raw": 32.36,
+        "normalized": 0.27
+    },
+    {
+        "time": 12.97,
+        "date": "30 May 2007",
+        "warmth_raw": 32.36,
+        "normalized": 0.27
+    },
+    {
+        "time": 13.0,
+        "date": "31 May 2007",
+        "warmth_raw": 32.32,
+        "normalized": 0.27
+    },
+    {
+        "time": 13.03,
+        "date": "31 May 2007",
+        "warmth_raw": 32.35,
+        "normalized": 0.27
+    },
+    {
+        "time": 13.07,
+        "date": "31 May 2007",
+        "warmth_raw": 32.38,
+        "normalized": 0.28
+    },
+    {
+        "time": 13.1,
+        "date": "31 May 2007",
+        "warmth_raw": 32.31,
+        "normalized": 0.27
+    },
+    {
+        "time": 13.13,
+        "date": "31 May 2007",
+        "warmth_raw": 32.2,
+        "normalized": 0.25
+    },
+    {
+        "time": 13.17,
+        "date": "31 May 2007",
+        "warmth_raw": 32.18,
+        "normalized": 0.25
+    },
+    {
+        "time": 13.2,
+        "date": "01 Jun 2007",
+        "warmth_raw": 32.28,
+        "normalized": 0.26
+    },
+    {
+        "time": 13.23,
+        "date": "01 Jun 2007",
+        "warmth_raw": 32.36,
+        "normalized": 0.27
+    },
+    {
+        "time": 13.27,
+        "date": "01 Jun 2007",
+        "warmth_raw": 32.49,
+        "normalized": 0.29
+    },
+    {
+        "time": 13.3,
+        "date": "01 Jun 2007",
+        "warmth_raw": 32.39,
+        "normalized": 0.28
+    },
+    {
+        "time": 13.33,
+        "date": "01 Jun 2007",
+        "warmth_raw": 32.48,
+        "normalized": 0.29
+    },
+    {
+        "time": 13.37,
+        "date": "01 Jun 2007",
+        "warmth_raw": 32.62,
+        "normalized": 0.31
+    },
+    {
+        "time": 13.4,
+        "date": "02 Jun 2007",
+        "warmth_raw": 32.6,
+        "normalized": 0.31
+    },
+    {
+        "time": 13.43,
+        "date": "02 Jun 2007",
+        "warmth_raw": 32.58,
+        "normalized": 0.3
+    },
+    {
+        "time": 13.47,
+        "date": "02 Jun 2007",
+        "warmth_raw": 32.61,
+        "normalized": 0.31
+    },
+    {
+        "time": 13.5,
+        "date": "02 Jun 2007",
+        "warmth_raw": 32.69,
+        "normalized": 0.32
+    },
+    {
+        "time": 13.53,
+        "date": "02 Jun 2007",
+        "warmth_raw": 32.62,
+        "normalized": 0.31
+    },
+    {
+        "time": 13.57,
+        "date": "02 Jun 2007",
+        "warmth_raw": 32.69,
+        "normalized": 0.32
+    },
+    {
+        "time": 13.6,
+        "date": "03 Jun 2007",
+        "warmth_raw": 32.63,
+        "normalized": 0.31
+    },
+    {
+        "time": 13.63,
+        "date": "03 Jun 2007",
+        "warmth_raw": 32.8,
+        "normalized": 0.33
+    },
+    {
+        "time": 13.67,
+        "date": "03 Jun 2007",
+        "warmth_raw": 32.72,
+        "normalized": 0.32
+    },
+    {
+        "time": 13.7,
+        "date": "03 Jun 2007",
+        "warmth_raw": 32.78,
+        "normalized": 0.33
+    },
+    {
+        "time": 13.73,
+        "date": "03 Jun 2007",
+        "warmth_raw": 32.8,
+        "normalized": 0.33
+    },
+    {
+        "time": 13.77,
+        "date": "04 Jun 2007",
+        "warmth_raw": 32.84,
+        "normalized": 0.34
+    },
+    {
+        "time": 13.8,
+        "date": "04 Jun 2007",
+        "warmth_raw": 32.76,
+        "normalized": 0.33
+    },
+    {
+        "time": 13.83,
+        "date": "04 Jun 2007",
+        "warmth_raw": 32.87,
+        "normalized": 0.34
+    },
+    {
+        "time": 13.87,
+        "date": "04 Jun 2007",
+        "warmth_raw": 32.79,
+        "normalized": 0.33
+    },
+    {
+        "time": 13.9,
+        "date": "04 Jun 2007",
+        "warmth_raw": 32.9,
+        "normalized": 0.35
+    },
+    {
+        "time": 13.93,
+        "date": "04 Jun 2007",
+        "warmth_raw": 32.86,
+        "normalized": 0.34
+    },
+    {
+        "time": 13.97,
+        "date": "05 Jun 2007",
+        "warmth_raw": 32.85,
+        "normalized": 0.34
+    },
+    {
+        "time": 14.0,
+        "date": "05 Jun 2007",
+        "warmth_raw": 32.79,
+        "normalized": 0.33
+    },
+    {
+        "time": 14.03,
+        "date": "05 Jun 2007",
+        "warmth_raw": 32.82,
+        "normalized": 0.34
+    },
+    {
+        "time": 14.07,
+        "date": "05 Jun 2007",
+        "warmth_raw": 32.86,
+        "normalized": 0.34
+    },
+    {
+        "time": 14.1,
+        "date": "05 Jun 2007",
+        "warmth_raw": 32.81,
+        "normalized": 0.34
+    },
+    {
+        "time": 14.13,
+        "date": "05 Jun 2007",
+        "warmth_raw": 33.01,
+        "normalized": 0.36
+    },
+    {
+        "time": 14.17,
+        "date": "06 Jun 2007",
+        "warmth_raw": 33.01,
+        "normalized": 0.36
+    },
+    {
+        "time": 14.2,
+        "date": "06 Jun 2007",
+        "warmth_raw": 32.99,
+        "normalized": 0.36
+    },
+    {
+        "time": 14.23,
+        "date": "06 Jun 2007",
+        "warmth_raw": 33.07,
+        "normalized": 0.37
+    },
+    {
+        "time": 14.27,
+        "date": "06 Jun 2007",
+        "warmth_raw": 32.93,
+        "normalized": 0.35
+    },
+    {
+        "time": 14.3,
+        "date": "06 Jun 2007",
+        "warmth_raw": 32.91,
+        "normalized": 0.35
+    },
+    {
+        "time": 14.33,
+        "date": "06 Jun 2007",
+        "warmth_raw": 33.02,
+        "normalized": 0.36
+    },
+    {
+        "time": 14.37,
+        "date": "07 Jun 2007",
+        "warmth_raw": 32.99,
+        "normalized": 0.36
+    },
+    {
+        "time": 14.4,
+        "date": "07 Jun 2007",
+        "warmth_raw": 33.04,
+        "normalized": 0.37
+    },
+    {
+        "time": 14.43,
+        "date": "07 Jun 2007",
+        "warmth_raw": 32.99,
+        "normalized": 0.36
+    },
+    {
+        "time": 14.47,
+        "date": "07 Jun 2007",
+        "warmth_raw": 33.04,
+        "normalized": 0.37
+    },
+    {
+        "time": 14.5,
+        "date": "07 Jun 2007",
+        "warmth_raw": 33.01,
+        "normalized": 0.36
+    },
+    {
+        "time": 14.53,
+        "date": "07 Jun 2007",
+        "warmth_raw": 33.05,
+        "normalized": 0.37
+    },
+    {
+        "time": 14.57,
+        "date": "08 Jun 2007",
+        "warmth_raw": 33.04,
+        "normalized": 0.37
+    },
+    {
+        "time": 14.6,
+        "date": "08 Jun 2007",
+        "warmth_raw": 33.08,
+        "normalized": 0.37
+    },
+    {
+        "time": 14.63,
+        "date": "08 Jun 2007",
+        "warmth_raw": 33.13,
+        "normalized": 0.38
+    },
+    {
+        "time": 14.67,
+        "date": "08 Jun 2007",
+        "warmth_raw": 33.04,
+        "normalized": 0.37
+    },
+    {
+        "time": 14.7,
+        "date": "08 Jun 2007",
+        "warmth_raw": 33.07,
+        "normalized": 0.37
+    },
+    {
+        "time": 14.73,
+        "date": "08 Jun 2007",
+        "warmth_raw": 33.12,
+        "normalized": 0.38
+    },
+    {
+        "time": 14.77,
+        "date": "09 Jun 2007",
+        "warmth_raw": 33.14,
+        "normalized": 0.38
+    },
+    {
+        "time": 14.8,
+        "date": "09 Jun 2007",
+        "warmth_raw": 33.05,
+        "normalized": 0.37
+    },
+    {
+        "time": 14.83,
+        "date": "09 Jun 2007",
+        "warmth_raw": 33.09,
+        "normalized": 0.37
+    },
+    {
+        "time": 14.87,
+        "date": "09 Jun 2007",
+        "warmth_raw": 33.01,
+        "normalized": 0.36
+    },
+    {
+        "time": 14.9,
+        "date": "09 Jun 2007",
+        "warmth_raw": 33.07,
+        "normalized": 0.37
+    },
+    {
+        "time": 14.93,
+        "date": "10 Jun 2007",
+        "warmth_raw": 33.05,
+        "normalized": 0.37
+    },
+    {
+        "time": 14.97,
+        "date": "10 Jun 2007",
+        "warmth_raw": 33.21,
+        "normalized": 0.39
+    },
+    {
+        "time": 15.0,
+        "date": "10 Jun 2007",
+        "warmth_raw": 32.75,
+        "normalized": 0.33
+    },
+    {
+        "time": 15.03,
+        "date": "10 Jun 2007",
+        "warmth_raw": 32.83,
+        "normalized": 0.34
+    },
+    {
+        "time": 15.07,
+        "date": "10 Jun 2007",
+        "warmth_raw": 33.11,
+        "normalized": 0.38
+    },
+    {
+        "time": 15.1,
+        "date": "10 Jun 2007",
+        "warmth_raw": 33.05,
+        "normalized": 0.37
+    },
+    {
+        "time": 15.13,
+        "date": "11 Jun 2007",
+        "warmth_raw": 33.14,
+        "normalized": 0.38
+    },
+    {
+        "time": 15.17,
+        "date": "11 Jun 2007",
+        "warmth_raw": 33.35,
+        "normalized": 0.41
+    },
+    {
+        "time": 15.2,
+        "date": "11 Jun 2007",
+        "warmth_raw": 33.62,
+        "normalized": 0.45
+    },
+    {
+        "time": 15.23,
+        "date": "11 Jun 2007",
+        "warmth_raw": 33.73,
+        "normalized": 0.46
+    },
+    {
+        "time": 15.27,
+        "date": "11 Jun 2007",
+        "warmth_raw": 33.71,
+        "normalized": 0.46
+    },
+    {
+        "time": 15.3,
+        "date": "11 Jun 2007",
+        "warmth_raw": 33.72,
+        "normalized": 0.46
+    },
+    {
+        "time": 15.33,
+        "date": "12 Jun 2007",
+        "warmth_raw": 33.48,
+        "normalized": 0.43
+    },
+    {
+        "time": 15.37,
+        "date": "12 Jun 2007",
+        "warmth_raw": 33.52,
+        "normalized": 0.43
+    },
+    {
+        "time": 15.4,
+        "date": "12 Jun 2007",
+        "warmth_raw": 33.7,
+        "normalized": 0.46
+    },
+    {
+        "time": 15.43,
+        "date": "12 Jun 2007",
+        "warmth_raw": 33.61,
+        "normalized": 0.44
+    },
+    {
+        "time": 15.47,
+        "date": "12 Jun 2007",
+        "warmth_raw": 33.42,
+        "normalized": 0.42
+    },
+    {
+        "time": 15.5,
+        "date": "12 Jun 2007",
+        "warmth_raw": 33.4,
+        "normalized": 0.42
+    },
+    {
+        "time": 15.53,
+        "date": "13 Jun 2007",
+        "warmth_raw": 33.48,
+        "normalized": 0.43
+    },
+    {
+        "time": 15.57,
+        "date": "13 Jun 2007",
+        "warmth_raw": 33.52,
+        "normalized": 0.43
+    },
+    {
+        "time": 15.6,
+        "date": "13 Jun 2007",
+        "warmth_raw": 33.52,
+        "normalized": 0.43
+    },
+    {
+        "time": 15.63,
+        "date": "13 Jun 2007",
+        "warmth_raw": 33.56,
+        "normalized": 0.44
+    },
+    {
+        "time": 15.67,
+        "date": "13 Jun 2007",
+        "warmth_raw": 33.49,
+        "normalized": 0.43
+    },
+    {
+        "time": 15.7,
+        "date": "13 Jun 2007",
+        "warmth_raw": 33.55,
+        "normalized": 0.44
+    },
+    {
+        "time": 15.73,
+        "date": "14 Jun 2007",
+        "warmth_raw": 33.66,
+        "normalized": 0.45
+    },
+    {
+        "time": 15.77,
+        "date": "14 Jun 2007",
+        "warmth_raw": 33.79,
+        "normalized": 0.47
+    },
+    {
+        "time": 15.8,
+        "date": "14 Jun 2007",
+        "warmth_raw": 33.81,
+        "normalized": 0.47
+    },
+    {
+        "time": 15.83,
+        "date": "14 Jun 2007",
+        "warmth_raw": 33.92,
+        "normalized": 0.49
+    },
+    {
+        "time": 15.87,
+        "date": "14 Jun 2007",
+        "warmth_raw": 33.91,
+        "normalized": 0.49
+    },
+    {
+        "time": 15.9,
+        "date": "15 Jun 2007",
+        "warmth_raw": 33.94,
+        "normalized": 0.49
+    },
+    {
+        "time": 15.93,
+        "date": "15 Jun 2007",
+        "warmth_raw": 34.02,
+        "normalized": 0.5
+    },
+    {
+        "time": 15.97,
+        "date": "15 Jun 2007",
+        "warmth_raw": 34.06,
+        "normalized": 0.51
+    },
+    {
+        "time": 16.0,
+        "date": "15 Jun 2007",
+        "warmth_raw": 34.71,
+        "normalized": 0.59
+    },
+    {
+        "time": 16.03,
+        "date": "15 Jun 2007",
+        "warmth_raw": 35.02,
+        "normalized": 0.64
+    },
+    {
+        "time": 16.07,
+        "date": "15 Jun 2007",
+        "warmth_raw": 35.1,
+        "normalized": 0.65
+    },
+    {
+        "time": 16.1,
+        "date": "16 Jun 2007",
+        "warmth_raw": 35.07,
+        "normalized": 0.64
+    },
+    {
+        "time": 16.13,
+        "date": "16 Jun 2007",
+        "warmth_raw": 35.04,
+        "normalized": 0.64
+    },
+    {
+        "time": 16.17,
+        "date": "16 Jun 2007",
+        "warmth_raw": 35.07,
+        "normalized": 0.64
+    },
+    {
+        "time": 16.2,
+        "date": "16 Jun 2007",
+        "warmth_raw": 35.12,
+        "normalized": 0.65
+    },
+    {
+        "time": 16.23,
+        "date": "16 Jun 2007",
+        "warmth_raw": 35.11,
+        "normalized": 0.65
+    },
+    {
+        "time": 16.27,
+        "date": "16 Jun 2007",
+        "warmth_raw": 35.02,
+        "normalized": 0.64
+    },
+    {
+        "time": 16.3,
+        "date": "17 Jun 2007",
+        "warmth_raw": 35.13,
+        "normalized": 0.65
+    },
+    {
+        "time": 16.33,
+        "date": "17 Jun 2007",
+        "warmth_raw": 34.98,
+        "normalized": 0.63
+    },
+    {
+        "time": 16.37,
+        "date": "17 Jun 2007",
+        "warmth_raw": 35.13,
+        "normalized": 0.65
+    },
+    {
+        "time": 16.4,
+        "date": "17 Jun 2007",
+        "warmth_raw": 35.17,
+        "normalized": 0.66
+    },
+    {
+        "time": 16.43,
+        "date": "17 Jun 2007",
+        "warmth_raw": 35.21,
+        "normalized": 0.66
+    },
+    {
+        "time": 16.47,
+        "date": "17 Jun 2007",
+        "warmth_raw": 35.43,
+        "normalized": 0.69
+    },
+    {
+        "time": 16.5,
+        "date": "18 Jun 2007",
+        "warmth_raw": 35.45,
+        "normalized": 0.69
+    },
+    {
+        "time": 16.53,
+        "date": "18 Jun 2007",
+        "warmth_raw": 35.51,
+        "normalized": 0.7
+    },
+    {
+        "time": 16.57,
+        "date": "18 Jun 2007",
+        "warmth_raw": 35.6,
+        "normalized": 0.71
+    },
+    {
+        "time": 16.6,
+        "date": "18 Jun 2007",
+        "warmth_raw": 35.76,
+        "normalized": 0.74
+    },
+    {
+        "time": 16.63,
+        "date": "18 Jun 2007",
+        "warmth_raw": 35.64,
+        "normalized": 0.72
+    },
+    {
+        "time": 16.67,
+        "date": "18 Jun 2007",
+        "warmth_raw": 35.7,
+        "normalized": 0.73
+    },
+    {
+        "time": 16.7,
+        "date": "19 Jun 2007",
+        "warmth_raw": 35.7,
+        "normalized": 0.73
+    },
+    {
+        "time": 16.73,
+        "date": "19 Jun 2007",
+        "warmth_raw": 35.81,
+        "normalized": 0.74
+    },
+    {
+        "time": 16.77,
+        "date": "19 Jun 2007",
+        "warmth_raw": 35.67,
+        "normalized": 0.72
+    },
+    {
+        "time": 16.8,
+        "date": "19 Jun 2007",
+        "warmth_raw": 35.82,
+        "normalized": 0.74
+    },
+    {
+        "time": 16.83,
+        "date": "19 Jun 2007",
+        "warmth_raw": 35.74,
+        "normalized": 0.73
+    },
+    {
+        "time": 16.87,
+        "date": "20 Jun 2007",
+        "warmth_raw": 35.72,
+        "normalized": 0.73
+    },
+    {
+        "time": 16.9,
+        "date": "20 Jun 2007",
+        "warmth_raw": 35.76,
+        "normalized": 0.74
+    },
+    {
+        "time": 16.93,
+        "date": "20 Jun 2007",
+        "warmth_raw": 35.71,
+        "normalized": 0.73
+    },
+    {
+        "time": 16.97,
+        "date": "20 Jun 2007",
+        "warmth_raw": 35.78,
+        "normalized": 0.74
+    },
+    {
+        "time": 17.0,
+        "date": "20 Jun 2007",
+        "warmth_raw": 35.83,
+        "normalized": 0.75
+    },
+    {
+        "time": 17.03,
+        "date": "20 Jun 2007",
+        "warmth_raw": 36.04,
+        "normalized": 0.77
+    },
+    {
+        "time": 17.07,
+        "date": "21 Jun 2007",
+        "warmth_raw": 35.97,
+        "normalized": 0.76
+    },
+    {
+        "time": 17.1,
+        "date": "21 Jun 2007",
+        "warmth_raw": 36.05,
+        "normalized": 0.78
+    },
+    {
+        "time": 17.13,
+        "date": "21 Jun 2007",
+        "warmth_raw": 36.09,
+        "normalized": 0.78
+    },
+    {
+        "time": 17.17,
+        "date": "21 Jun 2007",
+        "warmth_raw": 36.17,
+        "normalized": 0.79
+    },
+    {
+        "time": 17.2,
+        "date": "21 Jun 2007",
+        "warmth_raw": 36.28,
+        "normalized": 0.81
+    },
+    {
+        "time": 17.23,
+        "date": "21 Jun 2007",
+        "warmth_raw": 36.16,
+        "normalized": 0.79
+    },
+    {
+        "time": 17.27,
+        "date": "22 Jun 2007",
+        "warmth_raw": 36.12,
+        "normalized": 0.79
+    },
+    {
+        "time": 17.3,
+        "date": "22 Jun 2007",
+        "warmth_raw": 36.34,
+        "normalized": 0.82
+    },
+    {
+        "time": 17.33,
+        "date": "22 Jun 2007",
+        "warmth_raw": 36.36,
+        "normalized": 0.82
+    },
+    {
+        "time": 17.37,
+        "date": "22 Jun 2007",
+        "warmth_raw": 36.26,
+        "normalized": 0.8
+    },
+    {
+        "time": 17.4,
+        "date": "22 Jun 2007",
+        "warmth_raw": 36.37,
+        "normalized": 0.82
+    },
+    {
+        "time": 17.43,
+        "date": "22 Jun 2007",
+        "warmth_raw": 36.39,
+        "normalized": 0.82
+    },
+    {
+        "time": 17.47,
+        "date": "23 Jun 2007",
+        "warmth_raw": 36.4,
+        "normalized": 0.82
+    },
+    {
+        "time": 17.5,
+        "date": "23 Jun 2007",
+        "warmth_raw": 36.59,
+        "normalized": 0.85
+    },
+    {
+        "time": 17.53,
+        "date": "23 Jun 2007",
+        "warmth_raw": 36.78,
+        "normalized": 0.87
+    },
+    {
+        "time": 17.57,
+        "date": "23 Jun 2007",
+        "warmth_raw": 36.85,
+        "normalized": 0.88
+    },
+    {
+        "time": 17.6,
+        "date": "23 Jun 2007",
+        "warmth_raw": 36.83,
+        "normalized": 0.88
+    },
+    {
+        "time": 17.63,
+        "date": "23 Jun 2007",
+        "warmth_raw": 37.05,
+        "normalized": 0.91
+    },
+    {
+        "time": 17.67,
+        "date": "24 Jun 2007",
+        "warmth_raw": 36.97,
+        "normalized": 0.9
+    },
+    {
+        "time": 17.7,
+        "date": "24 Jun 2007",
+        "warmth_raw": 37.02,
+        "normalized": 0.91
+    },
+    {
+        "time": 17.73,
+        "date": "24 Jun 2007",
+        "warmth_raw": 36.97,
+        "normalized": 0.9
+    },
+    {
+        "time": 17.77,
+        "date": "24 Jun 2007",
+        "warmth_raw": 36.91,
+        "normalized": 0.89
+    },
+    {
+        "time": 17.8,
+        "date": "24 Jun 2007",
+        "warmth_raw": 37.0,
+        "normalized": 0.9
+    },
+    {
+        "time": 17.83,
+        "date": "24 Jun 2007",
+        "warmth_raw": 37.13,
+        "normalized": 0.92
+    },
+    {
+        "time": 17.87,
+        "date": "25 Jun 2007",
+        "warmth_raw": 37.27,
+        "normalized": 0.94
+    },
+    {
+        "time": 17.9,
+        "date": "25 Jun 2007",
+        "warmth_raw": 37.44,
+        "normalized": 0.96
+    },
+    {
+        "time": 17.93,
+        "date": "25 Jun 2007",
+        "warmth_raw": 37.53,
+        "normalized": 0.98
+    },
+    {
+        "time": 17.97,
+        "date": "25 Jun 2007",
+        "warmth_raw": 37.57,
+        "normalized": 0.98
+    },
+    {
+        "time": 18.0,
+        "date": "25 Jun 2007",
+        "warmth_raw": 37.25,
+        "normalized": 0.94
+    },
+    {
+        "time": 18.03,
+        "date": "25 Jun 2007",
+        "warmth_raw": 37.17,
+        "normalized": 0.93
+    },
+    {
+        "time": 18.07,
+        "date": "26 Jun 2007",
+        "warmth_raw": 37.21,
+        "normalized": 0.93
+    },
+    {
+        "time": 18.1,
+        "date": "26 Jun 2007",
+        "warmth_raw": 37.25,
+        "normalized": 0.94
+    },
+    {
+        "time": 18.13,
+        "date": "26 Jun 2007",
+        "warmth_raw": 37.25,
+        "normalized": 0.94
+    },
+    {
+        "time": 18.17,
+        "date": "26 Jun 2007",
+        "warmth_raw": 37.28,
+        "normalized": 0.94
+    },
+    {
+        "time": 18.2,
+        "date": "26 Jun 2007",
+        "warmth_raw": 37.35,
+        "normalized": 0.95
+    },
+    {
+        "time": 18.23,
+        "date": "27 Jun 2007",
+        "warmth_raw": 37.36,
+        "normalized": 0.95
+    },
+    {
+        "time": 18.27,
+        "date": "27 Jun 2007",
+        "warmth_raw": 37.41,
+        "normalized": 0.96
+    },
+    {
+        "time": 18.3,
+        "date": "27 Jun 2007",
+        "warmth_raw": 37.4,
+        "normalized": 0.96
+    },
+    {
+        "time": 18.33,
+        "date": "27 Jun 2007",
+        "warmth_raw": 37.39,
+        "normalized": 0.96
+    },
+    {
+        "time": 18.37,
+        "date": "27 Jun 2007",
+        "warmth_raw": 37.51,
+        "normalized": 0.97
+    },
+    {
+        "time": 18.4,
+        "date": "27 Jun 2007",
+        "warmth_raw": 37.62,
+        "normalized": 0.99
+    },
+    {
+        "time": 18.43,
+        "date": "28 Jun 2007",
+        "warmth_raw": 37.7,
+        "normalized": 1.0
+    },
+    {
+        "time": 18.47,
+        "date": "28 Jun 2007",
+        "warmth_raw": 37.56,
+        "normalized": 0.98
+    },
+    {
+        "time": 18.5,
+        "date": "28 Jun 2007",
+        "warmth_raw": 37.59,
+        "normalized": 0.99
+    },
+    {
+        "time": 18.53,
+        "date": "28 Jun 2007",
+        "warmth_raw": 37.6,
+        "normalized": 0.99
+    },
+    {
+        "time": 18.57,
+        "date": "28 Jun 2007",
+        "warmth_raw": 37.58,
+        "normalized": 0.98
+    },
+    {
+        "time": 18.6,
+        "date": "28 Jun 2007",
+        "warmth_raw": 37.63,
+        "normalized": 0.99
+    },
+    {
+        "time": 18.63,
+        "date": "29 Jun 2007",
+        "warmth_raw": 37.49,
+        "normalized": 0.97
+    },
+    {
+        "time": 18.67,
+        "date": "29 Jun 2007",
+        "warmth_raw": 37.44,
+        "normalized": 0.96
+    },
+    {
+        "time": 18.7,
+        "date": "29 Jun 2007",
+        "warmth_raw": 37.32,
+        "normalized": 0.95
+    },
+    {
+        "time": 18.73,
+        "date": "29 Jun 2007",
+        "warmth_raw": 37.44,
+        "normalized": 0.96
+    },
+    {
+        "time": 18.77,
+        "date": "29 Jun 2007",
+        "warmth_raw": 37.39,
+        "normalized": 0.96
+    },
+    {
+        "time": 18.8,
+        "date": "29 Jun 2007",
+        "warmth_raw": 37.36,
+        "normalized": 0.95
+    },
+    {
+        "time": 18.83,
+        "date": "30 Jun 2007",
+        "warmth_raw": 37.36,
+        "normalized": 0.95
+    },
+    {
+        "time": 18.87,
+        "date": "30 Jun 2007",
+        "warmth_raw": 37.29,
+        "normalized": 0.94
+    },
+    {
+        "time": 18.9,
+        "date": "30 Jun 2007",
+        "warmth_raw": 37.2,
+        "normalized": 0.93
+    },
+    {
+        "time": 18.93,
+        "date": "30 Jun 2007",
+        "warmth_raw": 37.21,
+        "normalized": 0.93
+    },
+    {
+        "time": 18.97,
+        "date": "30 Jun 2007",
+        "warmth_raw": 37.22,
+        "normalized": 0.93
+    },
+    {
+        "time": 19.0,
+        "date": "30 Jun 2007",
+        "warmth_raw": 37.26,
+        "normalized": 0.94
+    },
+    {
+        "time": 19.03,
+        "date": "01 Jul 2007",
+        "warmth_raw": 37.25,
+        "normalized": 0.94
+    },
+    {
+        "time": 19.07,
+        "date": "01 Jul 2007",
+        "warmth_raw": 37.2,
+        "normalized": 0.93
+    },
+    {
+        "time": 19.1,
+        "date": "01 Jul 2007",
+        "warmth_raw": 37.17,
+        "normalized": 0.93
+    },
+    {
+        "time": 19.13,
+        "date": "01 Jul 2007",
+        "warmth_raw": 37.04,
+        "normalized": 0.91
+    },
+    {
+        "time": 19.17,
+        "date": "01 Jul 2007",
+        "warmth_raw": 37.14,
+        "normalized": 0.92
+    },
+    {
+        "time": 19.2,
+        "date": "02 Jul 2007",
+        "warmth_raw": 36.99,
+        "normalized": 0.9
+    },
+    {
+        "time": 19.23,
+        "date": "02 Jul 2007",
+        "warmth_raw": 36.98,
+        "normalized": 0.9
+    },
+    {
+        "time": 19.27,
+        "date": "02 Jul 2007",
+        "warmth_raw": 36.88,
+        "normalized": 0.89
+    },
+    {
+        "time": 19.3,
+        "date": "02 Jul 2007",
+        "warmth_raw": 36.92,
+        "normalized": 0.89
+    },
+    {
+        "time": 19.33,
+        "date": "02 Jul 2007",
+        "warmth_raw": 37.02,
+        "normalized": 0.91
+    },
+    {
+        "time": 19.37,
+        "date": "02 Jul 2007",
+        "warmth_raw": 36.93,
+        "normalized": 0.9
+    },
+    {
+        "time": 19.4,
+        "date": "03 Jul 2007",
+        "warmth_raw": 36.98,
+        "normalized": 0.9
+    },
+    {
+        "time": 19.43,
+        "date": "03 Jul 2007",
+        "warmth_raw": 36.77,
+        "normalized": 0.87
+    },
+    {
+        "time": 19.47,
+        "date": "03 Jul 2007",
+        "warmth_raw": 36.84,
+        "normalized": 0.88
+    },
+    {
+        "time": 19.5,
+        "date": "03 Jul 2007",
+        "warmth_raw": 36.62,
+        "normalized": 0.85
+    },
+    {
+        "time": 19.53,
+        "date": "03 Jul 2007",
+        "warmth_raw": 36.58,
+        "normalized": 0.85
+    },
+    {
+        "time": 19.57,
+        "date": "03 Jul 2007",
+        "warmth_raw": 36.67,
+        "normalized": 0.86
+    },
+    {
+        "time": 19.6,
+        "date": "04 Jul 2007",
+        "warmth_raw": 36.71,
+        "normalized": 0.87
+    },
+    {
+        "time": 19.63,
+        "date": "04 Jul 2007",
+        "warmth_raw": 36.67,
+        "normalized": 0.86
+    },
+    {
+        "time": 19.67,
+        "date": "04 Jul 2007",
+        "warmth_raw": 36.51,
+        "normalized": 0.84
+    },
+    {
+        "time": 19.7,
+        "date": "04 Jul 2007",
+        "warmth_raw": 36.53,
+        "normalized": 0.84
+    },
+    {
+        "time": 19.73,
+        "date": "04 Jul 2007",
+        "warmth_raw": 36.61,
+        "normalized": 0.85
+    },
+    {
+        "time": 19.77,
+        "date": "04 Jul 2007",
+        "warmth_raw": 36.62,
+        "normalized": 0.85
+    },
+    {
+        "time": 19.8,
+        "date": "05 Jul 2007",
+        "warmth_raw": 36.46,
+        "normalized": 0.83
+    },
+    {
+        "time": 19.83,
+        "date": "05 Jul 2007",
+        "warmth_raw": 36.47,
+        "normalized": 0.83
+    },
+    {
+        "time": 19.87,
+        "date": "05 Jul 2007",
+        "warmth_raw": 36.43,
+        "normalized": 0.83
+    },
+    {
+        "time": 19.9,
+        "date": "05 Jul 2007",
+        "warmth_raw": 36.51,
+        "normalized": 0.84
+    },
+    {
+        "time": 19.93,
+        "date": "05 Jul 2007",
+        "warmth_raw": 36.5,
+        "normalized": 0.84
+    },
+    {
+        "time": 19.97,
+        "date": "05 Jul 2007",
+        "warmth_raw": 36.27,
+        "normalized": 0.81
+    },
+    {
+        "time": 20.0,
+        "date": "06 Jul 2007",
+        "warmth_raw": 36.46,
+        "normalized": 0.83
+    },
+    {
+        "time": 20.03,
+        "date": "06 Jul 2007",
+        "warmth_raw": 36.37,
+        "normalized": 0.82
+    },
+    {
+        "time": 20.07,
+        "date": "06 Jul 2007",
+        "warmth_raw": 36.43,
+        "normalized": 0.83
+    },
+    {
+        "time": 20.1,
+        "date": "06 Jul 2007",
+        "warmth_raw": 36.44,
+        "normalized": 0.83
+    },
+    {
+        "time": 20.13,
+        "date": "06 Jul 2007",
+        "warmth_raw": 36.47,
+        "normalized": 0.83
+    },
+    {
+        "time": 20.17,
+        "date": "07 Jul 2007",
+        "warmth_raw": 36.23,
+        "normalized": 0.8
+    },
+    {
+        "time": 20.2,
+        "date": "07 Jul 2007",
+        "warmth_raw": 36.23,
+        "normalized": 0.8
+    },
+    {
+        "time": 20.23,
+        "date": "07 Jul 2007",
+        "warmth_raw": 36.0,
+        "normalized": 0.77
+    },
+    {
+        "time": 20.27,
+        "date": "07 Jul 2007",
+        "warmth_raw": 36.03,
+        "normalized": 0.77
+    },
+    {
+        "time": 20.3,
+        "date": "07 Jul 2007",
+        "warmth_raw": 36.14,
+        "normalized": 0.79
+    },
+    {
+        "time": 20.33,
+        "date": "07 Jul 2007",
+        "warmth_raw": 36.12,
+        "normalized": 0.79
+    },
+    {
+        "time": 20.37,
+        "date": "08 Jul 2007",
+        "warmth_raw": 36.02,
+        "normalized": 0.77
+    },
+    {
+        "time": 20.4,
+        "date": "08 Jul 2007",
+        "warmth_raw": 36.14,
+        "normalized": 0.79
+    },
+    {
+        "time": 20.43,
+        "date": "08 Jul 2007",
+        "warmth_raw": 36.29,
+        "normalized": 0.81
+    },
+    {
+        "time": 20.47,
+        "date": "08 Jul 2007",
+        "warmth_raw": 36.19,
+        "normalized": 0.79
+    },
+    {
+        "time": 20.5,
+        "date": "08 Jul 2007",
+        "warmth_raw": 36.15,
+        "normalized": 0.79
+    },
+    {
+        "time": 20.53,
+        "date": "08 Jul 2007",
+        "warmth_raw": 36.19,
+        "normalized": 0.79
+    },
+    {
+        "time": 20.57,
+        "date": "09 Jul 2007",
+        "warmth_raw": 36.14,
+        "normalized": 0.79
+    },
+    {
+        "time": 20.6,
+        "date": "09 Jul 2007",
+        "warmth_raw": 36.31,
+        "normalized": 0.81
+    },
+    {
+        "time": 20.63,
+        "date": "09 Jul 2007",
+        "warmth_raw": 36.37,
+        "normalized": 0.82
+    },
+    {
+        "time": 20.67,
+        "date": "09 Jul 2007",
+        "warmth_raw": 36.49,
+        "normalized": 0.84
+    },
+    {
+        "time": 20.7,
+        "date": "09 Jul 2007",
+        "warmth_raw": 36.33,
+        "normalized": 0.81
+    },
+    {
+        "time": 20.73,
+        "date": "09 Jul 2007",
+        "warmth_raw": 36.11,
+        "normalized": 0.78
+    },
+    {
+        "time": 20.77,
+        "date": "10 Jul 2007",
+        "warmth_raw": 36.11,
+        "normalized": 0.78
+    },
+    {
+        "time": 20.8,
+        "date": "10 Jul 2007",
+        "warmth_raw": 36.19,
+        "normalized": 0.79
+    },
+    {
+        "time": 20.83,
+        "date": "10 Jul 2007",
+        "warmth_raw": 36.13,
+        "normalized": 0.79
+    },
+    {
+        "time": 20.87,
+        "date": "10 Jul 2007",
+        "warmth_raw": 36.14,
+        "normalized": 0.79
+    },
+    {
+        "time": 20.9,
+        "date": "10 Jul 2007",
+        "warmth_raw": 36.16,
+        "normalized": 0.79
+    },
+    {
+        "time": 20.93,
+        "date": "10 Jul 2007",
+        "warmth_raw": 36.21,
+        "normalized": 0.8
+    },
+    {
+        "time": 20.97,
+        "date": "11 Jul 2007",
+        "warmth_raw": 36.09,
+        "normalized": 0.78
+    },
+    {
+        "time": 21.0,
+        "date": "11 Jul 2007",
+        "warmth_raw": 36.04,
+        "normalized": 0.77
+    },
+    {
+        "time": 21.03,
+        "date": "11 Jul 2007",
+        "warmth_raw": 36.03,
+        "normalized": 0.77
+    },
+    {
+        "time": 21.07,
+        "date": "11 Jul 2007",
+        "warmth_raw": 36.05,
+        "normalized": 0.78
+    },
+    {
+        "time": 21.1,
+        "date": "11 Jul 2007",
+        "warmth_raw": 36.17,
+        "normalized": 0.79
+    },
+    {
+        "time": 21.13,
+        "date": "11 Jul 2007",
+        "warmth_raw": 36.18,
+        "normalized": 0.79
+    },
+    {
+        "time": 21.17,
+        "date": "12 Jul 2007",
+        "warmth_raw": 36.1,
+        "normalized": 0.78
+    },
+    {
+        "time": 21.2,
+        "date": "12 Jul 2007",
+        "warmth_raw": 36.16,
+        "normalized": 0.79
+    },
+    {
+        "time": 21.23,
+        "date": "12 Jul 2007",
+        "warmth_raw": 36.21,
+        "normalized": 0.8
+    },
+    {
+        "time": 21.27,
+        "date": "12 Jul 2007",
+        "warmth_raw": 36.09,
+        "normalized": 0.78
+    },
+    {
+        "time": 21.3,
+        "date": "12 Jul 2007",
+        "warmth_raw": 36.03,
+        "normalized": 0.77
+    },
+    {
+        "time": 21.33,
+        "date": "13 Jul 2007",
+        "warmth_raw": 35.98,
+        "normalized": 0.77
+    },
+    {
+        "time": 21.37,
+        "date": "13 Jul 2007",
+        "warmth_raw": 36.03,
+        "normalized": 0.77
+    },
+    {
+        "time": 21.4,
+        "date": "13 Jul 2007",
+        "warmth_raw": 36.06,
+        "normalized": 0.78
+    },
+    {
+        "time": 21.43,
+        "date": "13 Jul 2007",
+        "warmth_raw": 36.04,
+        "normalized": 0.77
+    },
+    {
+        "time": 21.47,
+        "date": "13 Jul 2007",
+        "warmth_raw": 36.01,
+        "normalized": 0.77
+    },
+    {
+        "time": 21.5,
+        "date": "13 Jul 2007",
+        "warmth_raw": 35.85,
+        "normalized": 0.75
+    },
+    {
+        "time": 21.53,
+        "date": "14 Jul 2007",
+        "warmth_raw": 35.84,
+        "normalized": 0.75
+    },
+    {
+        "time": 21.57,
+        "date": "14 Jul 2007",
+        "warmth_raw": 35.79,
+        "normalized": 0.74
+    },
+    {
+        "time": 21.6,
+        "date": "14 Jul 2007",
+        "warmth_raw": 35.85,
+        "normalized": 0.75
+    },
+    {
+        "time": 21.63,
+        "date": "14 Jul 2007",
+        "warmth_raw": 35.89,
+        "normalized": 0.75
+    },
+    {
+        "time": 21.67,
+        "date": "14 Jul 2007",
+        "warmth_raw": 35.93,
+        "normalized": 0.76
+    },
+    {
+        "time": 21.7,
+        "date": "14 Jul 2007",
+        "warmth_raw": 35.97,
+        "normalized": 0.76
+    },
+    {
+        "time": 21.73,
+        "date": "15 Jul 2007",
+        "warmth_raw": 36.02,
+        "normalized": 0.77
+    },
+    {
+        "time": 21.77,
+        "date": "15 Jul 2007",
+        "warmth_raw": 36.19,
+        "normalized": 0.79
+    },
+    {
+        "time": 21.8,
+        "date": "15 Jul 2007",
+        "warmth_raw": 35.93,
+        "normalized": 0.76
+    },
+    {
+        "time": 21.83,
+        "date": "15 Jul 2007",
+        "warmth_raw": 35.84,
+        "normalized": 0.75
+    },
+    {
+        "time": 21.87,
+        "date": "15 Jul 2007",
+        "warmth_raw": 35.83,
+        "normalized": 0.75
+    },
+    {
+        "time": 21.9,
+        "date": "15 Jul 2007",
+        "warmth_raw": 35.88,
+        "normalized": 0.75
+    },
+    {
+        "time": 21.93,
+        "date": "16 Jul 2007",
+        "warmth_raw": 35.85,
+        "normalized": 0.75
+    },
+    {
+        "time": 21.97,
+        "date": "16 Jul 2007",
+        "warmth_raw": 35.81,
+        "normalized": 0.74
+    },
+    {
+        "time": 22.0,
+        "date": "16 Jul 2007",
+        "warmth_raw": 35.71,
+        "normalized": 0.73
+    },
+    {
+        "time": 22.03,
+        "date": "16 Jul 2007",
+        "warmth_raw": 35.77,
+        "normalized": 0.74
+    },
+    {
+        "time": 22.07,
+        "date": "16 Jul 2007",
+        "warmth_raw": 36.06,
+        "normalized": 0.78
+    },
+    {
+        "time": 22.1,
+        "date": "16 Jul 2007",
+        "warmth_raw": 36.08,
+        "normalized": 0.78
+    },
+    {
+        "time": 22.13,
+        "date": "17 Jul 2007",
+        "warmth_raw": 36.1,
+        "normalized": 0.78
+    },
+    {
+        "time": 22.17,
+        "date": "17 Jul 2007",
+        "warmth_raw": 36.12,
+        "normalized": 0.79
+    },
+    {
+        "time": 22.2,
+        "date": "17 Jul 2007",
+        "warmth_raw": 35.98,
+        "normalized": 0.77
+    },
+    {
+        "time": 22.23,
+        "date": "17 Jul 2007",
+        "warmth_raw": 35.88,
+        "normalized": 0.75
+    },
+    {
+        "time": 22.27,
+        "date": "17 Jul 2007",
+        "warmth_raw": 35.98,
+        "normalized": 0.77
+    },
+    {
+        "time": 22.3,
+        "date": "18 Jul 2007",
+        "warmth_raw": 35.84,
+        "normalized": 0.75
+    },
+    {
+        "time": 22.33,
+        "date": "18 Jul 2007",
+        "warmth_raw": 36.0,
+        "normalized": 0.77
+    },
+    {
+        "time": 22.37,
+        "date": "18 Jul 2007",
+        "warmth_raw": 35.94,
+        "normalized": 0.76
+    },
+    {
+        "time": 22.4,
+        "date": "18 Jul 2007",
+        "warmth_raw": 35.8,
+        "normalized": 0.74
+    },
+    {
+        "time": 22.43,
+        "date": "18 Jul 2007",
+        "warmth_raw": 35.74,
+        "normalized": 0.73
+    },
+    {
+        "time": 22.47,
+        "date": "18 Jul 2007",
+        "warmth_raw": 35.74,
+        "normalized": 0.73
+    },
+    {
+        "time": 22.5,
+        "date": "19 Jul 2007",
+        "warmth_raw": 35.64,
+        "normalized": 0.72
+    },
+    {
+        "time": 22.53,
+        "date": "19 Jul 2007",
+        "warmth_raw": 35.72,
+        "normalized": 0.73
+    },
+    {
+        "time": 22.57,
+        "date": "19 Jul 2007",
+        "warmth_raw": 35.75,
+        "normalized": 0.74
+    },
+    {
+        "time": 22.6,
+        "date": "19 Jul 2007",
+        "warmth_raw": 35.61,
+        "normalized": 0.72
+    },
+    {
+        "time": 22.63,
+        "date": "19 Jul 2007",
+        "warmth_raw": 35.66,
+        "normalized": 0.72
+    },
+    {
+        "time": 22.67,
+        "date": "19 Jul 2007",
+        "warmth_raw": 35.8,
+        "normalized": 0.74
+    },
+    {
+        "time": 22.7,
+        "date": "20 Jul 2007",
+        "warmth_raw": 35.72,
+        "normalized": 0.73
+    },
+    {
+        "time": 22.73,
+        "date": "20 Jul 2007",
+        "warmth_raw": 35.74,
+        "normalized": 0.73
+    },
+    {
+        "time": 22.77,
+        "date": "20 Jul 2007",
+        "warmth_raw": 35.78,
+        "normalized": 0.74
+    },
+    {
+        "time": 22.8,
+        "date": "20 Jul 2007",
+        "warmth_raw": 35.81,
+        "normalized": 0.74
+    },
+    {
+        "time": 22.83,
+        "date": "20 Jul 2007",
+        "warmth_raw": 35.74,
+        "normalized": 0.73
+    },
+    {
+        "time": 22.87,
+        "date": "20 Jul 2007",
+        "warmth_raw": 35.83,
+        "normalized": 0.75
+    },
+    {
+        "time": 22.9,
+        "date": "21 Jul 2007",
+        "warmth_raw": 35.93,
+        "normalized": 0.76
+    },
+    {
+        "time": 22.93,
+        "date": "21 Jul 2007",
+        "warmth_raw": 35.91,
+        "normalized": 0.76
+    },
+    {
+        "time": 22.97,
+        "date": "21 Jul 2007",
+        "warmth_raw": 35.86,
+        "normalized": 0.75
+    },
+    {
+        "time": 23.0,
+        "date": "21 Jul 2007",
+        "warmth_raw": 35.85,
+        "normalized": 0.75
+    },
+    {
+        "time": 23.03,
+        "date": "21 Jul 2007",
+        "warmth_raw": 35.82,
+        "normalized": 0.74
+    },
+    {
+        "time": 23.07,
+        "date": "21 Jul 2007",
+        "warmth_raw": 35.75,
+        "normalized": 0.74
+    },
+    {
+        "time": 23.1,
+        "date": "22 Jul 2007",
+        "warmth_raw": 35.85,
+        "normalized": 0.75
+    },
+    {
+        "time": 23.13,
+        "date": "22 Jul 2007",
+        "warmth_raw": 35.85,
+        "normalized": 0.75
+    },
+    {
+        "time": 23.17,
+        "date": "22 Jul 2007",
+        "warmth_raw": 35.88,
+        "normalized": 0.75
+    },
+    {
+        "time": 23.2,
+        "date": "22 Jul 2007",
+        "warmth_raw": 35.98,
+        "normalized": 0.77
+    },
+    {
+        "time": 23.23,
+        "date": "22 Jul 2007",
+        "warmth_raw": 35.85,
+        "normalized": 0.75
+    },
+    {
+        "time": 23.27,
+        "date": "23 Jul 2007",
+        "warmth_raw": 35.9,
+        "normalized": 0.76
+    },
+    {
+        "time": 23.3,
+        "date": "23 Jul 2007",
+        "warmth_raw": 35.74,
+        "normalized": 0.73
+    },
+    {
+        "time": 23.33,
+        "date": "23 Jul 2007",
+        "warmth_raw": 35.75,
+        "normalized": 0.74
+    },
+    {
+        "time": 23.37,
+        "date": "23 Jul 2007",
+        "warmth_raw": 35.78,
+        "normalized": 0.74
+    },
+    {
+        "time": 23.4,
+        "date": "23 Jul 2007",
+        "warmth_raw": 35.95,
+        "normalized": 0.76
+    },
+    {
+        "time": 23.43,
+        "date": "23 Jul 2007",
+        "warmth_raw": 35.95,
+        "normalized": 0.76
+    },
+    {
+        "time": 23.47,
+        "date": "24 Jul 2007",
+        "warmth_raw": 35.96,
+        "normalized": 0.76
+    },
+    {
+        "time": 23.5,
+        "date": "24 Jul 2007",
+        "warmth_raw": 35.89,
+        "normalized": 0.75
+    },
+    {
+        "time": 23.53,
+        "date": "24 Jul 2007",
+        "warmth_raw": 35.92,
+        "normalized": 0.76
+    },
+    {
+        "time": 23.57,
+        "date": "24 Jul 2007",
+        "warmth_raw": 35.87,
+        "normalized": 0.75
+    },
+    {
+        "time": 23.6,
+        "date": "24 Jul 2007",
+        "warmth_raw": 35.73,
+        "normalized": 0.73
+    },
+    {
+        "time": 23.63,
+        "date": "24 Jul 2007",
+        "warmth_raw": 35.68,
+        "normalized": 0.73
+    },
+    {
+        "time": 23.67,
+        "date": "25 Jul 2007",
+        "warmth_raw": 35.75,
+        "normalized": 0.74
+    },
+    {
+        "time": 23.7,
+        "date": "25 Jul 2007",
+        "warmth_raw": 35.62,
+        "normalized": 0.72
+    },
+    {
+        "time": 23.73,
+        "date": "25 Jul 2007",
+        "warmth_raw": 35.71,
+        "normalized": 0.73
+    },
+    {
+        "time": 23.77,
+        "date": "25 Jul 2007",
+        "warmth_raw": 35.75,
+        "normalized": 0.74
+    },
+    {
+        "time": 23.8,
+        "date": "25 Jul 2007",
+        "warmth_raw": 35.81,
+        "normalized": 0.74
+    },
+    {
+        "time": 23.83,
+        "date": "25 Jul 2007",
+        "warmth_raw": 35.84,
+        "normalized": 0.75
+    },
+    {
+        "time": 23.87,
+        "date": "26 Jul 2007",
+        "warmth_raw": 35.7,
+        "normalized": 0.73
+    },
+    {
+        "time": 23.9,
+        "date": "26 Jul 2007",
+        "warmth_raw": 35.72,
+        "normalized": 0.73
+    },
+    {
+        "time": 23.93,
+        "date": "26 Jul 2007",
+        "warmth_raw": 35.82,
+        "normalized": 0.74
+    },
+    {
+        "time": 23.97,
+        "date": "26 Jul 2007",
+        "warmth_raw": 35.73,
+        "normalized": 0.73
+    },
+    {
+        "time": 24.0,
+        "date": "26 Jul 2007",
+        "warmth_raw": 36.47,
+        "normalized": 0.83
+    },
+    {
+        "time": 24.03,
+        "date": "26 Jul 2007",
+        "warmth_raw": 36.63,
+        "normalized": 0.85
+    },
+    {
+        "time": 24.07,
+        "date": "27 Jul 2007",
+        "warmth_raw": 36.66,
+        "normalized": 0.86
+    },
+    {
+        "time": 24.1,
+        "date": "27 Jul 2007",
+        "warmth_raw": 36.59,
+        "normalized": 0.85
+    },
+    {
+        "time": 24.13,
+        "date": "27 Jul 2007",
+        "warmth_raw": 36.63,
+        "normalized": 0.85
+    },
+    {
+        "time": 24.17,
+        "date": "27 Jul 2007",
+        "warmth_raw": 36.66,
+        "normalized": 0.86
+    },
+    {
+        "time": 24.2,
+        "date": "27 Jul 2007",
+        "warmth_raw": 36.66,
+        "normalized": 0.86
+    },
+    {
+        "time": 24.23,
+        "date": "27 Jul 2007",
+        "warmth_raw": 36.56,
+        "normalized": 0.85
+    },
+    {
+        "time": 24.27,
+        "date": "28 Jul 2007",
+        "warmth_raw": 36.65,
+        "normalized": 0.86
+    },
+    {
+        "time": 24.3,
+        "date": "28 Jul 2007",
+        "warmth_raw": 36.64,
+        "normalized": 0.86
+    },
+    {
+        "time": 24.33,
+        "date": "28 Jul 2007",
+        "warmth_raw": 36.65,
+        "normalized": 0.86
+    },
+    {
+        "time": 24.37,
+        "date": "28 Jul 2007",
+        "warmth_raw": 36.56,
+        "normalized": 0.85
+    },
+    {
+        "time": 24.4,
+        "date": "28 Jul 2007",
+        "warmth_raw": 36.64,
+        "normalized": 0.86
+    },
+    {
+        "time": 24.43,
+        "date": "28 Jul 2007",
+        "warmth_raw": 36.66,
+        "normalized": 0.86
+    },
+    {
+        "time": 24.47,
+        "date": "29 Jul 2007",
+        "warmth_raw": 36.82,
+        "normalized": 0.88
+    },
+    {
+        "time": 24.5,
+        "date": "29 Jul 2007",
+        "warmth_raw": 36.78,
+        "normalized": 0.87
+    },
+    {
+        "time": 24.53,
+        "date": "29 Jul 2007",
+        "warmth_raw": 36.78,
+        "normalized": 0.87
+    },
+    {
+        "time": 24.57,
+        "date": "29 Jul 2007",
+        "warmth_raw": 36.78,
+        "normalized": 0.87
+    },
+    {
+        "time": 24.6,
+        "date": "29 Jul 2007",
+        "warmth_raw": 36.82,
+        "normalized": 0.88
+    },
+    {
+        "time": 24.63,
+        "date": "30 Jul 2007",
+        "warmth_raw": 36.7,
+        "normalized": 0.86
+    },
+    {
+        "time": 24.67,
+        "date": "30 Jul 2007",
+        "warmth_raw": 36.82,
+        "normalized": 0.88
+    },
+    {
+        "time": 24.7,
+        "date": "30 Jul 2007",
+        "warmth_raw": 36.78,
+        "normalized": 0.87
+    },
+    {
+        "time": 24.73,
+        "date": "30 Jul 2007",
+        "warmth_raw": 36.88,
+        "normalized": 0.89
+    },
+    {
+        "time": 24.77,
+        "date": "30 Jul 2007",
+        "warmth_raw": 36.83,
+        "normalized": 0.88
+    },
+    {
+        "time": 24.8,
+        "date": "30 Jul 2007",
+        "warmth_raw": 36.87,
+        "normalized": 0.89
+    },
+    {
+        "time": 24.83,
+        "date": "31 Jul 2007",
+        "warmth_raw": 36.78,
+        "normalized": 0.87
+    },
+    {
+        "time": 24.87,
+        "date": "31 Jul 2007",
+        "warmth_raw": 36.73,
+        "normalized": 0.87
+    },
+    {
+        "time": 24.9,
+        "date": "31 Jul 2007",
+        "warmth_raw": 36.74,
+        "normalized": 0.87
+    },
+    {
+        "time": 24.93,
+        "date": "31 Jul 2007",
+        "warmth_raw": 36.79,
+        "normalized": 0.88
+    },
+    {
+        "time": 24.97,
+        "date": "31 Jul 2007",
+        "warmth_raw": 36.67,
+        "normalized": 0.86
+    },
+    {
+        "time": 25.0,
+        "date": "31 Jul 2007",
+        "warmth_raw": 36.58,
+        "normalized": 0.85
+    },
+    {
+        "time": 25.03,
+        "date": "01 Aug 2007",
+        "warmth_raw": 36.55,
+        "normalized": 0.84
+    },
+    {
+        "time": 25.07,
+        "date": "01 Aug 2007",
+        "warmth_raw": 36.62,
+        "normalized": 0.85
+    },
+    {
+        "time": 25.1,
+        "date": "01 Aug 2007",
+        "warmth_raw": 36.58,
+        "normalized": 0.85
+    },
+    {
+        "time": 25.13,
+        "date": "01 Aug 2007",
+        "warmth_raw": 36.62,
+        "normalized": 0.85
+    },
+    {
+        "time": 25.17,
+        "date": "01 Aug 2007",
+        "warmth_raw": 36.51,
+        "normalized": 0.84
+    },
+    {
+        "time": 25.2,
+        "date": "01 Aug 2007",
+        "warmth_raw": 36.49,
+        "normalized": 0.84
+    },
+    {
+        "time": 25.23,
+        "date": "02 Aug 2007",
+        "warmth_raw": 36.54,
+        "normalized": 0.84
+    },
+    {
+        "time": 25.27,
+        "date": "02 Aug 2007",
+        "warmth_raw": 36.57,
+        "normalized": 0.85
+    },
+    {
+        "time": 25.3,
+        "date": "02 Aug 2007",
+        "warmth_raw": 36.53,
+        "normalized": 0.84
+    },
+    {
+        "time": 25.33,
+        "date": "02 Aug 2007",
+        "warmth_raw": 36.55,
+        "normalized": 0.84
+    },
+    {
+        "time": 25.37,
+        "date": "02 Aug 2007",
+        "warmth_raw": 36.62,
+        "normalized": 0.85
+    },
+    {
+        "time": 25.4,
+        "date": "03 Aug 2007",
+        "warmth_raw": 36.57,
+        "normalized": 0.85
+    },
+    {
+        "time": 25.43,
+        "date": "03 Aug 2007",
+        "warmth_raw": 36.56,
+        "normalized": 0.85
+    },
+    {
+        "time": 25.47,
+        "date": "03 Aug 2007",
+        "warmth_raw": 36.46,
+        "normalized": 0.83
+    },
+    {
+        "time": 25.5,
+        "date": "03 Aug 2007",
+        "warmth_raw": 36.59,
+        "normalized": 0.85
+    },
+    {
+        "time": 25.53,
+        "date": "03 Aug 2007",
+        "warmth_raw": 36.45,
+        "normalized": 0.83
+    },
+    {
+        "time": 25.57,
+        "date": "03 Aug 2007",
+        "warmth_raw": 36.45,
+        "normalized": 0.83
+    },
+    {
+        "time": 25.6,
+        "date": "04 Aug 2007",
+        "warmth_raw": 36.8,
+        "normalized": 0.88
+    },
+    {
+        "time": 25.63,
+        "date": "04 Aug 2007",
+        "warmth_raw": 36.7,
+        "normalized": 0.86
+    },
+    {
+        "time": 25.67,
+        "date": "04 Aug 2007",
+        "warmth_raw": 36.71,
+        "normalized": 0.87
+    },
+    {
+        "time": 25.7,
+        "date": "04 Aug 2007",
+        "warmth_raw": 36.79,
+        "normalized": 0.88
+    },
+    {
+        "time": 25.73,
+        "date": "04 Aug 2007",
+        "warmth_raw": 36.79,
+        "normalized": 0.88
+    },
+    {
+        "time": 25.77,
+        "date": "04 Aug 2007",
+        "warmth_raw": 36.64,
+        "normalized": 0.86
+    },
+    {
+        "time": 25.8,
+        "date": "05 Aug 2007",
+        "warmth_raw": 36.37,
+        "normalized": 0.82
+    },
+    {
+        "time": 25.83,
+        "date": "05 Aug 2007",
+        "warmth_raw": 36.59,
+        "normalized": 0.85
+    },
+    {
+        "time": 25.87,
+        "date": "05 Aug 2007",
+        "warmth_raw": 36.59,
+        "normalized": 0.85
+    },
+    {
+        "time": 25.9,
+        "date": "05 Aug 2007",
+        "warmth_raw": 36.59,
+        "normalized": 0.85
+    },
+    {
+        "time": 25.93,
+        "date": "05 Aug 2007",
+        "warmth_raw": 36.5,
+        "normalized": 0.84
+    },
+    {
+        "time": 25.97,
+        "date": "05 Aug 2007",
+        "warmth_raw": 36.45,
+        "normalized": 0.83
+    },
+    {
+        "time": 26.0,
+        "date": "06 Aug 2007",
+        "warmth_raw": 36.56,
+        "normalized": 0.85
+    },
+    {
+        "time": 26.03,
+        "date": "06 Aug 2007",
+        "warmth_raw": 36.55,
+        "normalized": 0.84
+    },
+    {
+        "time": 26.07,
+        "date": "06 Aug 2007",
+        "warmth_raw": 36.45,
+        "normalized": 0.83
+    },
+    {
+        "time": 26.1,
+        "date": "06 Aug 2007",
+        "warmth_raw": 36.33,
+        "normalized": 0.81
+    },
+    {
+        "time": 26.13,
+        "date": "06 Aug 2007",
+        "warmth_raw": 36.33,
+        "normalized": 0.81
+    },
+    {
+        "time": 26.17,
+        "date": "06 Aug 2007",
+        "warmth_raw": 36.34,
+        "normalized": 0.82
+    },
+    {
+        "time": 26.2,
+        "date": "07 Aug 2007",
+        "warmth_raw": 36.35,
+        "normalized": 0.82
+    },
+    {
+        "time": 26.23,
+        "date": "07 Aug 2007",
+        "warmth_raw": 36.31,
+        "normalized": 0.81
+    },
+    {
+        "time": 26.27,
+        "date": "07 Aug 2007",
+        "warmth_raw": 36.36,
+        "normalized": 0.82
+    },
+    {
+        "time": 26.3,
+        "date": "07 Aug 2007",
+        "warmth_raw": 36.33,
+        "normalized": 0.81
+    },
+    {
+        "time": 26.33,
+        "date": "07 Aug 2007",
+        "warmth_raw": 36.34,
+        "normalized": 0.82
+    },
+    {
+        "time": 26.37,
+        "date": "08 Aug 2007",
+        "warmth_raw": 36.28,
+        "normalized": 0.81
+    },
+    {
+        "time": 26.4,
+        "date": "08 Aug 2007",
+        "warmth_raw": 36.25,
+        "normalized": 0.8
+    },
+    {
+        "time": 26.43,
+        "date": "08 Aug 2007",
+        "warmth_raw": 36.15,
+        "normalized": 0.79
+    },
+    {
+        "time": 26.47,
+        "date": "08 Aug 2007",
+        "warmth_raw": 36.16,
+        "normalized": 0.79
+    },
+    {
+        "time": 26.5,
+        "date": "08 Aug 2007",
+        "warmth_raw": 36.13,
+        "normalized": 0.79
+    },
+    {
+        "time": 26.53,
+        "date": "08 Aug 2007",
+        "warmth_raw": 36.09,
+        "normalized": 0.78
+    },
+    {
+        "time": 26.57,
+        "date": "09 Aug 2007",
+        "warmth_raw": 36.02,
+        "normalized": 0.77
+    },
+    {
+        "time": 26.6,
+        "date": "09 Aug 2007",
+        "warmth_raw": 36.16,
+        "normalized": 0.79
+    },
+    {
+        "time": 26.63,
+        "date": "09 Aug 2007",
+        "warmth_raw": 36.09,
+        "normalized": 0.78
+    },
+    {
+        "time": 26.67,
+        "date": "09 Aug 2007",
+        "warmth_raw": 36.12,
+        "normalized": 0.79
+    },
+    {
+        "time": 26.7,
+        "date": "09 Aug 2007",
+        "warmth_raw": 36.01,
+        "normalized": 0.77
+    },
+    {
+        "time": 26.73,
+        "date": "09 Aug 2007",
+        "warmth_raw": 36.19,
+        "normalized": 0.79
+    },
+    {
+        "time": 26.77,
+        "date": "10 Aug 2007",
+        "warmth_raw": 36.14,
+        "normalized": 0.79
+    },
+    {
+        "time": 26.8,
+        "date": "10 Aug 2007",
+        "warmth_raw": 36.16,
+        "normalized": 0.79
+    },
+    {
+        "time": 26.83,
+        "date": "10 Aug 2007",
+        "warmth_raw": 36.12,
+        "normalized": 0.79
+    },
+    {
+        "time": 26.87,
+        "date": "10 Aug 2007",
+        "warmth_raw": 36.3,
+        "normalized": 0.81
+    },
+    {
+        "time": 26.9,
+        "date": "10 Aug 2007",
+        "warmth_raw": 36.34,
+        "normalized": 0.82
+    },
+    {
+        "time": 26.93,
+        "date": "10 Aug 2007",
+        "warmth_raw": 36.33,
+        "normalized": 0.81
+    },
+    {
+        "time": 26.97,
+        "date": "11 Aug 2007",
+        "warmth_raw": 36.32,
+        "normalized": 0.81
+    },
+    {
+        "time": 27.0,
+        "date": "11 Aug 2007",
+        "warmth_raw": 35.93,
+        "normalized": 0.76
+    },
+    {
+        "time": 27.03,
+        "date": "11 Aug 2007",
+        "warmth_raw": 35.93,
+        "normalized": 0.76
+    },
+    {
+        "time": 27.07,
+        "date": "11 Aug 2007",
+        "warmth_raw": 35.97,
+        "normalized": 0.76
+    },
+    {
+        "time": 27.1,
+        "date": "11 Aug 2007",
+        "warmth_raw": 36.09,
+        "normalized": 0.78
+    },
+    {
+        "time": 27.13,
+        "date": "11 Aug 2007",
+        "warmth_raw": 36.12,
+        "normalized": 0.79
+    },
+    {
+        "time": 27.17,
+        "date": "12 Aug 2007",
+        "warmth_raw": 36.16,
+        "normalized": 0.79
+    },
+    {
+        "time": 27.2,
+        "date": "12 Aug 2007",
+        "warmth_raw": 36.11,
+        "normalized": 0.78
+    },
+    {
+        "time": 27.23,
+        "date": "12 Aug 2007",
+        "warmth_raw": 35.96,
+        "normalized": 0.76
+    },
+    {
+        "time": 27.27,
+        "date": "12 Aug 2007",
+        "warmth_raw": 36.0,
+        "normalized": 0.77
+    },
+    {
+        "time": 27.3,
+        "date": "12 Aug 2007",
+        "warmth_raw": 35.98,
+        "normalized": 0.77
+    },
+    {
+        "time": 27.33,
+        "date": "12 Aug 2007",
+        "warmth_raw": 35.99,
+        "normalized": 0.77
+    },
+    {
+        "time": 27.37,
+        "date": "13 Aug 2007",
+        "warmth_raw": 35.89,
+        "normalized": 0.75
+    },
+    {
+        "time": 27.4,
+        "date": "13 Aug 2007",
+        "warmth_raw": 35.93,
+        "normalized": 0.76
+    },
+    {
+        "time": 27.43,
+        "date": "13 Aug 2007",
+        "warmth_raw": 35.85,
+        "normalized": 0.75
+    },
+    {
+        "time": 27.47,
+        "date": "13 Aug 2007",
+        "warmth_raw": 35.8,
+        "normalized": 0.74
+    },
+    {
+        "time": 27.5,
+        "date": "13 Aug 2007",
+        "warmth_raw": 35.79,
+        "normalized": 0.74
+    },
+    {
+        "time": 27.53,
+        "date": "13 Aug 2007",
+        "warmth_raw": 35.85,
+        "normalized": 0.75
+    },
+    {
+        "time": 27.57,
+        "date": "14 Aug 2007",
+        "warmth_raw": 35.8,
+        "normalized": 0.74
+    },
+    {
+        "time": 27.6,
+        "date": "14 Aug 2007",
+        "warmth_raw": 35.82,
+        "normalized": 0.74
+    },
+    {
+        "time": 27.63,
+        "date": "14 Aug 2007",
+        "warmth_raw": 35.77,
+        "normalized": 0.74
+    },
+    {
+        "time": 27.67,
+        "date": "14 Aug 2007",
+        "warmth_raw": 35.36,
+        "normalized": 0.68
+    },
+    {
+        "time": 27.7,
+        "date": "14 Aug 2007",
+        "warmth_raw": 35.2,
+        "normalized": 0.66
+    },
+    {
+        "time": 27.73,
+        "date": "15 Aug 2007",
+        "warmth_raw": 35.13,
+        "normalized": 0.65
+    },
+    {
+        "time": 27.77,
+        "date": "15 Aug 2007",
+        "warmth_raw": 35.1,
+        "normalized": 0.65
+    },
+    {
+        "time": 27.8,
+        "date": "15 Aug 2007",
+        "warmth_raw": 34.98,
+        "normalized": 0.63
+    },
+    {
+        "time": 27.83,
+        "date": "15 Aug 2007",
+        "warmth_raw": 34.91,
+        "normalized": 0.62
+    },
+    {
+        "time": 27.87,
+        "date": "15 Aug 2007",
+        "warmth_raw": 34.95,
+        "normalized": 0.63
+    },
+    {
+        "time": 27.9,
+        "date": "15 Aug 2007",
+        "warmth_raw": 34.88,
+        "normalized": 0.62
+    },
+    {
+        "time": 27.93,
+        "date": "16 Aug 2007",
+        "warmth_raw": 34.67,
+        "normalized": 0.59
+    },
+    {
+        "time": 27.97,
+        "date": "16 Aug 2007",
+        "warmth_raw": 34.65,
+        "normalized": 0.59
+    },
+    {
+        "time": 28.0,
+        "date": "16 Aug 2007",
+        "warmth_raw": 34.26,
+        "normalized": 0.53
+    },
+    {
+        "time": 28.03,
+        "date": "16 Aug 2007",
+        "warmth_raw": 34.13,
+        "normalized": 0.51
+    },
+    {
+        "time": 28.07,
+        "date": "16 Aug 2007",
+        "warmth_raw": 34.18,
+        "normalized": 0.52
+    },
+    {
+        "time": 28.1,
+        "date": "16 Aug 2007",
+        "warmth_raw": 34.2,
+        "normalized": 0.52
+    },
+    {
+        "time": 28.13,
+        "date": "17 Aug 2007",
+        "warmth_raw": 34.17,
+        "normalized": 0.52
+    },
+    {
+        "time": 28.17,
+        "date": "17 Aug 2007",
+        "warmth_raw": 34.14,
+        "normalized": 0.52
+    },
+    {
+        "time": 28.2,
+        "date": "17 Aug 2007",
+        "warmth_raw": 34.12,
+        "normalized": 0.51
+    },
+    {
+        "time": 28.23,
+        "date": "17 Aug 2007",
+        "warmth_raw": 33.88,
+        "normalized": 0.48
+    },
+    {
+        "time": 28.27,
+        "date": "17 Aug 2007",
+        "warmth_raw": 33.7,
+        "normalized": 0.46
+    },
+    {
+        "time": 28.3,
+        "date": "17 Aug 2007",
+        "warmth_raw": 33.69,
+        "normalized": 0.46
+    },
+    {
+        "time": 28.33,
+        "date": "18 Aug 2007",
+        "warmth_raw": 33.68,
+        "normalized": 0.45
+    },
+    {
+        "time": 28.37,
+        "date": "18 Aug 2007",
+        "warmth_raw": 33.59,
+        "normalized": 0.44
+    },
+    {
+        "time": 28.4,
+        "date": "18 Aug 2007",
+        "warmth_raw": 33.68,
+        "normalized": 0.45
+    },
+    {
+        "time": 28.43,
+        "date": "18 Aug 2007",
+        "warmth_raw": 33.63,
+        "normalized": 0.45
+    },
+    {
+        "time": 28.47,
+        "date": "18 Aug 2007",
+        "warmth_raw": 33.54,
+        "normalized": 0.43
+    },
+    {
+        "time": 28.5,
+        "date": "18 Aug 2007",
+        "warmth_raw": 33.41,
+        "normalized": 0.42
+    },
+    {
+        "time": 28.53,
+        "date": "19 Aug 2007",
+        "warmth_raw": 33.32,
+        "normalized": 0.4
+    },
+    {
+        "time": 28.57,
+        "date": "19 Aug 2007",
+        "warmth_raw": 33.37,
+        "normalized": 0.41
+    },
+    {
+        "time": 28.6,
+        "date": "19 Aug 2007",
+        "warmth_raw": 33.41,
+        "normalized": 0.42
+    },
+    {
+        "time": 28.63,
+        "date": "19 Aug 2007",
+        "warmth_raw": 33.42,
+        "normalized": 0.42
+    },
+    {
+        "time": 28.67,
+        "date": "19 Aug 2007",
+        "warmth_raw": 33.48,
+        "normalized": 0.43
+    },
+    {
+        "time": 28.7,
+        "date": "20 Aug 2007",
+        "warmth_raw": 33.43,
+        "normalized": 0.42
+    },
+    {
+        "time": 28.73,
+        "date": "20 Aug 2007",
+        "warmth_raw": 33.46,
+        "normalized": 0.42
+    },
+    {
+        "time": 28.77,
+        "date": "20 Aug 2007",
+        "warmth_raw": 33.4,
+        "normalized": 0.42
+    },
+    {
+        "time": 28.8,
+        "date": "20 Aug 2007",
+        "warmth_raw": 33.3,
+        "normalized": 0.4
+    },
+    {
+        "time": 28.83,
+        "date": "20 Aug 2007",
+        "warmth_raw": 33.33,
+        "normalized": 0.41
+    },
+    {
+        "time": 28.87,
+        "date": "20 Aug 2007",
+        "warmth_raw": 33.38,
+        "normalized": 0.41
+    },
+    {
+        "time": 28.9,
+        "date": "21 Aug 2007",
+        "warmth_raw": 33.33,
+        "normalized": 0.41
+    },
+    {
+        "time": 28.93,
+        "date": "21 Aug 2007",
+        "warmth_raw": 33.37,
+        "normalized": 0.41
+    },
+    {
+        "time": 28.97,
+        "date": "21 Aug 2007",
+        "warmth_raw": 33.54,
+        "normalized": 0.43
+    },
+    {
+        "time": 29.0,
+        "date": "21 Aug 2007",
+        "warmth_raw": 33.29,
+        "normalized": 0.4
+    },
+    {
+        "time": 29.03,
+        "date": "21 Aug 2007",
+        "warmth_raw": 33.28,
+        "normalized": 0.4
+    },
+    {
+        "time": 29.07,
+        "date": "21 Aug 2007",
+        "warmth_raw": 33.24,
+        "normalized": 0.39
+    },
+    {
+        "time": 29.1,
+        "date": "22 Aug 2007",
+        "warmth_raw": 33.22,
+        "normalized": 0.39
+    },
+    {
+        "time": 29.13,
+        "date": "22 Aug 2007",
+        "warmth_raw": 33.22,
+        "normalized": 0.39
+    },
+    {
+        "time": 29.17,
+        "date": "22 Aug 2007",
+        "warmth_raw": 33.23,
+        "normalized": 0.39
+    },
+    {
+        "time": 29.2,
+        "date": "22 Aug 2007",
+        "warmth_raw": 33.35,
+        "normalized": 0.41
+    },
+    {
+        "time": 29.23,
+        "date": "22 Aug 2007",
+        "warmth_raw": 33.28,
+        "normalized": 0.4
+    },
+    {
+        "time": 29.27,
+        "date": "22 Aug 2007",
+        "warmth_raw": 33.6,
+        "normalized": 0.44
+    },
+    {
+        "time": 29.3,
+        "date": "23 Aug 2007",
+        "warmth_raw": 33.64,
+        "normalized": 0.45
+    },
+    {
+        "time": 29.33,
+        "date": "23 Aug 2007",
+        "warmth_raw": 33.63,
+        "normalized": 0.45
+    },
+    {
+        "time": 29.37,
+        "date": "23 Aug 2007",
+        "warmth_raw": 33.59,
+        "normalized": 0.44
+    },
+    {
+        "time": 29.4,
+        "date": "23 Aug 2007",
+        "warmth_raw": 33.61,
+        "normalized": 0.44
+    },
+    {
+        "time": 29.43,
+        "date": "23 Aug 2007",
+        "warmth_raw": 33.42,
+        "normalized": 0.42
+    },
+    {
+        "time": 29.47,
+        "date": "23 Aug 2007",
+        "warmth_raw": 33.56,
+        "normalized": 0.44
+    },
+    {
+        "time": 29.5,
+        "date": "24 Aug 2007",
+        "warmth_raw": 33.7,
+        "normalized": 0.46
+    },
+    {
+        "time": 29.53,
+        "date": "24 Aug 2007",
+        "warmth_raw": 33.76,
+        "normalized": 0.46
+    },
+    {
+        "time": 29.57,
+        "date": "24 Aug 2007",
+        "warmth_raw": 33.82,
+        "normalized": 0.47
+    },
+    {
+        "time": 29.6,
+        "date": "24 Aug 2007",
+        "warmth_raw": 33.82,
+        "normalized": 0.47
+    },
+    {
+        "time": 29.63,
+        "date": "24 Aug 2007",
+        "warmth_raw": 33.93,
+        "normalized": 0.49
+    },
+    {
+        "time": 29.67,
+        "date": "25 Aug 2007",
+        "warmth_raw": 33.91,
+        "normalized": 0.49
+    },
+    {
+        "time": 29.7,
+        "date": "25 Aug 2007",
+        "warmth_raw": 33.9,
+        "normalized": 0.48
+    },
+    {
+        "time": 29.73,
+        "date": "25 Aug 2007",
+        "warmth_raw": 33.9,
+        "normalized": 0.48
+    },
+    {
+        "time": 29.77,
+        "date": "25 Aug 2007",
+        "warmth_raw": 33.91,
+        "normalized": 0.49
+    },
+    {
+        "time": 29.8,
+        "date": "25 Aug 2007",
+        "warmth_raw": 33.9,
+        "normalized": 0.48
+    },
+    {
+        "time": 29.83,
+        "date": "25 Aug 2007",
+        "warmth_raw": 33.94,
+        "normalized": 0.49
+    },
+    {
+        "time": 29.87,
+        "date": "26 Aug 2007",
+        "warmth_raw": 33.94,
+        "normalized": 0.49
+    },
+    {
+        "time": 29.9,
+        "date": "26 Aug 2007",
+        "warmth_raw": 33.91,
+        "normalized": 0.49
+    },
+    {
+        "time": 29.93,
+        "date": "26 Aug 2007",
+        "warmth_raw": 33.88,
+        "normalized": 0.48
+    },
+    {
+        "time": 29.97,
+        "date": "26 Aug 2007",
+        "warmth_raw": 33.93,
+        "normalized": 0.49
+    },
+    {
+        "time": 30.0,
+        "date": "26 Aug 2007",
+        "warmth_raw": 33.61,
+        "normalized": 0.44
+    },
+    {
+        "time": 30.03,
+        "date": "26 Aug 2007",
+        "warmth_raw": 33.49,
+        "normalized": 0.43
+    },
+    {
+        "time": 30.07,
+        "date": "27 Aug 2007",
+        "warmth_raw": 33.62,
+        "normalized": 0.45
+    },
+    {
+        "time": 30.1,
+        "date": "27 Aug 2007",
+        "warmth_raw": 33.61,
+        "normalized": 0.44
+    },
+    {
+        "time": 30.13,
+        "date": "27 Aug 2007",
+        "warmth_raw": 33.58,
+        "normalized": 0.44
+    },
+    {
+        "time": 30.17,
+        "date": "27 Aug 2007",
+        "warmth_raw": 33.72,
+        "normalized": 0.46
+    },
+    {
+        "time": 30.2,
+        "date": "27 Aug 2007",
+        "warmth_raw": 33.66,
+        "normalized": 0.45
+    },
+    {
+        "time": 30.23,
+        "date": "27 Aug 2007",
+        "warmth_raw": 33.68,
+        "normalized": 0.45
+    },
+    {
+        "time": 30.27,
+        "date": "28 Aug 2007",
+        "warmth_raw": 33.58,
+        "normalized": 0.44
+    },
+    {
+        "time": 30.3,
+        "date": "28 Aug 2007",
+        "warmth_raw": 33.53,
+        "normalized": 0.43
+    },
+    {
+        "time": 30.33,
+        "date": "28 Aug 2007",
+        "warmth_raw": 33.72,
+        "normalized": 0.46
+    },
+    {
+        "time": 30.37,
+        "date": "28 Aug 2007",
+        "warmth_raw": 33.78,
+        "normalized": 0.47
+    },
+    {
+        "time": 30.4,
+        "date": "28 Aug 2007",
+        "warmth_raw": 33.8,
+        "normalized": 0.47
+    },
+    {
+        "time": 30.43,
+        "date": "28 Aug 2007",
+        "warmth_raw": 33.82,
+        "normalized": 0.47
+    },
+    {
+        "time": 30.47,
+        "date": "29 Aug 2007",
+        "warmth_raw": 33.88,
+        "normalized": 0.48
+    },
+    {
+        "time": 30.5,
+        "date": "29 Aug 2007",
+        "warmth_raw": 33.78,
+        "normalized": 0.47
+    },
+    {
+        "time": 30.53,
+        "date": "29 Aug 2007",
+        "warmth_raw": 33.82,
+        "normalized": 0.47
+    },
+    {
+        "time": 30.57,
+        "date": "29 Aug 2007",
+        "warmth_raw": 33.78,
+        "normalized": 0.47
+    },
+    {
+        "time": 30.6,
+        "date": "29 Aug 2007",
+        "warmth_raw": 33.74,
+        "normalized": 0.46
+    },
+    {
+        "time": 30.63,
+        "date": "29 Aug 2007",
+        "warmth_raw": 33.71,
+        "normalized": 0.46
+    },
+    {
+        "time": 30.67,
+        "date": "30 Aug 2007",
+        "warmth_raw": 33.66,
+        "normalized": 0.45
+    },
+    {
+        "time": 30.7,
+        "date": "30 Aug 2007",
+        "warmth_raw": 33.95,
+        "normalized": 0.49
+    },
+    {
+        "time": 30.73,
+        "date": "30 Aug 2007",
+        "warmth_raw": 33.89,
+        "normalized": 0.48
+    },
+    {
+        "time": 30.77,
+        "date": "30 Aug 2007",
+        "warmth_raw": 33.79,
+        "normalized": 0.47
+    },
+    {
+        "time": 30.8,
+        "date": "30 Aug 2007",
+        "warmth_raw": 33.82,
+        "normalized": 0.47
+    },
+    {
+        "time": 30.83,
+        "date": "31 Aug 2007",
+        "warmth_raw": 33.76,
+        "normalized": 0.46
+    },
+    {
+        "time": 30.87,
+        "date": "31 Aug 2007",
+        "warmth_raw": 33.74,
+        "normalized": 0.46
+    },
+    {
+        "time": 30.9,
+        "date": "31 Aug 2007",
+        "warmth_raw": 33.58,
+        "normalized": 0.44
+    },
+    {
+        "time": 30.93,
+        "date": "31 Aug 2007",
+        "warmth_raw": 33.6,
+        "normalized": 0.44
+    },
+    {
+        "time": 30.97,
+        "date": "31 Aug 2007",
+        "warmth_raw": 33.77,
+        "normalized": 0.47
+    },
+    {
+        "time": 31.0,
+        "date": "31 Aug 2007",
+        "warmth_raw": 33.85,
+        "normalized": 0.48
+    },
+    {
+        "time": 31.03,
+        "date": "01 Sep 2007",
+        "warmth_raw": 33.81,
+        "normalized": 0.47
+    },
+    {
+        "time": 31.07,
+        "date": "01 Sep 2007",
+        "warmth_raw": 33.59,
+        "normalized": 0.44
+    },
+    {
+        "time": 31.1,
+        "date": "01 Sep 2007",
+        "warmth_raw": 33.68,
+        "normalized": 0.45
+    },
+    {
+        "time": 31.13,
+        "date": "01 Sep 2007",
+        "warmth_raw": 33.68,
+        "normalized": 0.45
+    },
+    {
+        "time": 31.17,
+        "date": "01 Sep 2007",
+        "warmth_raw": 33.67,
+        "normalized": 0.45
+    },
+    {
+        "time": 31.2,
+        "date": "01 Sep 2007",
+        "warmth_raw": 33.8,
+        "normalized": 0.47
+    },
+    {
+        "time": 31.23,
+        "date": "02 Sep 2007",
+        "warmth_raw": 33.74,
+        "normalized": 0.46
+    },
+    {
+        "time": 31.27,
+        "date": "02 Sep 2007",
+        "warmth_raw": 33.8,
+        "normalized": 0.47
+    },
+    {
+        "time": 31.3,
+        "date": "02 Sep 2007",
+        "warmth_raw": 33.81,
+        "normalized": 0.47
+    },
+    {
+        "time": 31.33,
+        "date": "02 Sep 2007",
+        "warmth_raw": 33.98,
+        "normalized": 0.49
+    },
+    {
+        "time": 31.37,
+        "date": "02 Sep 2007",
+        "warmth_raw": 34.05,
+        "normalized": 0.5
+    },
+    {
+        "time": 31.4,
+        "date": "02 Sep 2007",
+        "warmth_raw": 34.09,
+        "normalized": 0.51
+    },
+    {
+        "time": 31.43,
+        "date": "03 Sep 2007",
+        "warmth_raw": 34.1,
+        "normalized": 0.51
+    },
+    {
+        "time": 31.47,
+        "date": "03 Sep 2007",
+        "warmth_raw": 33.96,
+        "normalized": 0.49
+    },
+    {
+        "time": 31.5,
+        "date": "03 Sep 2007",
+        "warmth_raw": 34.11,
+        "normalized": 0.51
+    },
+    {
+        "time": 31.53,
+        "date": "03 Sep 2007",
+        "warmth_raw": 34.18,
+        "normalized": 0.52
+    },
+    {
+        "time": 31.57,
+        "date": "03 Sep 2007",
+        "warmth_raw": 34.27,
+        "normalized": 0.53
+    },
+    {
+        "time": 31.6,
+        "date": "03 Sep 2007",
+        "warmth_raw": 34.39,
+        "normalized": 0.55
+    },
+    {
+        "time": 31.63,
+        "date": "04 Sep 2007",
+        "warmth_raw": 34.34,
+        "normalized": 0.54
+    },
+    {
+        "time": 31.67,
+        "date": "04 Sep 2007",
+        "warmth_raw": 34.43,
+        "normalized": 0.56
+    },
+    {
+        "time": 31.7,
+        "date": "04 Sep 2007",
+        "warmth_raw": 34.47,
+        "normalized": 0.56
+    },
+    {
+        "time": 31.73,
+        "date": "04 Sep 2007",
+        "warmth_raw": 34.61,
+        "normalized": 0.58
+    },
+    {
+        "time": 31.77,
+        "date": "04 Sep 2007",
+        "warmth_raw": 34.59,
+        "normalized": 0.58
+    },
+    {
+        "time": 31.8,
+        "date": "05 Sep 2007",
+        "warmth_raw": 34.66,
+        "normalized": 0.59
+    },
+    {
+        "time": 31.83,
+        "date": "05 Sep 2007",
+        "warmth_raw": 34.59,
+        "normalized": 0.58
+    },
+    {
+        "time": 31.87,
+        "date": "05 Sep 2007",
+        "warmth_raw": 34.67,
+        "normalized": 0.59
+    },
+    {
+        "time": 31.9,
+        "date": "05 Sep 2007",
+        "warmth_raw": 34.71,
+        "normalized": 0.59
+    },
+    {
+        "time": 31.93,
+        "date": "05 Sep 2007",
+        "warmth_raw": 34.61,
+        "normalized": 0.58
+    },
+    {
+        "time": 31.97,
+        "date": "05 Sep 2007",
+        "warmth_raw": 34.61,
+        "normalized": 0.58
+    },
+    {
+        "time": 32.0,
+        "date": "06 Sep 2007",
+        "warmth_raw": 35.33,
+        "normalized": 0.68
+    },
+    {
+        "time": 32.03,
+        "date": "06 Sep 2007",
+        "warmth_raw": 35.45,
+        "normalized": 0.69
+    },
+    {
+        "time": 32.07,
+        "date": "06 Sep 2007",
+        "warmth_raw": 35.36,
+        "normalized": 0.68
+    },
+    {
+        "time": 32.1,
+        "date": "06 Sep 2007",
+        "warmth_raw": 35.36,
+        "normalized": 0.68
+    },
+    {
+        "time": 32.13,
+        "date": "06 Sep 2007",
+        "warmth_raw": 35.38,
+        "normalized": 0.68
+    },
+    {
+        "time": 32.17,
+        "date": "06 Sep 2007",
+        "warmth_raw": 35.43,
+        "normalized": 0.69
+    },
+    {
+        "time": 32.2,
+        "date": "07 Sep 2007",
+        "warmth_raw": 35.4,
+        "normalized": 0.69
+    },
+    {
+        "time": 32.23,
+        "date": "07 Sep 2007",
+        "warmth_raw": 35.25,
+        "normalized": 0.67
+    },
+    {
+        "time": 32.27,
+        "date": "07 Sep 2007",
+        "warmth_raw": 35.35,
+        "normalized": 0.68
+    },
+    {
+        "time": 32.3,
+        "date": "07 Sep 2007",
+        "warmth_raw": 35.37,
+        "normalized": 0.68
+    },
+    {
+        "time": 32.33,
+        "date": "07 Sep 2007",
+        "warmth_raw": 35.24,
+        "normalized": 0.67
+    },
+    {
+        "time": 32.37,
+        "date": "07 Sep 2007",
+        "warmth_raw": 35.32,
+        "normalized": 0.68
+    },
+    {
+        "time": 32.4,
+        "date": "08 Sep 2007",
+        "warmth_raw": 35.37,
+        "normalized": 0.68
+    },
+    {
+        "time": 32.43,
+        "date": "08 Sep 2007",
+        "warmth_raw": 35.45,
+        "normalized": 0.69
+    },
+    {
+        "time": 32.47,
+        "date": "08 Sep 2007",
+        "warmth_raw": 35.25,
+        "normalized": 0.67
+    },
+    {
+        "time": 32.5,
+        "date": "08 Sep 2007",
+        "warmth_raw": 35.38,
+        "normalized": 0.68
+    },
+    {
+        "time": 32.53,
+        "date": "08 Sep 2007",
+        "warmth_raw": 35.45,
+        "normalized": 0.69
+    },
+    {
+        "time": 32.57,
+        "date": "08 Sep 2007",
+        "warmth_raw": 35.35,
+        "normalized": 0.68
+    },
+    {
+        "time": 32.6,
+        "date": "09 Sep 2007",
+        "warmth_raw": 35.44,
+        "normalized": 0.69
+    },
+    {
+        "time": 32.63,
+        "date": "09 Sep 2007",
+        "warmth_raw": 35.37,
+        "normalized": 0.68
+    },
+    {
+        "time": 32.67,
+        "date": "09 Sep 2007",
+        "warmth_raw": 35.21,
+        "normalized": 0.66
+    },
+    {
+        "time": 32.7,
+        "date": "09 Sep 2007",
+        "warmth_raw": 35.1,
+        "normalized": 0.65
+    },
+    {
+        "time": 32.73,
+        "date": "09 Sep 2007",
+        "warmth_raw": 34.97,
+        "normalized": 0.63
+    },
+    {
+        "time": 32.77,
+        "date": "10 Sep 2007",
+        "warmth_raw": 35.15,
+        "normalized": 0.65
+    },
+    {
+        "time": 32.8,
+        "date": "10 Sep 2007",
+        "warmth_raw": 35.15,
+        "normalized": 0.65
+    },
+    {
+        "time": 32.83,
+        "date": "10 Sep 2007",
+        "warmth_raw": 35.18,
+        "normalized": 0.66
+    },
+    {
+        "time": 32.87,
+        "date": "10 Sep 2007",
+        "warmth_raw": 35.05,
+        "normalized": 0.64
+    },
+    {
+        "time": 32.9,
+        "date": "10 Sep 2007",
+        "warmth_raw": 34.79,
+        "normalized": 0.6
+    },
+    {
+        "time": 32.93,
+        "date": "10 Sep 2007",
+        "warmth_raw": 34.84,
+        "normalized": 0.61
+    },
+    {
+        "time": 32.97,
+        "date": "11 Sep 2007",
+        "warmth_raw": 34.89,
+        "normalized": 0.62
+    },
+    {
+        "time": 33.0,
+        "date": "11 Sep 2007",
+        "warmth_raw": 34.67,
+        "normalized": 0.59
+    },
+    {
+        "time": 33.03,
+        "date": "11 Sep 2007",
+        "warmth_raw": 34.66,
+        "normalized": 0.59
+    },
+    {
+        "time": 33.07,
+        "date": "11 Sep 2007",
+        "warmth_raw": 34.6,
+        "normalized": 0.58
+    },
+    {
+        "time": 33.1,
+        "date": "11 Sep 2007",
+        "warmth_raw": 34.63,
+        "normalized": 0.58
+    },
+    {
+        "time": 33.13,
+        "date": "11 Sep 2007",
+        "warmth_raw": 34.76,
+        "normalized": 0.6
+    },
+    {
+        "time": 33.17,
+        "date": "12 Sep 2007",
+        "warmth_raw": 34.76,
+        "normalized": 0.6
+    },
+    {
+        "time": 33.2,
+        "date": "12 Sep 2007",
+        "warmth_raw": 34.81,
+        "normalized": 0.61
+    },
+    {
+        "time": 33.23,
+        "date": "12 Sep 2007",
+        "warmth_raw": 34.68,
+        "normalized": 0.59
+    },
+    {
+        "time": 33.27,
+        "date": "12 Sep 2007",
+        "warmth_raw": 34.44,
+        "normalized": 0.56
+    },
+    {
+        "time": 33.3,
+        "date": "12 Sep 2007",
+        "warmth_raw": 34.5,
+        "normalized": 0.57
+    },
+    {
+        "time": 33.33,
+        "date": "12 Sep 2007",
+        "warmth_raw": 34.59,
+        "normalized": 0.58
+    },
+    {
+        "time": 33.37,
+        "date": "13 Sep 2007",
+        "warmth_raw": 34.48,
+        "normalized": 0.56
+    },
+    {
+        "time": 33.4,
+        "date": "13 Sep 2007",
+        "warmth_raw": 34.52,
+        "normalized": 0.57
+    },
+    {
+        "time": 33.43,
+        "date": "13 Sep 2007",
+        "warmth_raw": 34.39,
+        "normalized": 0.55
+    },
+    {
+        "time": 33.47,
+        "date": "13 Sep 2007",
+        "warmth_raw": 34.41,
+        "normalized": 0.55
+    },
+    {
+        "time": 33.5,
+        "date": "13 Sep 2007",
+        "warmth_raw": 34.36,
+        "normalized": 0.55
+    },
+    {
+        "time": 33.53,
+        "date": "13 Sep 2007",
+        "warmth_raw": 34.35,
+        "normalized": 0.54
+    },
+    {
+        "time": 33.57,
+        "date": "14 Sep 2007",
+        "warmth_raw": 34.31,
+        "normalized": 0.54
+    },
+    {
+        "time": 33.6,
+        "date": "14 Sep 2007",
+        "warmth_raw": 34.34,
+        "normalized": 0.54
+    },
+    {
+        "time": 33.63,
+        "date": "14 Sep 2007",
+        "warmth_raw": 34.19,
+        "normalized": 0.52
+    },
+    {
+        "time": 33.67,
+        "date": "14 Sep 2007",
+        "warmth_raw": 34.2,
+        "normalized": 0.52
+    },
+    {
+        "time": 33.7,
+        "date": "14 Sep 2007",
+        "warmth_raw": 34.15,
+        "normalized": 0.52
+    },
+    {
+        "time": 33.73,
+        "date": "14 Sep 2007",
+        "warmth_raw": 34.16,
+        "normalized": 0.52
+    },
+    {
+        "time": 33.77,
+        "date": "15 Sep 2007",
+        "warmth_raw": 34.04,
+        "normalized": 0.5
+    },
+    {
+        "time": 33.8,
+        "date": "15 Sep 2007",
+        "warmth_raw": 33.95,
+        "normalized": 0.49
+    },
+    {
+        "time": 33.83,
+        "date": "15 Sep 2007",
+        "warmth_raw": 33.76,
+        "normalized": 0.46
+    },
+    {
+        "time": 33.87,
+        "date": "15 Sep 2007",
+        "warmth_raw": 33.78,
+        "normalized": 0.47
+    },
+    {
+        "time": 33.9,
+        "date": "15 Sep 2007",
+        "warmth_raw": 33.84,
+        "normalized": 0.48
+    },
+    {
+        "time": 33.93,
+        "date": "15 Sep 2007",
+        "warmth_raw": 33.85,
+        "normalized": 0.48
+    },
+    {
+        "time": 33.97,
+        "date": "16 Sep 2007",
+        "warmth_raw": 33.74,
+        "normalized": 0.46
+    },
+    {
+        "time": 34.0,
+        "date": "16 Sep 2007",
+        "warmth_raw": 33.7,
+        "normalized": 0.46
+    },
+    {
+        "time": 34.03,
+        "date": "16 Sep 2007",
+        "warmth_raw": 33.71,
+        "normalized": 0.46
+    },
+    {
+        "time": 34.07,
+        "date": "16 Sep 2007",
+        "warmth_raw": 33.8,
+        "normalized": 0.47
+    },
+    {
+        "time": 34.1,
+        "date": "16 Sep 2007",
+        "warmth_raw": 33.71,
+        "normalized": 0.46
+    },
+    {
+        "time": 34.13,
+        "date": "17 Sep 2007",
+        "warmth_raw": 33.57,
+        "normalized": 0.44
+    },
+    {
+        "time": 34.17,
+        "date": "17 Sep 2007",
+        "warmth_raw": 33.49,
+        "normalized": 0.43
+    },
+    {
+        "time": 34.2,
+        "date": "17 Sep 2007",
+        "warmth_raw": 33.59,
+        "normalized": 0.44
+    },
+    {
+        "time": 34.23,
+        "date": "17 Sep 2007",
+        "warmth_raw": 33.58,
+        "normalized": 0.44
+    },
+    {
+        "time": 34.27,
+        "date": "17 Sep 2007",
+        "warmth_raw": 33.56,
+        "normalized": 0.44
+    },
+    {
+        "time": 34.3,
+        "date": "17 Sep 2007",
+        "warmth_raw": 33.34,
+        "normalized": 0.41
+    },
+    {
+        "time": 34.33,
+        "date": "18 Sep 2007",
+        "warmth_raw": 33.34,
+        "normalized": 0.41
+    },
+    {
+        "time": 34.37,
+        "date": "18 Sep 2007",
+        "warmth_raw": 33.35,
+        "normalized": 0.41
+    },
+    {
+        "time": 34.4,
+        "date": "18 Sep 2007",
+        "warmth_raw": 33.33,
+        "normalized": 0.41
+    },
+    {
+        "time": 34.43,
+        "date": "18 Sep 2007",
+        "warmth_raw": 33.46,
+        "normalized": 0.42
+    },
+    {
+        "time": 34.47,
+        "date": "18 Sep 2007",
+        "warmth_raw": 33.48,
+        "normalized": 0.43
+    },
+    {
+        "time": 34.5,
+        "date": "18 Sep 2007",
+        "warmth_raw": 33.48,
+        "normalized": 0.43
+    },
+    {
+        "time": 34.53,
+        "date": "19 Sep 2007",
+        "warmth_raw": 33.52,
+        "normalized": 0.43
+    },
+    {
+        "time": 34.57,
+        "date": "19 Sep 2007",
+        "warmth_raw": 33.58,
+        "normalized": 0.44
+    },
+    {
+        "time": 34.6,
+        "date": "19 Sep 2007",
+        "warmth_raw": 33.61,
+        "normalized": 0.44
+    },
+    {
+        "time": 34.63,
+        "date": "19 Sep 2007",
+        "warmth_raw": 33.59,
+        "normalized": 0.44
+    },
+    {
+        "time": 34.67,
+        "date": "19 Sep 2007",
+        "warmth_raw": 33.68,
+        "normalized": 0.45
+    },
+    {
+        "time": 34.7,
+        "date": "19 Sep 2007",
+        "warmth_raw": 33.73,
+        "normalized": 0.46
+    },
+    {
+        "time": 34.73,
+        "date": "20 Sep 2007",
+        "warmth_raw": 33.64,
+        "normalized": 0.45
+    },
+    {
+        "time": 34.77,
+        "date": "20 Sep 2007",
+        "warmth_raw": 33.58,
+        "normalized": 0.44
+    },
+    {
+        "time": 34.8,
+        "date": "20 Sep 2007",
+        "warmth_raw": 33.68,
+        "normalized": 0.45
+    },
+    {
+        "time": 34.83,
+        "date": "20 Sep 2007",
+        "warmth_raw": 33.69,
+        "normalized": 0.46
+    },
+    {
+        "time": 34.87,
+        "date": "20 Sep 2007",
+        "warmth_raw": 33.66,
+        "normalized": 0.45
+    },
+    {
+        "time": 34.9,
+        "date": "20 Sep 2007",
+        "warmth_raw": 33.6,
+        "normalized": 0.44
+    },
+    {
+        "time": 34.93,
+        "date": "21 Sep 2007",
+        "warmth_raw": 33.65,
+        "normalized": 0.45
+    },
+    {
+        "time": 34.97,
+        "date": "21 Sep 2007",
+        "warmth_raw": 33.73,
+        "normalized": 0.46
+    },
+    {
+        "time": 35.0,
+        "date": "21 Sep 2007",
+        "warmth_raw": 33.74,
+        "normalized": 0.46
+    },
+    {
+        "time": 35.03,
+        "date": "21 Sep 2007",
+        "warmth_raw": 33.76,
+        "normalized": 0.46
+    },
+    {
+        "time": 35.07,
+        "date": "21 Sep 2007",
+        "warmth_raw": 33.76,
+        "normalized": 0.46
+    },
+    {
+        "time": 35.1,
+        "date": "22 Sep 2007",
+        "warmth_raw": 33.64,
+        "normalized": 0.45
+    },
+    {
+        "time": 35.13,
+        "date": "22 Sep 2007",
+        "warmth_raw": 33.69,
+        "normalized": 0.46
+    },
+    {
+        "time": 35.17,
+        "date": "22 Sep 2007",
+        "warmth_raw": 33.75,
+        "normalized": 0.46
+    },
+    {
+        "time": 35.2,
+        "date": "22 Sep 2007",
+        "warmth_raw": 33.88,
+        "normalized": 0.48
+    },
+    {
+        "time": 35.23,
+        "date": "22 Sep 2007",
+        "warmth_raw": 33.92,
+        "normalized": 0.49
+    },
+    {
+        "time": 35.27,
+        "date": "22 Sep 2007",
+        "warmth_raw": 34.02,
+        "normalized": 0.5
+    },
+    {
+        "time": 35.3,
+        "date": "23 Sep 2007",
+        "warmth_raw": 33.89,
+        "normalized": 0.48
+    },
+    {
+        "time": 35.33,
+        "date": "23 Sep 2007",
+        "warmth_raw": 33.91,
+        "normalized": 0.49
+    },
+    {
+        "time": 35.37,
+        "date": "23 Sep 2007",
+        "warmth_raw": 33.74,
+        "normalized": 0.46
+    },
+    {
+        "time": 35.4,
+        "date": "23 Sep 2007",
+        "warmth_raw": 33.9,
+        "normalized": 0.48
+    },
+    {
+        "time": 35.43,
+        "date": "23 Sep 2007",
+        "warmth_raw": 33.97,
+        "normalized": 0.49
+    },
+    {
+        "time": 35.47,
+        "date": "23 Sep 2007",
+        "warmth_raw": 33.95,
+        "normalized": 0.49
+    },
+    {
+        "time": 35.5,
+        "date": "24 Sep 2007",
+        "warmth_raw": 33.83,
+        "normalized": 0.47
+    },
+    {
+        "time": 35.53,
+        "date": "24 Sep 2007",
+        "warmth_raw": 33.87,
+        "normalized": 0.48
+    },
+    {
+        "time": 35.57,
+        "date": "24 Sep 2007",
+        "warmth_raw": 33.9,
+        "normalized": 0.48
+    },
+    {
+        "time": 35.6,
+        "date": "24 Sep 2007",
+        "warmth_raw": 33.73,
+        "normalized": 0.46
+    },
+    {
+        "time": 35.63,
+        "date": "24 Sep 2007",
+        "warmth_raw": 33.78,
+        "normalized": 0.47
+    },
+    {
+        "time": 35.67,
+        "date": "24 Sep 2007",
+        "warmth_raw": 33.7,
+        "normalized": 0.46
+    },
+    {
+        "time": 35.7,
+        "date": "25 Sep 2007",
+        "warmth_raw": 33.67,
+        "normalized": 0.45
+    },
+    {
+        "time": 35.73,
+        "date": "25 Sep 2007",
+        "warmth_raw": 33.73,
+        "normalized": 0.46
+    },
+    {
+        "time": 35.77,
+        "date": "25 Sep 2007",
+        "warmth_raw": 33.62,
+        "normalized": 0.45
+    },
+    {
+        "time": 35.8,
+        "date": "25 Sep 2007",
+        "warmth_raw": 33.55,
+        "normalized": 0.44
+    },
+    {
+        "time": 35.83,
+        "date": "25 Sep 2007",
+        "warmth_raw": 33.7,
+        "normalized": 0.46
+    },
+    {
+        "time": 35.87,
+        "date": "25 Sep 2007",
+        "warmth_raw": 33.59,
+        "normalized": 0.44
+    },
+    {
+        "time": 35.9,
+        "date": "26 Sep 2007",
+        "warmth_raw": 33.55,
+        "normalized": 0.44
+    },
+    {
+        "time": 35.93,
+        "date": "26 Sep 2007",
+        "warmth_raw": 33.37,
+        "normalized": 0.41
+    },
+    {
+        "time": 35.97,
+        "date": "26 Sep 2007",
+        "warmth_raw": 33.32,
+        "normalized": 0.4
+    },
+    {
+        "time": 36.0,
+        "date": "26 Sep 2007",
+        "warmth_raw": 33.36,
+        "normalized": 0.41
+    },
+    {
+        "time": 36.03,
+        "date": "26 Sep 2007",
+        "warmth_raw": 33.39,
+        "normalized": 0.41
+    },
+    {
+        "time": 36.07,
+        "date": "27 Sep 2007",
+        "warmth_raw": 33.27,
+        "normalized": 0.4
+    },
+    {
+        "time": 36.1,
+        "date": "27 Sep 2007",
+        "warmth_raw": 33.21,
+        "normalized": 0.39
+    },
+    {
+        "time": 36.13,
+        "date": "27 Sep 2007",
+        "warmth_raw": 33.23,
+        "normalized": 0.39
+    },
+    {
+        "time": 36.17,
+        "date": "27 Sep 2007",
+        "warmth_raw": 33.22,
+        "normalized": 0.39
+    },
+    {
+        "time": 36.2,
+        "date": "27 Sep 2007",
+        "warmth_raw": 33.1,
+        "normalized": 0.38
+    },
+    {
+        "time": 36.23,
+        "date": "27 Sep 2007",
+        "warmth_raw": 33.07,
+        "normalized": 0.37
+    },
+    {
+        "time": 36.27,
+        "date": "28 Sep 2007",
+        "warmth_raw": 33.02,
+        "normalized": 0.36
+    },
+    {
+        "time": 36.3,
+        "date": "28 Sep 2007",
+        "warmth_raw": 32.94,
+        "normalized": 0.35
+    },
+    {
+        "time": 36.33,
+        "date": "28 Sep 2007",
+        "warmth_raw": 32.86,
+        "normalized": 0.34
+    },
+    {
+        "time": 36.37,
+        "date": "28 Sep 2007",
+        "warmth_raw": 32.85,
+        "normalized": 0.34
+    },
+    {
+        "time": 36.4,
+        "date": "28 Sep 2007",
+        "warmth_raw": 32.87,
+        "normalized": 0.34
+    },
+    {
+        "time": 36.43,
+        "date": "28 Sep 2007",
+        "warmth_raw": 32.84,
+        "normalized": 0.34
+    },
+    {
+        "time": 36.47,
+        "date": "29 Sep 2007",
+        "warmth_raw": 32.32,
+        "normalized": 0.27
+    },
+    {
+        "time": 36.5,
+        "date": "29 Sep 2007",
+        "warmth_raw": 32.35,
+        "normalized": 0.27
+    },
+    {
+        "time": 36.53,
+        "date": "29 Sep 2007",
+        "warmth_raw": 32.27,
+        "normalized": 0.26
+    },
+    {
+        "time": 36.57,
+        "date": "29 Sep 2007",
+        "warmth_raw": 32.24,
+        "normalized": 0.26
+    },
+    {
+        "time": 36.6,
+        "date": "29 Sep 2007",
+        "warmth_raw": 32.23,
+        "normalized": 0.26
+    },
+    {
+        "time": 36.63,
+        "date": "29 Sep 2007",
+        "warmth_raw": 32.26,
+        "normalized": 0.26
+    },
+    {
+        "time": 36.67,
+        "date": "30 Sep 2007",
+        "warmth_raw": 32.33,
+        "normalized": 0.27
+    },
+    {
+        "time": 36.7,
+        "date": "30 Sep 2007",
+        "warmth_raw": 32.29,
+        "normalized": 0.26
+    },
+    {
+        "time": 36.73,
+        "date": "30 Sep 2007",
+        "warmth_raw": 32.38,
+        "normalized": 0.28
+    },
+    {
+        "time": 36.77,
+        "date": "30 Sep 2007",
+        "warmth_raw": 32.35,
+        "normalized": 0.27
+    },
+    {
+        "time": 36.8,
+        "date": "30 Sep 2007",
+        "warmth_raw": 32.29,
+        "normalized": 0.26
+    },
+    {
+        "time": 36.83,
+        "date": "30 Sep 2007",
+        "warmth_raw": 32.33,
+        "normalized": 0.27
+    },
+    {
+        "time": 36.87,
+        "date": "01 Oct 2007",
+        "warmth_raw": 32.3,
+        "normalized": 0.27
+    },
+    {
+        "time": 36.9,
+        "date": "01 Oct 2007",
+        "warmth_raw": 32.36,
+        "normalized": 0.27
+    },
+    {
+        "time": 36.93,
+        "date": "01 Oct 2007",
+        "warmth_raw": 32.35,
+        "normalized": 0.27
+    },
+    {
+        "time": 36.97,
+        "date": "01 Oct 2007",
+        "warmth_raw": 32.28,
+        "normalized": 0.26
+    },
+    {
+        "time": 37.0,
+        "date": "01 Oct 2007",
+        "warmth_raw": 32.1,
+        "normalized": 0.24
+    },
+    {
+        "time": 37.03,
+        "date": "01 Oct 2007",
+        "warmth_raw": 32.06,
+        "normalized": 0.23
+    },
+    {
+        "time": 37.07,
+        "date": "02 Oct 2007",
+        "warmth_raw": 32.04,
+        "normalized": 0.23
+    },
+    {
+        "time": 37.1,
+        "date": "02 Oct 2007",
+        "warmth_raw": 32.03,
+        "normalized": 0.23
+    },
+    {
+        "time": 37.13,
+        "date": "02 Oct 2007",
+        "warmth_raw": 32.08,
+        "normalized": 0.24
+    },
+    {
+        "time": 37.17,
+        "date": "02 Oct 2007",
+        "warmth_raw": 32.21,
+        "normalized": 0.25
+    },
+    {
+        "time": 37.2,
+        "date": "02 Oct 2007",
+        "warmth_raw": 32.17,
+        "normalized": 0.25
+    },
+    {
+        "time": 37.23,
+        "date": "03 Oct 2007",
+        "warmth_raw": 32.12,
+        "normalized": 0.24
+    },
+    {
+        "time": 37.27,
+        "date": "03 Oct 2007",
+        "warmth_raw": 32.11,
+        "normalized": 0.24
+    },
+    {
+        "time": 37.3,
+        "date": "03 Oct 2007",
+        "warmth_raw": 32.02,
+        "normalized": 0.23
+    },
+    {
+        "time": 37.33,
+        "date": "03 Oct 2007",
+        "warmth_raw": 32.15,
+        "normalized": 0.25
+    },
+    {
+        "time": 37.37,
+        "date": "03 Oct 2007",
+        "warmth_raw": 32.12,
+        "normalized": 0.24
+    },
+    {
+        "time": 37.4,
+        "date": "03 Oct 2007",
+        "warmth_raw": 32.13,
+        "normalized": 0.24
+    },
+    {
+        "time": 37.43,
+        "date": "04 Oct 2007",
+        "warmth_raw": 32.21,
+        "normalized": 0.25
+    },
+    {
+        "time": 37.47,
+        "date": "04 Oct 2007",
+        "warmth_raw": 32.18,
+        "normalized": 0.25
+    },
+    {
+        "time": 37.5,
+        "date": "04 Oct 2007",
+        "warmth_raw": 32.12,
+        "normalized": 0.24
+    },
+    {
+        "time": 37.53,
+        "date": "04 Oct 2007",
+        "warmth_raw": 32.02,
+        "normalized": 0.23
+    },
+    {
+        "time": 37.57,
+        "date": "04 Oct 2007",
+        "warmth_raw": 32.06,
+        "normalized": 0.23
+    },
+    {
+        "time": 37.6,
+        "date": "04 Oct 2007",
+        "warmth_raw": 32.13,
+        "normalized": 0.24
+    },
+    {
+        "time": 37.63,
+        "date": "05 Oct 2007",
+        "warmth_raw": 32.2,
+        "normalized": 0.25
+    },
+    {
+        "time": 37.67,
+        "date": "05 Oct 2007",
+        "warmth_raw": 32.2,
+        "normalized": 0.25
+    },
+    {
+        "time": 37.7,
+        "date": "05 Oct 2007",
+        "warmth_raw": 32.22,
+        "normalized": 0.26
+    },
+    {
+        "time": 37.73,
+        "date": "05 Oct 2007",
+        "warmth_raw": 32.26,
+        "normalized": 0.26
+    },
+    {
+        "time": 37.77,
+        "date": "05 Oct 2007",
+        "warmth_raw": 32.28,
+        "normalized": 0.26
+    },
+    {
+        "time": 37.8,
+        "date": "05 Oct 2007",
+        "warmth_raw": 32.04,
+        "normalized": 0.23
+    },
+    {
+        "time": 37.83,
+        "date": "06 Oct 2007",
+        "warmth_raw": 32.08,
+        "normalized": 0.24
+    },
+    {
+        "time": 37.87,
+        "date": "06 Oct 2007",
+        "warmth_raw": 31.99,
+        "normalized": 0.22
+    },
+    {
+        "time": 37.9,
+        "date": "06 Oct 2007",
+        "warmth_raw": 32.08,
+        "normalized": 0.24
+    },
+    {
+        "time": 37.93,
+        "date": "06 Oct 2007",
+        "warmth_raw": 31.95,
+        "normalized": 0.22
+    },
+    {
+        "time": 37.97,
+        "date": "06 Oct 2007",
+        "warmth_raw": 32.03,
+        "normalized": 0.23
+    },
+    {
+        "time": 38.0,
+        "date": "06 Oct 2007",
+        "warmth_raw": 32.1,
+        "normalized": 0.24
+    },
+    {
+        "time": 38.03,
+        "date": "07 Oct 2007",
+        "warmth_raw": 32.02,
+        "normalized": 0.23
+    },
+    {
+        "time": 38.07,
+        "date": "07 Oct 2007",
+        "warmth_raw": 32.0,
+        "normalized": 0.23
+    },
+    {
+        "time": 38.1,
+        "date": "07 Oct 2007",
+        "warmth_raw": 32.06,
+        "normalized": 0.23
+    },
+    {
+        "time": 38.13,
+        "date": "07 Oct 2007",
+        "warmth_raw": 32.15,
+        "normalized": 0.25
+    },
+    {
+        "time": 38.17,
+        "date": "07 Oct 2007",
+        "warmth_raw": 32.15,
+        "normalized": 0.25
+    },
+    {
+        "time": 38.2,
+        "date": "08 Oct 2007",
+        "warmth_raw": 32.27,
+        "normalized": 0.26
+    },
+    {
+        "time": 38.23,
+        "date": "08 Oct 2007",
+        "warmth_raw": 32.21,
+        "normalized": 0.25
+    },
+    {
+        "time": 38.27,
+        "date": "08 Oct 2007",
+        "warmth_raw": 32.35,
+        "normalized": 0.27
+    },
+    {
+        "time": 38.3,
+        "date": "08 Oct 2007",
+        "warmth_raw": 32.17,
+        "normalized": 0.25
+    },
+    {
+        "time": 38.33,
+        "date": "08 Oct 2007",
+        "warmth_raw": 32.23,
+        "normalized": 0.26
+    },
+    {
+        "time": 38.37,
+        "date": "08 Oct 2007",
+        "warmth_raw": 32.0,
+        "normalized": 0.23
+    },
+    {
+        "time": 38.4,
+        "date": "09 Oct 2007",
+        "warmth_raw": 32.09,
+        "normalized": 0.24
+    },
+    {
+        "time": 38.43,
+        "date": "09 Oct 2007",
+        "warmth_raw": 32.25,
+        "normalized": 0.26
+    },
+    {
+        "time": 38.47,
+        "date": "09 Oct 2007",
+        "warmth_raw": 32.21,
+        "normalized": 0.25
+    },
+    {
+        "time": 38.5,
+        "date": "09 Oct 2007",
+        "warmth_raw": 32.32,
+        "normalized": 0.27
+    },
+    {
+        "time": 38.53,
+        "date": "09 Oct 2007",
+        "warmth_raw": 32.29,
+        "normalized": 0.26
+    },
+    {
+        "time": 38.57,
+        "date": "09 Oct 2007",
+        "warmth_raw": 32.1,
+        "normalized": 0.24
+    },
+    {
+        "time": 38.6,
+        "date": "10 Oct 2007",
+        "warmth_raw": 32.07,
+        "normalized": 0.24
+    },
+    {
+        "time": 38.63,
+        "date": "10 Oct 2007",
+        "warmth_raw": 32.03,
+        "normalized": 0.23
+    },
+    {
+        "time": 38.67,
+        "date": "10 Oct 2007",
+        "warmth_raw": 31.99,
+        "normalized": 0.22
+    },
+    {
+        "time": 38.7,
+        "date": "10 Oct 2007",
+        "warmth_raw": 31.93,
+        "normalized": 0.22
+    },
+    {
+        "time": 38.73,
+        "date": "10 Oct 2007",
+        "warmth_raw": 31.94,
+        "normalized": 0.22
+    },
+    {
+        "time": 38.77,
+        "date": "10 Oct 2007",
+        "warmth_raw": 31.96,
+        "normalized": 0.22
+    },
+    {
+        "time": 38.8,
+        "date": "11 Oct 2007",
+        "warmth_raw": 31.97,
+        "normalized": 0.22
+    },
+    {
+        "time": 38.83,
+        "date": "11 Oct 2007",
+        "warmth_raw": 32.09,
+        "normalized": 0.24
+    },
+    {
+        "time": 38.87,
+        "date": "11 Oct 2007",
+        "warmth_raw": 32.02,
+        "normalized": 0.23
+    },
+    {
+        "time": 38.9,
+        "date": "11 Oct 2007",
+        "warmth_raw": 32.01,
+        "normalized": 0.23
+    },
+    {
+        "time": 38.93,
+        "date": "11 Oct 2007",
+        "warmth_raw": 31.94,
+        "normalized": 0.22
+    },
+    {
+        "time": 38.97,
+        "date": "11 Oct 2007",
+        "warmth_raw": 31.93,
+        "normalized": 0.22
+    },
+    {
+        "time": 39.0,
+        "date": "12 Oct 2007",
+        "warmth_raw": 31.7,
+        "normalized": 0.18
+    },
+    {
+        "time": 39.03,
+        "date": "12 Oct 2007",
+        "warmth_raw": 31.66,
+        "normalized": 0.18
+    },
+    {
+        "time": 39.07,
+        "date": "12 Oct 2007",
+        "warmth_raw": 31.73,
+        "normalized": 0.19
+    },
+    {
+        "time": 39.1,
+        "date": "12 Oct 2007",
+        "warmth_raw": 31.89,
+        "normalized": 0.21
+    },
+    {
+        "time": 39.13,
+        "date": "12 Oct 2007",
+        "warmth_raw": 31.85,
+        "normalized": 0.21
+    },
+    {
+        "time": 39.17,
+        "date": "13 Oct 2007",
+        "warmth_raw": 31.86,
+        "normalized": 0.21
+    },
+    {
+        "time": 39.2,
+        "date": "13 Oct 2007",
+        "warmth_raw": 31.77,
+        "normalized": 0.19
+    },
+    {
+        "time": 39.23,
+        "date": "13 Oct 2007",
+        "warmth_raw": 31.72,
+        "normalized": 0.19
+    },
+    {
+        "time": 39.27,
+        "date": "13 Oct 2007",
+        "warmth_raw": 31.9,
+        "normalized": 0.21
+    },
+    {
+        "time": 39.3,
+        "date": "13 Oct 2007",
+        "warmth_raw": 31.9,
+        "normalized": 0.21
+    },
+    {
+        "time": 39.33,
+        "date": "13 Oct 2007",
+        "warmth_raw": 31.86,
+        "normalized": 0.21
+    },
+    {
+        "time": 39.37,
+        "date": "14 Oct 2007",
+        "warmth_raw": 31.86,
+        "normalized": 0.21
+    },
+    {
+        "time": 39.4,
+        "date": "14 Oct 2007",
+        "warmth_raw": 31.86,
+        "normalized": 0.21
+    },
+    {
+        "time": 39.43,
+        "date": "14 Oct 2007",
+        "warmth_raw": 31.81,
+        "normalized": 0.2
+    },
+    {
+        "time": 39.47,
+        "date": "14 Oct 2007",
+        "warmth_raw": 31.78,
+        "normalized": 0.2
+    },
+    {
+        "time": 39.5,
+        "date": "14 Oct 2007",
+        "warmth_raw": 31.75,
+        "normalized": 0.19
+    },
+    {
+        "time": 39.53,
+        "date": "14 Oct 2007",
+        "warmth_raw": 31.68,
+        "normalized": 0.18
+    },
+    {
+        "time": 39.57,
+        "date": "15 Oct 2007",
+        "warmth_raw": 31.57,
+        "normalized": 0.17
+    },
+    {
+        "time": 39.6,
+        "date": "15 Oct 2007",
+        "warmth_raw": 31.59,
+        "normalized": 0.17
+    },
+    {
+        "time": 39.63,
+        "date": "15 Oct 2007",
+        "warmth_raw": 31.51,
+        "normalized": 0.16
+    },
+    {
+        "time": 39.67,
+        "date": "15 Oct 2007",
+        "warmth_raw": 31.48,
+        "normalized": 0.15
+    },
+    {
+        "time": 39.7,
+        "date": "15 Oct 2007",
+        "warmth_raw": 31.53,
+        "normalized": 0.16
+    },
+    {
+        "time": 39.73,
+        "date": "15 Oct 2007",
+        "warmth_raw": 31.52,
+        "normalized": 0.16
+    },
+    {
+        "time": 39.77,
+        "date": "16 Oct 2007",
+        "warmth_raw": 31.43,
+        "normalized": 0.15
+    },
+    {
+        "time": 39.8,
+        "date": "16 Oct 2007",
+        "warmth_raw": 31.38,
+        "normalized": 0.14
+    },
+    {
+        "time": 39.83,
+        "date": "16 Oct 2007",
+        "warmth_raw": 31.44,
+        "normalized": 0.15
+    },
+    {
+        "time": 39.87,
+        "date": "16 Oct 2007",
+        "warmth_raw": 31.43,
+        "normalized": 0.15
+    },
+    {
+        "time": 39.9,
+        "date": "16 Oct 2007",
+        "warmth_raw": 31.38,
+        "normalized": 0.14
+    },
+    {
+        "time": 39.93,
+        "date": "16 Oct 2007",
+        "warmth_raw": 31.38,
+        "normalized": 0.14
+    },
+    {
+        "time": 39.97,
+        "date": "17 Oct 2007",
+        "warmth_raw": 31.23,
+        "normalized": 0.12
+    },
+    {
+        "time": 40.0,
+        "date": "17 Oct 2007",
+        "warmth_raw": 32.1,
+        "normalized": 0.24
+    },
+    {
+        "time": 40.03,
+        "date": "17 Oct 2007",
+        "warmth_raw": 31.82,
+        "normalized": 0.2
+    },
+    {
+        "time": 40.07,
+        "date": "17 Oct 2007",
+        "warmth_raw": 31.9,
+        "normalized": 0.21
+    },
+    {
+        "time": 40.1,
+        "date": "17 Oct 2007",
+        "warmth_raw": 31.99,
+        "normalized": 0.22
+    },
+    {
+        "time": 40.13,
+        "date": "17 Oct 2007",
+        "warmth_raw": 32.0,
+        "normalized": 0.23
+    },
+    {
+        "time": 40.17,
+        "date": "18 Oct 2007",
+        "warmth_raw": 31.98,
+        "normalized": 0.22
+    },
+    {
+        "time": 40.2,
+        "date": "18 Oct 2007",
+        "warmth_raw": 32.0,
+        "normalized": 0.23
+    },
+    {
+        "time": 40.23,
+        "date": "18 Oct 2007",
+        "warmth_raw": 32.06,
+        "normalized": 0.23
+    },
+    {
+        "time": 40.27,
+        "date": "18 Oct 2007",
+        "warmth_raw": 32.03,
+        "normalized": 0.23
+    },
+    {
+        "time": 40.3,
+        "date": "18 Oct 2007",
+        "warmth_raw": 32.15,
+        "normalized": 0.25
+    },
+    {
+        "time": 40.33,
+        "date": "19 Oct 2007",
+        "warmth_raw": 32.11,
+        "normalized": 0.24
+    },
+    {
+        "time": 40.37,
+        "date": "19 Oct 2007",
+        "warmth_raw": 31.99,
+        "normalized": 0.22
+    },
+    {
+        "time": 40.4,
+        "date": "19 Oct 2007",
+        "warmth_raw": 31.99,
+        "normalized": 0.22
+    },
+    {
+        "time": 40.43,
+        "date": "19 Oct 2007",
+        "warmth_raw": 32.0,
+        "normalized": 0.23
+    },
+    {
+        "time": 40.47,
+        "date": "19 Oct 2007",
+        "warmth_raw": 31.89,
+        "normalized": 0.21
+    },
+    {
+        "time": 40.5,
+        "date": "19 Oct 2007",
+        "warmth_raw": 31.82,
+        "normalized": 0.2
+    },
+    {
+        "time": 40.53,
+        "date": "20 Oct 2007",
+        "warmth_raw": 31.91,
+        "normalized": 0.21
+    },
+    {
+        "time": 40.57,
+        "date": "20 Oct 2007",
+        "warmth_raw": 31.92,
+        "normalized": 0.21
+    },
+    {
+        "time": 40.6,
+        "date": "20 Oct 2007",
+        "warmth_raw": 31.9,
+        "normalized": 0.21
+    },
+    {
+        "time": 40.63,
+        "date": "20 Oct 2007",
+        "warmth_raw": 31.78,
+        "normalized": 0.2
+    },
+    {
+        "time": 40.67,
+        "date": "20 Oct 2007",
+        "warmth_raw": 31.77,
+        "normalized": 0.19
+    },
+    {
+        "time": 40.7,
+        "date": "20 Oct 2007",
+        "warmth_raw": 31.78,
+        "normalized": 0.2
+    },
+    {
+        "time": 40.73,
+        "date": "21 Oct 2007",
+        "warmth_raw": 31.69,
+        "normalized": 0.18
+    },
+    {
+        "time": 40.77,
+        "date": "21 Oct 2007",
+        "warmth_raw": 31.71,
+        "normalized": 0.19
+    },
+    {
+        "time": 40.8,
+        "date": "21 Oct 2007",
+        "warmth_raw": 31.84,
+        "normalized": 0.2
+    },
+    {
+        "time": 40.83,
+        "date": "21 Oct 2007",
+        "warmth_raw": 31.83,
+        "normalized": 0.2
+    },
+    {
+        "time": 40.87,
+        "date": "21 Oct 2007",
+        "warmth_raw": 31.71,
+        "normalized": 0.19
+    },
+    {
+        "time": 40.9,
+        "date": "21 Oct 2007",
+        "warmth_raw": 31.94,
+        "normalized": 0.22
+    },
+    {
+        "time": 40.93,
+        "date": "22 Oct 2007",
+        "warmth_raw": 31.79,
+        "normalized": 0.2
+    },
+    {
+        "time": 40.97,
+        "date": "22 Oct 2007",
+        "warmth_raw": 31.5,
+        "normalized": 0.16
+    },
+    {
+        "time": 41.0,
+        "date": "22 Oct 2007",
+        "warmth_raw": 31.7,
+        "normalized": 0.18
+    },
+    {
+        "time": 41.03,
+        "date": "22 Oct 2007",
+        "warmth_raw": 31.72,
+        "normalized": 0.19
+    },
+    {
+        "time": 41.07,
+        "date": "22 Oct 2007",
+        "warmth_raw": 31.66,
+        "normalized": 0.18
+    },
+    {
+        "time": 41.1,
+        "date": "22 Oct 2007",
+        "warmth_raw": 31.65,
+        "normalized": 0.18
+    },
+    {
+        "time": 41.13,
+        "date": "23 Oct 2007",
+        "warmth_raw": 31.64,
+        "normalized": 0.18
+    },
+    {
+        "time": 41.17,
+        "date": "23 Oct 2007",
+        "warmth_raw": 31.68,
+        "normalized": 0.18
+    },
+    {
+        "time": 41.2,
+        "date": "23 Oct 2007",
+        "warmth_raw": 31.68,
+        "normalized": 0.18
+    },
+    {
+        "time": 41.23,
+        "date": "23 Oct 2007",
+        "warmth_raw": 31.65,
+        "normalized": 0.18
+    },
+    {
+        "time": 41.27,
+        "date": "23 Oct 2007",
+        "warmth_raw": 31.58,
+        "normalized": 0.17
+    },
+    {
+        "time": 41.3,
+        "date": "24 Oct 2007",
+        "warmth_raw": 31.54,
+        "normalized": 0.16
+    },
+    {
+        "time": 41.33,
+        "date": "24 Oct 2007",
+        "warmth_raw": 31.5,
+        "normalized": 0.16
+    },
+    {
+        "time": 41.37,
+        "date": "24 Oct 2007",
+        "warmth_raw": 31.42,
+        "normalized": 0.15
+    },
+    {
+        "time": 41.4,
+        "date": "24 Oct 2007",
+        "warmth_raw": 31.48,
+        "normalized": 0.15
+    },
+    {
+        "time": 41.43,
+        "date": "24 Oct 2007",
+        "warmth_raw": 31.52,
+        "normalized": 0.16
+    },
+    {
+        "time": 41.47,
+        "date": "24 Oct 2007",
+        "warmth_raw": 31.46,
+        "normalized": 0.15
+    },
+    {
+        "time": 41.5,
+        "date": "25 Oct 2007",
+        "warmth_raw": 31.42,
+        "normalized": 0.15
+    },
+    {
+        "time": 41.53,
+        "date": "25 Oct 2007",
+        "warmth_raw": 31.49,
+        "normalized": 0.16
+    },
+    {
+        "time": 41.57,
+        "date": "25 Oct 2007",
+        "warmth_raw": 31.39,
+        "normalized": 0.14
+    },
+    {
+        "time": 41.6,
+        "date": "25 Oct 2007",
+        "warmth_raw": 31.36,
+        "normalized": 0.14
+    },
+    {
+        "time": 41.63,
+        "date": "25 Oct 2007",
+        "warmth_raw": 31.19,
+        "normalized": 0.12
+    },
+    {
+        "time": 41.67,
+        "date": "25 Oct 2007",
+        "warmth_raw": 31.24,
+        "normalized": 0.12
+    },
+    {
+        "time": 41.7,
+        "date": "26 Oct 2007",
+        "warmth_raw": 31.36,
+        "normalized": 0.14
+    },
+    {
+        "time": 41.73,
+        "date": "26 Oct 2007",
+        "warmth_raw": 31.31,
+        "normalized": 0.13
+    },
+    {
+        "time": 41.77,
+        "date": "26 Oct 2007",
+        "warmth_raw": 31.05,
+        "normalized": 0.1
+    },
+    {
+        "time": 41.8,
+        "date": "26 Oct 2007",
+        "warmth_raw": 31.08,
+        "normalized": 0.1
+    },
+    {
+        "time": 41.83,
+        "date": "26 Oct 2007",
+        "warmth_raw": 31.1,
+        "normalized": 0.1
+    },
+    {
+        "time": 41.87,
+        "date": "26 Oct 2007",
+        "warmth_raw": 31.05,
+        "normalized": 0.1
+    },
+    {
+        "time": 41.9,
+        "date": "27 Oct 2007",
+        "warmth_raw": 31.02,
+        "normalized": 0.09
+    },
+    {
+        "time": 41.93,
+        "date": "27 Oct 2007",
+        "warmth_raw": 30.99,
+        "normalized": 0.09
+    },
+    {
+        "time": 41.97,
+        "date": "27 Oct 2007",
+        "warmth_raw": 30.87,
+        "normalized": 0.07
+    },
+    {
+        "time": 42.0,
+        "date": "27 Oct 2007",
+        "warmth_raw": 30.47,
+        "normalized": 0.02
+    },
+    {
+        "time": 42.03,
+        "date": "27 Oct 2007",
+        "warmth_raw": 30.48,
+        "normalized": 0.02
+    },
+    {
+        "time": 42.07,
+        "date": "27 Oct 2007",
+        "warmth_raw": 30.51,
+        "normalized": 0.02
+    },
+    {
+        "time": 42.1,
+        "date": "28 Oct 2007",
+        "warmth_raw": 30.51,
+        "normalized": 0.02
+    },
+    {
+        "time": 42.13,
+        "date": "28 Oct 2007",
+        "warmth_raw": 30.38,
+        "normalized": 0.01
+    },
+    {
+        "time": 42.17,
+        "date": "28 Oct 2007",
+        "warmth_raw": 30.38,
+        "normalized": 0.01
+    },
+    {
+        "time": 42.2,
+        "date": "28 Oct 2007",
+        "warmth_raw": 30.41,
+        "normalized": 0.01
+    },
+    {
+        "time": 42.23,
+        "date": "28 Oct 2007",
+        "warmth_raw": 30.34,
+        "normalized": 0.0
+    },
+    {
+        "time": 42.27,
+        "date": "29 Oct 2007",
+        "warmth_raw": 30.46,
+        "normalized": 0.02
+    },
+    {
+        "time": 42.3,
+        "date": "29 Oct 2007",
+        "warmth_raw": 30.49,
+        "normalized": 0.02
+    },
+    {
+        "time": 42.33,
+        "date": "29 Oct 2007",
+        "warmth_raw": 30.64,
+        "normalized": 0.04
+    },
+    {
+        "time": 42.37,
+        "date": "29 Oct 2007",
+        "warmth_raw": 30.59,
+        "normalized": 0.03
+    },
+    {
+        "time": 42.4,
+        "date": "29 Oct 2007",
+        "warmth_raw": 30.81,
+        "normalized": 0.06
+    },
+    {
+        "time": 42.43,
+        "date": "29 Oct 2007",
+        "warmth_raw": 30.73,
+        "normalized": 0.05
+    },
+    {
+        "time": 42.47,
+        "date": "30 Oct 2007",
+        "warmth_raw": 30.73,
+        "normalized": 0.05
+    },
+    {
+        "time": 42.5,
+        "date": "30 Oct 2007",
+        "warmth_raw": 30.89,
+        "normalized": 0.07
+    },
+    {
+        "time": 42.53,
+        "date": "30 Oct 2007",
+        "warmth_raw": 30.78,
+        "normalized": 0.06
+    },
+    {
+        "time": 42.57,
+        "date": "30 Oct 2007",
+        "warmth_raw": 30.77,
+        "normalized": 0.06
+    },
+    {
+        "time": 42.6,
+        "date": "30 Oct 2007",
+        "warmth_raw": 30.8,
+        "normalized": 0.06
+    },
+    {
+        "time": 42.63,
+        "date": "30 Oct 2007",
+        "warmth_raw": 30.9,
+        "normalized": 0.08
+    },
+    {
+        "time": 42.67,
+        "date": "31 Oct 2007",
+        "warmth_raw": 30.91,
+        "normalized": 0.08
+    },
+    {
+        "time": 42.7,
+        "date": "31 Oct 2007",
+        "warmth_raw": 30.87,
+        "normalized": 0.07
+    },
+    {
+        "time": 42.73,
+        "date": "31 Oct 2007",
+        "warmth_raw": 30.84,
+        "normalized": 0.07
+    },
+    {
+        "time": 42.77,
+        "date": "31 Oct 2007",
+        "warmth_raw": 30.9,
+        "normalized": 0.08
+    },
+    {
+        "time": 42.8,
+        "date": "31 Oct 2007",
+        "warmth_raw": 30.94,
+        "normalized": 0.08
+    },
+    {
+        "time": 42.83,
+        "date": "31 Oct 2007",
+        "warmth_raw": 30.97,
+        "normalized": 0.09
+    },
+    {
+        "time": 42.87,
+        "date": "01 Nov 2007",
+        "warmth_raw": 30.89,
+        "normalized": 0.07
+    },
+    {
+        "time": 42.9,
+        "date": "01 Nov 2007",
+        "warmth_raw": 30.76,
+        "normalized": 0.06
+    },
+    {
+        "time": 42.93,
+        "date": "01 Nov 2007",
+        "warmth_raw": 30.84,
+        "normalized": 0.07
+    },
+    {
+        "time": 42.97,
+        "date": "01 Nov 2007",
+        "warmth_raw": 30.85,
+        "normalized": 0.07
+    },
+    {
+        "time": 43.0,
+        "date": "01 Nov 2007",
+        "warmth_raw": 30.95,
+        "normalized": 0.08
+    },
+    {
+        "time": 43.03,
+        "date": "01 Nov 2007",
+        "warmth_raw": 30.7,
+        "normalized": 0.05
+    },
+    {
+        "time": 43.07,
+        "date": "02 Nov 2007",
+        "warmth_raw": 30.71,
+        "normalized": 0.05
+    },
+    {
+        "time": 43.1,
+        "date": "02 Nov 2007",
+        "warmth_raw": 30.8,
+        "normalized": 0.06
+    },
+    {
+        "time": 43.13,
+        "date": "02 Nov 2007",
+        "warmth_raw": 30.94,
+        "normalized": 0.08
+    },
+    {
+        "time": 43.17,
+        "date": "02 Nov 2007",
+        "warmth_raw": 31.12,
+        "normalized": 0.11
+    },
+    {
+        "time": 43.2,
+        "date": "02 Nov 2007",
+        "warmth_raw": 31.23,
+        "normalized": 0.12
+    },
+    {
+        "time": 43.23,
+        "date": "02 Nov 2007",
+        "warmth_raw": 31.22,
+        "normalized": 0.12
+    },
+    {
+        "time": 43.27,
+        "date": "03 Nov 2007",
+        "warmth_raw": 31.32,
+        "normalized": 0.13
+    },
+    {
+        "time": 43.3,
+        "date": "03 Nov 2007",
+        "warmth_raw": 31.33,
+        "normalized": 0.13
+    },
+    {
+        "time": 43.33,
+        "date": "03 Nov 2007",
+        "warmth_raw": 31.35,
+        "normalized": 0.14
+    },
+    {
+        "time": 43.37,
+        "date": "03 Nov 2007",
+        "warmth_raw": 31.47,
+        "normalized": 0.15
+    },
+    {
+        "time": 43.4,
+        "date": "03 Nov 2007",
+        "warmth_raw": 31.62,
+        "normalized": 0.17
+    },
+    {
+        "time": 43.43,
+        "date": "03 Nov 2007",
+        "warmth_raw": 31.74,
+        "normalized": 0.19
+    },
+    {
+        "time": 43.47,
+        "date": "04 Nov 2007",
+        "warmth_raw": 31.74,
+        "normalized": 0.19
+    },
+    {
+        "time": 43.5,
+        "date": "04 Nov 2007",
+        "warmth_raw": 32.04,
+        "normalized": 0.23
+    },
+    {
+        "time": 43.53,
+        "date": "04 Nov 2007",
+        "warmth_raw": 32.13,
+        "normalized": 0.24
+    },
+    {
+        "time": 43.57,
+        "date": "04 Nov 2007",
+        "warmth_raw": 32.15,
+        "normalized": 0.25
+    },
+    {
+        "time": 43.6,
+        "date": "04 Nov 2007",
+        "warmth_raw": 32.14,
+        "normalized": 0.24
+    },
+    {
+        "time": 43.63,
+        "date": "05 Nov 2007",
+        "warmth_raw": 32.24,
+        "normalized": 0.26
+    },
+    {
+        "time": 43.67,
+        "date": "05 Nov 2007",
+        "warmth_raw": 32.36,
+        "normalized": 0.27
+    },
+    {
+        "time": 43.7,
+        "date": "05 Nov 2007",
+        "warmth_raw": 32.44,
+        "normalized": 0.29
+    },
+    {
+        "time": 43.73,
+        "date": "05 Nov 2007",
+        "warmth_raw": 32.58,
+        "normalized": 0.3
+    },
+    {
+        "time": 43.77,
+        "date": "05 Nov 2007",
+        "warmth_raw": 32.47,
+        "normalized": 0.29
+    },
+    {
+        "time": 43.8,
+        "date": "05 Nov 2007",
+        "warmth_raw": 32.54,
+        "normalized": 0.3
+    },
+    {
+        "time": 43.83,
+        "date": "06 Nov 2007",
+        "warmth_raw": 32.57,
+        "normalized": 0.3
+    },
+    {
+        "time": 43.87,
+        "date": "06 Nov 2007",
+        "warmth_raw": 32.63,
+        "normalized": 0.31
+    },
+    {
+        "time": 43.9,
+        "date": "06 Nov 2007",
+        "warmth_raw": 32.64,
+        "normalized": 0.31
+    },
+    {
+        "time": 43.93,
+        "date": "06 Nov 2007",
+        "warmth_raw": 32.91,
+        "normalized": 0.35
+    },
+    {
+        "time": 43.97,
+        "date": "06 Nov 2007",
+        "warmth_raw": 32.84,
+        "normalized": 0.34
+    },
+    {
+        "time": 44.0,
+        "date": "06 Nov 2007",
+        "warmth_raw": 34.01,
+        "normalized": 0.5
+    },
+    {
+        "time": 44.03,
+        "date": "07 Nov 2007",
+        "warmth_raw": 33.96,
+        "normalized": 0.49
+    },
+    {
+        "time": 44.07,
+        "date": "07 Nov 2007",
+        "warmth_raw": 33.9,
+        "normalized": 0.48
+    },
+    {
+        "time": 44.1,
+        "date": "07 Nov 2007",
+        "warmth_raw": 33.9,
+        "normalized": 0.48
+    },
+    {
+        "time": 44.13,
+        "date": "07 Nov 2007",
+        "warmth_raw": 33.83,
+        "normalized": 0.47
+    },
+    {
+        "time": 44.17,
+        "date": "07 Nov 2007",
+        "warmth_raw": 33.82,
+        "normalized": 0.47
+    },
+    {
+        "time": 44.2,
+        "date": "07 Nov 2007",
+        "warmth_raw": 33.84,
+        "normalized": 0.48
+    },
+    {
+        "time": 44.23,
+        "date": "08 Nov 2007",
+        "warmth_raw": 33.73,
+        "normalized": 0.46
+    },
+    {
+        "time": 44.27,
+        "date": "08 Nov 2007",
+        "warmth_raw": 33.7,
+        "normalized": 0.46
+    },
+    {
+        "time": 44.3,
+        "date": "08 Nov 2007",
+        "warmth_raw": 33.77,
+        "normalized": 0.47
+    },
+    {
+        "time": 44.33,
+        "date": "08 Nov 2007",
+        "warmth_raw": 33.86,
+        "normalized": 0.48
+    },
+    {
+        "time": 44.37,
+        "date": "08 Nov 2007",
+        "warmth_raw": 33.93,
+        "normalized": 0.49
+    },
+    {
+        "time": 44.4,
+        "date": "08 Nov 2007",
+        "warmth_raw": 33.88,
+        "normalized": 0.48
+    },
+    {
+        "time": 44.43,
+        "date": "09 Nov 2007",
+        "warmth_raw": 33.9,
+        "normalized": 0.48
+    },
+    {
+        "time": 44.47,
+        "date": "09 Nov 2007",
+        "warmth_raw": 33.85,
+        "normalized": 0.48
+    },
+    {
+        "time": 44.5,
+        "date": "09 Nov 2007",
+        "warmth_raw": 33.9,
+        "normalized": 0.48
+    },
+    {
+        "time": 44.53,
+        "date": "09 Nov 2007",
+        "warmth_raw": 33.93,
+        "normalized": 0.49
+    },
+    {
+        "time": 44.57,
+        "date": "09 Nov 2007",
+        "warmth_raw": 34.01,
+        "normalized": 0.5
+    },
+    {
+        "time": 44.6,
+        "date": "10 Nov 2007",
+        "warmth_raw": 34.03,
+        "normalized": 0.5
+    },
+    {
+        "time": 44.63,
+        "date": "10 Nov 2007",
+        "warmth_raw": 34.12,
+        "normalized": 0.51
+    },
+    {
+        "time": 44.67,
+        "date": "10 Nov 2007",
+        "warmth_raw": 34.08,
+        "normalized": 0.51
+    },
+    {
+        "time": 44.7,
+        "date": "10 Nov 2007",
+        "warmth_raw": 34.2,
+        "normalized": 0.52
+    },
+    {
+        "time": 44.73,
+        "date": "10 Nov 2007",
+        "warmth_raw": 34.14,
+        "normalized": 0.52
+    },
+    {
+        "time": 44.77,
+        "date": "10 Nov 2007",
+        "warmth_raw": 34.07,
+        "normalized": 0.51
+    },
+    {
+        "time": 44.8,
+        "date": "11 Nov 2007",
+        "warmth_raw": 34.1,
+        "normalized": 0.51
+    },
+    {
+        "time": 44.83,
+        "date": "11 Nov 2007",
+        "warmth_raw": 34.1,
+        "normalized": 0.51
+    },
+    {
+        "time": 44.87,
+        "date": "11 Nov 2007",
+        "warmth_raw": 34.09,
+        "normalized": 0.51
+    },
+    {
+        "time": 44.9,
+        "date": "11 Nov 2007",
+        "warmth_raw": 34.33,
+        "normalized": 0.54
+    },
+    {
+        "time": 44.93,
+        "date": "11 Nov 2007",
+        "warmth_raw": 34.25,
+        "normalized": 0.53
+    },
+    {
+        "time": 44.97,
+        "date": "11 Nov 2007",
+        "warmth_raw": 34.11,
+        "normalized": 0.51
+    },
+    {
+        "time": 45.0,
+        "date": "12 Nov 2007",
+        "warmth_raw": 33.99,
+        "normalized": 0.5
+    },
+    {
+        "time": 45.03,
+        "date": "12 Nov 2007",
+        "warmth_raw": 33.98,
+        "normalized": 0.49
+    },
+    {
+        "time": 45.07,
+        "date": "12 Nov 2007",
+        "warmth_raw": 34.03,
+        "normalized": 0.5
+    },
+    {
+        "time": 45.1,
+        "date": "12 Nov 2007",
+        "warmth_raw": 34.07,
+        "normalized": 0.51
+    },
+    {
+        "time": 45.13,
+        "date": "12 Nov 2007",
+        "warmth_raw": 34.11,
+        "normalized": 0.51
+    },
+    {
+        "time": 45.17,
+        "date": "12 Nov 2007",
+        "warmth_raw": 34.32,
+        "normalized": 0.54
+    },
+    {
+        "time": 45.2,
+        "date": "13 Nov 2007",
+        "warmth_raw": 34.28,
+        "normalized": 0.54
+    },
+    {
+        "time": 45.23,
+        "date": "13 Nov 2007",
+        "warmth_raw": 34.29,
+        "normalized": 0.54
+    },
+    {
+        "time": 45.27,
+        "date": "13 Nov 2007",
+        "warmth_raw": 34.29,
+        "normalized": 0.54
+    },
+    {
+        "time": 45.3,
+        "date": "13 Nov 2007",
+        "warmth_raw": 34.28,
+        "normalized": 0.54
+    },
+    {
+        "time": 45.33,
+        "date": "13 Nov 2007",
+        "warmth_raw": 34.31,
+        "normalized": 0.54
+    },
+    {
+        "time": 45.37,
+        "date": "13 Nov 2007",
+        "warmth_raw": 34.38,
+        "normalized": 0.55
+    },
+    {
+        "time": 45.4,
+        "date": "14 Nov 2007",
+        "warmth_raw": 34.33,
+        "normalized": 0.54
+    },
+    {
+        "time": 45.43,
+        "date": "14 Nov 2007",
+        "warmth_raw": 34.21,
+        "normalized": 0.53
+    },
+    {
+        "time": 45.47,
+        "date": "14 Nov 2007",
+        "warmth_raw": 34.22,
+        "normalized": 0.53
+    },
+    {
+        "time": 45.5,
+        "date": "14 Nov 2007",
+        "warmth_raw": 34.29,
+        "normalized": 0.54
+    },
+    {
+        "time": 45.53,
+        "date": "14 Nov 2007",
+        "warmth_raw": 34.44,
+        "normalized": 0.56
+    },
+    {
+        "time": 45.57,
+        "date": "15 Nov 2007",
+        "warmth_raw": 34.43,
+        "normalized": 0.56
+    },
+    {
+        "time": 45.6,
+        "date": "15 Nov 2007",
+        "warmth_raw": 34.6,
+        "normalized": 0.58
+    },
+    {
+        "time": 45.63,
+        "date": "15 Nov 2007",
+        "warmth_raw": 34.71,
+        "normalized": 0.59
+    },
+    {
+        "time": 45.67,
+        "date": "15 Nov 2007",
+        "warmth_raw": 34.75,
+        "normalized": 0.6
+    },
+    {
+        "time": 45.7,
+        "date": "15 Nov 2007",
+        "warmth_raw": 34.96,
+        "normalized": 0.63
+    },
+    {
+        "time": 45.73,
+        "date": "15 Nov 2007",
+        "warmth_raw": 34.93,
+        "normalized": 0.62
+    },
+    {
+        "time": 45.77,
+        "date": "16 Nov 2007",
+        "warmth_raw": 34.72,
+        "normalized": 0.6
+    },
+    {
+        "time": 45.8,
+        "date": "16 Nov 2007",
+        "warmth_raw": 34.96,
+        "normalized": 0.63
+    },
+    {
+        "time": 45.83,
+        "date": "16 Nov 2007",
+        "warmth_raw": 34.96,
+        "normalized": 0.63
+    },
+    {
+        "time": 45.87,
+        "date": "16 Nov 2007",
+        "warmth_raw": 34.94,
+        "normalized": 0.62
+    },
+    {
+        "time": 45.9,
+        "date": "16 Nov 2007",
+        "warmth_raw": 34.91,
+        "normalized": 0.62
+    },
+    {
+        "time": 45.93,
+        "date": "16 Nov 2007",
+        "warmth_raw": 34.97,
+        "normalized": 0.63
+    },
+    {
+        "time": 45.97,
+        "date": "17 Nov 2007",
+        "warmth_raw": 35.0,
+        "normalized": 0.63
+    },
+    {
+        "time": 46.0,
+        "date": "17 Nov 2007",
+        "warmth_raw": 35.05,
+        "normalized": 0.64
+    },
+    {
+        "time": 46.03,
+        "date": "17 Nov 2007",
+        "warmth_raw": 35.05,
+        "normalized": 0.64
+    },
+    {
+        "time": 46.07,
+        "date": "17 Nov 2007",
+        "warmth_raw": 35.2,
+        "normalized": 0.66
+    },
+    {
+        "time": 46.1,
+        "date": "17 Nov 2007",
+        "warmth_raw": 35.26,
+        "normalized": 0.67
+    },
+    {
+        "time": 46.13,
+        "date": "17 Nov 2007",
+        "warmth_raw": 35.16,
+        "normalized": 0.65
+    },
+    {
+        "time": 46.17,
+        "date": "18 Nov 2007",
+        "warmth_raw": 35.09,
+        "normalized": 0.65
+    },
+    {
+        "time": 46.2,
+        "date": "18 Nov 2007",
+        "warmth_raw": 35.11,
+        "normalized": 0.65
+    },
+    {
+        "time": 46.23,
+        "date": "18 Nov 2007",
+        "warmth_raw": 35.09,
+        "normalized": 0.65
+    },
+    {
+        "time": 46.27,
+        "date": "18 Nov 2007",
+        "warmth_raw": 35.14,
+        "normalized": 0.65
+    },
+    {
+        "time": 46.3,
+        "date": "18 Nov 2007",
+        "warmth_raw": 35.19,
+        "normalized": 0.66
+    },
+    {
+        "time": 46.33,
+        "date": "18 Nov 2007",
+        "warmth_raw": 35.15,
+        "normalized": 0.65
+    },
+    {
+        "time": 46.37,
+        "date": "19 Nov 2007",
+        "warmth_raw": 35.13,
+        "normalized": 0.65
+    },
+    {
+        "time": 46.4,
+        "date": "19 Nov 2007",
+        "warmth_raw": 35.14,
+        "normalized": 0.65
+    },
+    {
+        "time": 46.43,
+        "date": "19 Nov 2007",
+        "warmth_raw": 35.2,
+        "normalized": 0.66
+    },
+    {
+        "time": 46.47,
+        "date": "19 Nov 2007",
+        "warmth_raw": 35.22,
+        "normalized": 0.66
+    },
+    {
+        "time": 46.5,
+        "date": "19 Nov 2007",
+        "warmth_raw": 35.28,
+        "normalized": 0.67
+    },
+    {
+        "time": 46.53,
+        "date": "19 Nov 2007",
+        "warmth_raw": 35.28,
+        "normalized": 0.67
+    },
+    {
+        "time": 46.57,
+        "date": "20 Nov 2007",
+        "warmth_raw": 35.24,
+        "normalized": 0.67
+    },
+    {
+        "time": 46.6,
+        "date": "20 Nov 2007",
+        "warmth_raw": 35.1,
+        "normalized": 0.65
+    },
+    {
+        "time": 46.63,
+        "date": "20 Nov 2007",
+        "warmth_raw": 34.97,
+        "normalized": 0.63
+    },
+    {
+        "time": 46.67,
+        "date": "20 Nov 2007",
+        "warmth_raw": 34.86,
+        "normalized": 0.61
+    },
+    {
+        "time": 46.7,
+        "date": "20 Nov 2007",
+        "warmth_raw": 34.97,
+        "normalized": 0.63
+    },
+    {
+        "time": 46.73,
+        "date": "21 Nov 2007",
+        "warmth_raw": 34.97,
+        "normalized": 0.63
+    },
+    {
+        "time": 46.77,
+        "date": "21 Nov 2007",
+        "warmth_raw": 35.0,
+        "normalized": 0.63
+    },
+    {
+        "time": 46.8,
+        "date": "21 Nov 2007",
+        "warmth_raw": 34.92,
+        "normalized": 0.62
+    },
+    {
+        "time": 46.83,
+        "date": "21 Nov 2007",
+        "warmth_raw": 34.9,
+        "normalized": 0.62
+    },
+    {
+        "time": 46.87,
+        "date": "21 Nov 2007",
+        "warmth_raw": 34.87,
+        "normalized": 0.62
+    },
+    {
+        "time": 46.9,
+        "date": "21 Nov 2007",
+        "warmth_raw": 34.7,
+        "normalized": 0.59
+    },
+    {
+        "time": 46.93,
+        "date": "22 Nov 2007",
+        "warmth_raw": 34.6,
+        "normalized": 0.58
+    },
+    {
+        "time": 46.97,
+        "date": "22 Nov 2007",
+        "warmth_raw": 34.61,
+        "normalized": 0.58
+    },
+    {
+        "time": 47.0,
+        "date": "22 Nov 2007",
+        "warmth_raw": 34.52,
+        "normalized": 0.57
+    },
+    {
+        "time": 47.03,
+        "date": "22 Nov 2007",
+        "warmth_raw": 34.54,
+        "normalized": 0.57
+    },
+    {
+        "time": 47.07,
+        "date": "22 Nov 2007",
+        "warmth_raw": 34.66,
+        "normalized": 0.59
+    },
+    {
+        "time": 47.1,
+        "date": "22 Nov 2007",
+        "warmth_raw": 34.21,
+        "normalized": 0.53
+    },
+    {
+        "time": 47.13,
+        "date": "23 Nov 2007",
+        "warmth_raw": 34.07,
+        "normalized": 0.51
+    },
+    {
+        "time": 47.17,
+        "date": "23 Nov 2007",
+        "warmth_raw": 34.14,
+        "normalized": 0.52
+    },
+    {
+        "time": 47.2,
+        "date": "23 Nov 2007",
+        "warmth_raw": 33.98,
+        "normalized": 0.49
+    },
+    {
+        "time": 47.23,
+        "date": "23 Nov 2007",
+        "warmth_raw": 34.06,
+        "normalized": 0.51
+    },
+    {
+        "time": 47.27,
+        "date": "23 Nov 2007",
+        "warmth_raw": 33.87,
+        "normalized": 0.48
+    },
+    {
+        "time": 47.3,
+        "date": "23 Nov 2007",
+        "warmth_raw": 33.47,
+        "normalized": 0.43
+    },
+    {
+        "time": 47.33,
+        "date": "24 Nov 2007",
+        "warmth_raw": 33.77,
+        "normalized": 0.47
+    },
+    {
+        "time": 47.37,
+        "date": "24 Nov 2007",
+        "warmth_raw": 33.52,
+        "normalized": 0.43
+    },
+    {
+        "time": 47.4,
+        "date": "24 Nov 2007",
+        "warmth_raw": 33.44,
+        "normalized": 0.42
+    },
+    {
+        "time": 47.43,
+        "date": "24 Nov 2007",
+        "warmth_raw": 33.45,
+        "normalized": 0.42
+    },
+    {
+        "time": 47.47,
+        "date": "24 Nov 2007",
+        "warmth_raw": 33.17,
+        "normalized": 0.38
+    },
+    {
+        "time": 47.5,
+        "date": "24 Nov 2007",
+        "warmth_raw": 33.2,
+        "normalized": 0.39
+    },
+    {
+        "time": 47.53,
+        "date": "25 Nov 2007",
+        "warmth_raw": 33.19,
+        "normalized": 0.39
+    },
+    {
+        "time": 47.57,
+        "date": "25 Nov 2007",
+        "warmth_raw": 33.18,
+        "normalized": 0.39
+    },
+    {
+        "time": 47.6,
+        "date": "25 Nov 2007",
+        "warmth_raw": 33.07,
+        "normalized": 0.37
+    },
+    {
+        "time": 47.63,
+        "date": "25 Nov 2007",
+        "warmth_raw": 32.86,
+        "normalized": 0.34
+    },
+    {
+        "time": 47.67,
+        "date": "25 Nov 2007",
+        "warmth_raw": 32.64,
+        "normalized": 0.31
+    },
+    {
+        "time": 47.7,
+        "date": "26 Nov 2007",
+        "warmth_raw": 32.63,
+        "normalized": 0.31
+    },
+    {
+        "time": 47.73,
+        "date": "26 Nov 2007",
+        "warmth_raw": 32.66,
+        "normalized": 0.32
+    },
+    {
+        "time": 47.77,
+        "date": "26 Nov 2007",
+        "warmth_raw": 32.67,
+        "normalized": 0.32
+    },
+    {
+        "time": 47.8,
+        "date": "26 Nov 2007",
+        "warmth_raw": 32.5,
+        "normalized": 0.29
+    },
+    {
+        "time": 47.83,
+        "date": "26 Nov 2007",
+        "warmth_raw": 32.48,
+        "normalized": 0.29
+    },
+    {
+        "time": 47.87,
+        "date": "26 Nov 2007",
+        "warmth_raw": 32.4,
+        "normalized": 0.28
+    },
+    {
+        "time": 47.9,
+        "date": "27 Nov 2007",
+        "warmth_raw": 32.41,
+        "normalized": 0.28
+    },
+    {
+        "time": 47.93,
+        "date": "27 Nov 2007",
+        "warmth_raw": 32.43,
+        "normalized": 0.28
+    },
+    {
+        "time": 47.97,
+        "date": "27 Nov 2007",
+        "warmth_raw": 32.39,
+        "normalized": 0.28
+    },
+    {
+        "time": 48.0,
+        "date": "27 Nov 2007",
+        "warmth_raw": 32.23,
+        "normalized": 0.26
+    },
+    {
+        "time": 48.03,
+        "date": "27 Nov 2007",
+        "warmth_raw": 32.05,
+        "normalized": 0.23
+    },
+    {
+        "time": 48.07,
+        "date": "27 Nov 2007",
+        "warmth_raw": 31.94,
+        "normalized": 0.22
+    },
+    {
+        "time": 48.1,
+        "date": "28 Nov 2007",
+        "warmth_raw": 31.74,
+        "normalized": 0.19
+    },
+    {
+        "time": 48.13,
+        "date": "28 Nov 2007",
+        "warmth_raw": 31.68,
+        "normalized": 0.18
+    },
+    {
+        "time": 48.17,
+        "date": "28 Nov 2007",
+        "warmth_raw": 31.73,
+        "normalized": 0.19
+    },
+    {
+        "time": 48.2,
+        "date": "28 Nov 2007",
+        "warmth_raw": 31.68,
+        "normalized": 0.18
+    },
+    {
+        "time": 48.23,
+        "date": "28 Nov 2007",
+        "warmth_raw": 31.79,
+        "normalized": 0.2
+    },
+    {
+        "time": 48.27,
+        "date": "28 Nov 2007",
+        "warmth_raw": 31.71,
+        "normalized": 0.19
+    },
+    {
+        "time": 48.3,
+        "date": "29 Nov 2007",
+        "warmth_raw": 31.87,
+        "normalized": 0.21
+    },
+    {
+        "time": 48.33,
+        "date": "29 Nov 2007",
+        "warmth_raw": 31.88,
+        "normalized": 0.21
+    },
+    {
+        "time": 48.37,
+        "date": "29 Nov 2007",
+        "warmth_raw": 31.88,
+        "normalized": 0.21
+    },
+    {
+        "time": 48.4,
+        "date": "29 Nov 2007",
+        "warmth_raw": 31.88,
+        "normalized": 0.21
+    },
+    {
+        "time": 48.43,
+        "date": "29 Nov 2007",
+        "warmth_raw": 31.97,
+        "normalized": 0.22
+    },
+    {
+        "time": 48.47,
+        "date": "29 Nov 2007",
+        "warmth_raw": 32.1,
+        "normalized": 0.24
+    },
+    {
+        "time": 48.5,
+        "date": "30 Nov 2007",
+        "warmth_raw": 32.07,
+        "normalized": 0.24
+    },
+    {
+        "time": 48.53,
+        "date": "30 Nov 2007",
+        "warmth_raw": 32.01,
+        "normalized": 0.23
+    },
+    {
+        "time": 48.57,
+        "date": "30 Nov 2007",
+        "warmth_raw": 32.06,
+        "normalized": 0.23
+    },
+    {
+        "time": 48.6,
+        "date": "30 Nov 2007",
+        "warmth_raw": 32.04,
+        "normalized": 0.23
+    },
+    {
+        "time": 48.63,
+        "date": "30 Nov 2007",
+        "warmth_raw": 32.1,
+        "normalized": 0.24
+    },
+    {
+        "time": 48.67,
+        "date": "01 Dec 2007",
+        "warmth_raw": 32.12,
+        "normalized": 0.24
+    },
+    {
+        "time": 48.7,
+        "date": "01 Dec 2007",
+        "warmth_raw": 32.17,
+        "normalized": 0.25
+    },
+    {
+        "time": 48.73,
+        "date": "01 Dec 2007",
+        "warmth_raw": 31.89,
+        "normalized": 0.21
+    },
+    {
+        "time": 48.77,
+        "date": "01 Dec 2007",
+        "warmth_raw": 31.9,
+        "normalized": 0.21
+    },
+    {
+        "time": 48.8,
+        "date": "01 Dec 2007",
+        "warmth_raw": 31.83,
+        "normalized": 0.2
+    },
+    {
+        "time": 48.83,
+        "date": "01 Dec 2007",
+        "warmth_raw": 31.96,
+        "normalized": 0.22
+    },
+    {
+        "time": 48.87,
+        "date": "02 Dec 2007",
+        "warmth_raw": 31.93,
+        "normalized": 0.22
+    },
+    {
+        "time": 48.9,
+        "date": "02 Dec 2007",
+        "warmth_raw": 31.9,
+        "normalized": 0.21
+    },
+    {
+        "time": 48.93,
+        "date": "02 Dec 2007",
+        "warmth_raw": 31.7,
+        "normalized": 0.18
+    },
+    {
+        "time": 48.97,
+        "date": "02 Dec 2007",
+        "warmth_raw": 31.63,
+        "normalized": 0.18
+    },
+    {
+        "time": 49.0,
+        "date": "02 Dec 2007",
+        "warmth_raw": 31.83,
+        "normalized": 0.2
+    },
+    {
+        "time": 49.03,
+        "date": "02 Dec 2007",
+        "warmth_raw": 31.8,
+        "normalized": 0.2
+    },
+    {
+        "time": 49.07,
+        "date": "03 Dec 2007",
+        "warmth_raw": 31.8,
+        "normalized": 0.2
+    },
+    {
+        "time": 49.1,
+        "date": "03 Dec 2007",
+        "warmth_raw": 31.73,
+        "normalized": 0.19
+    },
+    {
+        "time": 49.13,
+        "date": "03 Dec 2007",
+        "warmth_raw": 31.8,
+        "normalized": 0.2
+    },
+    {
+        "time": 49.17,
+        "date": "03 Dec 2007",
+        "warmth_raw": 31.66,
+        "normalized": 0.18
+    },
+    {
+        "time": 49.2,
+        "date": "03 Dec 2007",
+        "warmth_raw": 31.71,
+        "normalized": 0.19
+    },
+    {
+        "time": 49.23,
+        "date": "03 Dec 2007",
+        "warmth_raw": 31.62,
+        "normalized": 0.17
+    },
+    {
+        "time": 49.27,
+        "date": "04 Dec 2007",
+        "warmth_raw": 31.61,
+        "normalized": 0.17
+    },
+    {
+        "time": 49.3,
+        "date": "04 Dec 2007",
+        "warmth_raw": 31.53,
+        "normalized": 0.16
+    },
+    {
+        "time": 49.33,
+        "date": "04 Dec 2007",
+        "warmth_raw": 31.48,
+        "normalized": 0.15
+    },
+    {
+        "time": 49.37,
+        "date": "04 Dec 2007",
+        "warmth_raw": 31.37,
+        "normalized": 0.14
+    },
+    {
+        "time": 49.4,
+        "date": "04 Dec 2007",
+        "warmth_raw": 31.38,
+        "normalized": 0.14
+    },
+    {
+        "time": 49.43,
+        "date": "04 Dec 2007",
+        "warmth_raw": 31.17,
+        "normalized": 0.11
+    },
+    {
+        "time": 49.47,
+        "date": "05 Dec 2007",
+        "warmth_raw": 31.3,
+        "normalized": 0.13
+    },
+    {
+        "time": 49.5,
+        "date": "05 Dec 2007",
+        "warmth_raw": 31.24,
+        "normalized": 0.12
+    },
+    {
+        "time": 49.53,
+        "date": "05 Dec 2007",
+        "warmth_raw": 31.32,
+        "normalized": 0.13
+    },
+    {
+        "time": 49.57,
+        "date": "05 Dec 2007",
+        "warmth_raw": 31.38,
+        "normalized": 0.14
+    },
+    {
+        "time": 49.6,
+        "date": "05 Dec 2007",
+        "warmth_raw": 31.38,
+        "normalized": 0.14
+    },
+    {
+        "time": 49.63,
+        "date": "05 Dec 2007",
+        "warmth_raw": 31.43,
+        "normalized": 0.15
+    },
+    {
+        "time": 49.67,
+        "date": "06 Dec 2007",
+        "warmth_raw": 31.52,
+        "normalized": 0.16
+    },
+    {
+        "time": 49.7,
+        "date": "06 Dec 2007",
+        "warmth_raw": 31.46,
+        "normalized": 0.15
+    },
+    {
+        "time": 49.73,
+        "date": "06 Dec 2007",
+        "warmth_raw": 31.53,
+        "normalized": 0.16
+    },
+    {
+        "time": 49.77,
+        "date": "06 Dec 2007",
+        "warmth_raw": 31.47,
+        "normalized": 0.15
+    },
+    {
+        "time": 49.8,
+        "date": "06 Dec 2007",
+        "warmth_raw": 31.72,
+        "normalized": 0.19
+    },
+    {
+        "time": 49.83,
+        "date": "06 Dec 2007",
+        "warmth_raw": 31.69,
+        "normalized": 0.18
+    },
+    {
+        "time": 49.87,
+        "date": "07 Dec 2007",
+        "warmth_raw": 31.69,
+        "normalized": 0.18
+    },
+    {
+        "time": 49.9,
+        "date": "07 Dec 2007",
+        "warmth_raw": 31.6,
+        "normalized": 0.17
+    },
+    {
+        "time": 49.93,
+        "date": "07 Dec 2007",
+        "warmth_raw": 31.52,
+        "normalized": 0.16
+    },
+    {
+        "time": 49.97,
+        "date": "07 Dec 2007",
+        "warmth_raw": 31.6,
+        "normalized": 0.17
+    },
+    {
+        "time": 50.0,
+        "date": "07 Dec 2007",
+        "warmth_raw": 31.54,
+        "normalized": 0.16
+    },
+    {
+        "time": 50.03,
+        "date": "08 Dec 2007",
+        "warmth_raw": 31.58,
+        "normalized": 0.17
+    },
+    {
+        "time": 50.07,
+        "date": "08 Dec 2007",
+        "warmth_raw": 31.46,
+        "normalized": 0.15
+    },
+    {
+        "time": 50.1,
+        "date": "08 Dec 2007",
+        "warmth_raw": 31.51,
+        "normalized": 0.16
+    },
+    {
+        "time": 50.13,
+        "date": "08 Dec 2007",
+        "warmth_raw": 31.66,
+        "normalized": 0.18
+    },
+    {
+        "time": 50.17,
+        "date": "08 Dec 2007",
+        "warmth_raw": 31.57,
+        "normalized": 0.17
+    },
+    {
+        "time": 50.2,
+        "date": "08 Dec 2007",
+        "warmth_raw": 31.61,
+        "normalized": 0.17
+    },
+    {
+        "time": 50.23,
+        "date": "09 Dec 2007",
+        "warmth_raw": 31.66,
+        "normalized": 0.18
+    },
+    {
+        "time": 50.27,
+        "date": "09 Dec 2007",
+        "warmth_raw": 31.66,
+        "normalized": 0.18
+    },
+    {
+        "time": 50.3,
+        "date": "09 Dec 2007",
+        "warmth_raw": 31.65,
+        "normalized": 0.18
+    },
+    {
+        "time": 50.33,
+        "date": "09 Dec 2007",
+        "warmth_raw": 31.83,
+        "normalized": 0.2
+    },
+    {
+        "time": 50.37,
+        "date": "09 Dec 2007",
+        "warmth_raw": 31.72,
+        "normalized": 0.19
+    },
+    {
+        "time": 50.4,
+        "date": "09 Dec 2007",
+        "warmth_raw": 31.92,
+        "normalized": 0.21
+    },
+    {
+        "time": 50.43,
+        "date": "10 Dec 2007",
+        "warmth_raw": 32.07,
+        "normalized": 0.24
+    },
+    {
+        "time": 50.47,
+        "date": "10 Dec 2007",
+        "warmth_raw": 32.05,
+        "normalized": 0.23
+    },
+    {
+        "time": 50.5,
+        "date": "10 Dec 2007",
+        "warmth_raw": 32.11,
+        "normalized": 0.24
+    },
+    {
+        "time": 50.53,
+        "date": "10 Dec 2007",
+        "warmth_raw": 32.1,
+        "normalized": 0.24
+    },
+    {
+        "time": 50.57,
+        "date": "10 Dec 2007",
+        "warmth_raw": 32.01,
+        "normalized": 0.23
+    },
+    {
+        "time": 50.6,
+        "date": "10 Dec 2007",
+        "warmth_raw": 32.06,
+        "normalized": 0.23
+    },
+    {
+        "time": 50.63,
+        "date": "11 Dec 2007",
+        "warmth_raw": 32.08,
+        "normalized": 0.24
+    },
+    {
+        "time": 50.67,
+        "date": "11 Dec 2007",
+        "warmth_raw": 32.08,
+        "normalized": 0.24
+    },
+    {
+        "time": 50.7,
+        "date": "11 Dec 2007",
+        "warmth_raw": 32.18,
+        "normalized": 0.25
+    },
+    {
+        "time": 50.73,
+        "date": "11 Dec 2007",
+        "warmth_raw": 32.24,
+        "normalized": 0.26
+    },
+    {
+        "time": 50.77,
+        "date": "11 Dec 2007",
+        "warmth_raw": 32.09,
+        "normalized": 0.24
+    },
+    {
+        "time": 50.8,
+        "date": "12 Dec 2007",
+        "warmth_raw": 32.04,
+        "normalized": 0.23
+    },
+    {
+        "time": 50.83,
+        "date": "12 Dec 2007",
+        "warmth_raw": 32.02,
+        "normalized": 0.23
+    },
+    {
+        "time": 50.87,
+        "date": "12 Dec 2007",
+        "warmth_raw": 32.08,
+        "normalized": 0.24
+    },
+    {
+        "time": 50.9,
+        "date": "12 Dec 2007",
+        "warmth_raw": 32.15,
+        "normalized": 0.25
+    },
+    {
+        "time": 50.93,
+        "date": "12 Dec 2007",
+        "warmth_raw": 32.25,
+        "normalized": 0.26
+    },
+    {
+        "time": 50.97,
+        "date": "12 Dec 2007",
+        "warmth_raw": 32.28,
+        "normalized": 0.26
+    },
+    {
+        "time": 51.0,
+        "date": "13 Dec 2007",
+        "warmth_raw": 32.05,
+        "normalized": 0.23
+    },
+    {
+        "time": 51.03,
+        "date": "13 Dec 2007",
+        "warmth_raw": 31.98,
+        "normalized": 0.22
+    },
+    {
+        "time": 51.07,
+        "date": "13 Dec 2007",
+        "warmth_raw": 31.99,
+        "normalized": 0.22
+    },
+    {
+        "time": 51.1,
+        "date": "13 Dec 2007",
+        "warmth_raw": 31.83,
+        "normalized": 0.2
+    },
+    {
+        "time": 51.13,
+        "date": "13 Dec 2007",
+        "warmth_raw": 31.95,
+        "normalized": 0.22
+    },
+    {
+        "time": 51.17,
+        "date": "13 Dec 2007",
+        "warmth_raw": 31.87,
+        "normalized": 0.21
+    },
+    {
+        "time": 51.2,
+        "date": "14 Dec 2007",
+        "warmth_raw": 31.96,
+        "normalized": 0.22
+    },
+    {
+        "time": 51.23,
+        "date": "14 Dec 2007",
+        "warmth_raw": 31.79,
+        "normalized": 0.2
+    },
+    {
+        "time": 51.27,
+        "date": "14 Dec 2007",
+        "warmth_raw": 31.64,
+        "normalized": 0.18
+    },
+    {
+        "time": 51.3,
+        "date": "14 Dec 2007",
+        "warmth_raw": 31.67,
+        "normalized": 0.18
+    },
+    {
+        "time": 51.33,
+        "date": "14 Dec 2007",
+        "warmth_raw": 31.7,
+        "normalized": 0.18
+    },
+    {
+        "time": 51.37,
+        "date": "14 Dec 2007",
+        "warmth_raw": 31.86,
+        "normalized": 0.21
+    },
+    {
+        "time": 51.4,
+        "date": "15 Dec 2007",
+        "warmth_raw": 31.86,
+        "normalized": 0.21
+    },
+    {
+        "time": 51.43,
+        "date": "15 Dec 2007",
+        "warmth_raw": 31.73,
+        "normalized": 0.19
+    },
+    {
+        "time": 51.47,
+        "date": "15 Dec 2007",
+        "warmth_raw": 31.74,
+        "normalized": 0.19
+    },
+    {
+        "time": 51.5,
+        "date": "15 Dec 2007",
+        "warmth_raw": 31.9,
+        "normalized": 0.21
+    },
+    {
+        "time": 51.53,
+        "date": "15 Dec 2007",
+        "warmth_raw": 31.92,
+        "normalized": 0.21
+    },
+    {
+        "time": 51.57,
+        "date": "15 Dec 2007",
+        "warmth_raw": 31.99,
+        "normalized": 0.22
+    },
+    {
+        "time": 51.6,
+        "date": "16 Dec 2007",
+        "warmth_raw": 31.74,
+        "normalized": 0.19
+    },
+    {
+        "time": 51.63,
+        "date": "16 Dec 2007",
+        "warmth_raw": 31.7,
+        "normalized": 0.18
+    },
+    {
+        "time": 51.67,
+        "date": "16 Dec 2007",
+        "warmth_raw": 31.64,
+        "normalized": 0.18
+    },
+    {
+        "time": 51.7,
+        "date": "16 Dec 2007",
+        "warmth_raw": 31.7,
+        "normalized": 0.18
+    },
+    {
+        "time": 51.73,
+        "date": "16 Dec 2007",
+        "warmth_raw": 31.79,
+        "normalized": 0.2
+    },
+    {
+        "time": 51.77,
+        "date": "17 Dec 2007",
+        "warmth_raw": 31.73,
+        "normalized": 0.19
+    },
+    {
+        "time": 51.8,
+        "date": "17 Dec 2007",
+        "warmth_raw": 31.66,
+        "normalized": 0.18
+    },
+    {
+        "time": 51.83,
+        "date": "17 Dec 2007",
+        "warmth_raw": 31.65,
+        "normalized": 0.18
+    },
+    {
+        "time": 51.87,
+        "date": "17 Dec 2007",
+        "warmth_raw": 31.46,
+        "normalized": 0.15
+    },
+    {
+        "time": 51.9,
+        "date": "17 Dec 2007",
+        "warmth_raw": 31.63,
+        "normalized": 0.18
+    },
+    {
+        "time": 51.93,
+        "date": "17 Dec 2007",
+        "warmth_raw": 31.67,
+        "normalized": 0.18
+    },
+    {
+        "time": 51.97,
+        "date": "18 Dec 2007",
+        "warmth_raw": 31.69,
+        "normalized": 0.18
+    },
+    {
+        "time": 52.0,
+        "date": "18 Dec 2007",
+        "warmth_raw": 32.67,
+        "normalized": 0.32
+    },
+    {
+        "time": 52.03,
+        "date": "18 Dec 2007",
+        "warmth_raw": 32.83,
+        "normalized": 0.34
+    },
+    {
+        "time": 52.07,
+        "date": "18 Dec 2007",
+        "warmth_raw": 32.85,
+        "normalized": 0.34
+    },
+    {
+        "time": 52.1,
+        "date": "18 Dec 2007",
+        "warmth_raw": 32.96,
+        "normalized": 0.36
+    },
+    {
+        "time": 52.13,
+        "date": "18 Dec 2007",
+        "warmth_raw": 32.93,
+        "normalized": 0.35
+    },
+    {
+        "time": 52.17,
+        "date": "19 Dec 2007",
+        "warmth_raw": 32.78,
+        "normalized": 0.33
+    },
+    {
+        "time": 52.2,
+        "date": "19 Dec 2007",
+        "warmth_raw": 32.77,
+        "normalized": 0.33
+    },
+    {
+        "time": 52.23,
+        "date": "19 Dec 2007",
+        "warmth_raw": 32.71,
+        "normalized": 0.32
+    },
+    {
+        "time": 52.27,
+        "date": "19 Dec 2007",
+        "warmth_raw": 32.75,
+        "normalized": 0.33
+    },
+    {
+        "time": 52.3,
+        "date": "19 Dec 2007",
+        "warmth_raw": 32.67,
+        "normalized": 0.32
+    },
+    {
+        "time": 52.33,
+        "date": "19 Dec 2007",
+        "warmth_raw": 32.68,
+        "normalized": 0.32
+    },
+    {
+        "time": 52.37,
+        "date": "20 Dec 2007",
+        "warmth_raw": 32.51,
+        "normalized": 0.29
+    },
+    {
+        "time": 52.4,
+        "date": "20 Dec 2007",
+        "warmth_raw": 32.69,
+        "normalized": 0.32
+    },
+    {
+        "time": 52.43,
+        "date": "20 Dec 2007",
+        "warmth_raw": 32.63,
+        "normalized": 0.31
+    },
+    {
+        "time": 52.47,
+        "date": "20 Dec 2007",
+        "warmth_raw": 32.64,
+        "normalized": 0.31
+    },
+    {
+        "time": 52.5,
+        "date": "20 Dec 2007",
+        "warmth_raw": 32.72,
+        "normalized": 0.32
+    },
+    {
+        "time": 52.53,
+        "date": "20 Dec 2007",
+        "warmth_raw": 32.48,
+        "normalized": 0.29
+    },
+    {
+        "time": 52.57,
+        "date": "21 Dec 2007",
+        "warmth_raw": 32.47,
+        "normalized": 0.29
+    },
+    {
+        "time": 52.6,
+        "date": "21 Dec 2007",
+        "warmth_raw": 32.49,
+        "normalized": 0.29
+    },
+    {
+        "time": 52.63,
+        "date": "21 Dec 2007",
+        "warmth_raw": 32.45,
+        "normalized": 0.29
+    },
+    {
+        "time": 52.67,
+        "date": "21 Dec 2007",
+        "warmth_raw": 32.44,
+        "normalized": 0.29
+    },
+    {
+        "time": 52.7,
+        "date": "21 Dec 2007",
+        "warmth_raw": 32.17,
+        "normalized": 0.25
+    },
+    {
+        "time": 52.73,
+        "date": "21 Dec 2007",
+        "warmth_raw": 32.0,
+        "normalized": 0.23
+    },
+    {
+        "time": 52.77,
+        "date": "22 Dec 2007",
+        "warmth_raw": 32.1,
+        "normalized": 0.24
+    },
+    {
+        "time": 52.8,
+        "date": "22 Dec 2007",
+        "warmth_raw": 32.04,
+        "normalized": 0.23
+    },
+    {
+        "time": 52.83,
+        "date": "22 Dec 2007",
+        "warmth_raw": 32.13,
+        "normalized": 0.24
+    },
+    {
+        "time": 52.87,
+        "date": "22 Dec 2007",
+        "warmth_raw": 32.25,
+        "normalized": 0.26
+    },
+    {
+        "time": 52.9,
+        "date": "22 Dec 2007",
+        "warmth_raw": 32.17,
+        "normalized": 0.25
+    },
+    {
+        "time": 52.93,
+        "date": "22 Dec 2007",
+        "warmth_raw": 32.19,
+        "normalized": 0.25
+    },
+    {
+        "time": 52.97,
+        "date": "23 Dec 2007",
+        "warmth_raw": 32.33,
+        "normalized": 0.27
+    },
+    {
+        "time": 53.0,
+        "date": "23 Dec 2007",
+        "warmth_raw": 32.33,
+        "normalized": 0.27
+    },
+    {
+        "time": 53.03,
+        "date": "23 Dec 2007",
+        "warmth_raw": 32.35,
+        "normalized": 0.27
+    },
+    {
+        "time": 53.07,
+        "date": "23 Dec 2007",
+        "warmth_raw": 32.31,
+        "normalized": 0.27
+    },
+    {
+        "time": 53.1,
+        "date": "23 Dec 2007",
+        "warmth_raw": 32.39,
+        "normalized": 0.28
+    },
+    {
+        "time": 53.13,
+        "date": "24 Dec 2007",
+        "warmth_raw": 32.36,
+        "normalized": 0.27
+    },
+    {
+        "time": 53.17,
+        "date": "24 Dec 2007",
+        "warmth_raw": 32.44,
+        "normalized": 0.29
+    },
+    {
+        "time": 53.2,
+        "date": "24 Dec 2007",
+        "warmth_raw": 32.46,
+        "normalized": 0.29
+    },
+    {
+        "time": 53.23,
+        "date": "24 Dec 2007",
+        "warmth_raw": 32.4,
+        "normalized": 0.28
+    },
+    {
+        "time": 53.27,
+        "date": "24 Dec 2007",
+        "warmth_raw": 32.42,
+        "normalized": 0.28
+    },
+    {
+        "time": 53.3,
+        "date": "24 Dec 2007",
+        "warmth_raw": 32.39,
+        "normalized": 0.28
+    },
+    {
+        "time": 53.33,
+        "date": "25 Dec 2007",
+        "warmth_raw": 32.54,
+        "normalized": 0.3
+    },
+    {
+        "time": 53.37,
+        "date": "25 Dec 2007",
+        "warmth_raw": 32.54,
+        "normalized": 0.3
+    },
+    {
+        "time": 53.4,
+        "date": "25 Dec 2007",
+        "warmth_raw": 32.5,
+        "normalized": 0.29
+    },
+    {
+        "time": 53.43,
+        "date": "25 Dec 2007",
+        "warmth_raw": 32.39,
+        "normalized": 0.28
+    },
+    {
+        "time": 53.47,
+        "date": "25 Dec 2007",
+        "warmth_raw": 32.52,
+        "normalized": 0.3
+    },
+    {
+        "time": 53.5,
+        "date": "25 Dec 2007",
+        "warmth_raw": 32.46,
+        "normalized": 0.29
+    },
+    {
+        "time": 53.53,
+        "date": "26 Dec 2007",
+        "warmth_raw": 32.34,
+        "normalized": 0.27
+    },
+    {
+        "time": 53.57,
+        "date": "26 Dec 2007",
+        "warmth_raw": 32.34,
+        "normalized": 0.27
+    },
+    {
+        "time": 53.6,
+        "date": "26 Dec 2007",
+        "warmth_raw": 32.43,
+        "normalized": 0.28
+    },
+    {
+        "time": 53.63,
+        "date": "26 Dec 2007",
+        "warmth_raw": 32.41,
+        "normalized": 0.28
+    },
+    {
+        "time": 53.67,
+        "date": "26 Dec 2007",
+        "warmth_raw": 32.31,
+        "normalized": 0.27
+    },
+    {
+        "time": 53.7,
+        "date": "26 Dec 2007",
+        "warmth_raw": 32.29,
+        "normalized": 0.26
+    },
+    {
+        "time": 53.73,
+        "date": "27 Dec 2007",
+        "warmth_raw": 32.2,
+        "normalized": 0.25
+    },
+    {
+        "time": 53.77,
+        "date": "27 Dec 2007",
+        "warmth_raw": 32.31,
+        "normalized": 0.27
+    },
+    {
+        "time": 53.8,
+        "date": "27 Dec 2007",
+        "warmth_raw": 32.24,
+        "normalized": 0.26
+    },
+    {
+        "time": 53.83,
+        "date": "27 Dec 2007",
+        "warmth_raw": 32.17,
+        "normalized": 0.25
+    },
+    {
+        "time": 53.87,
+        "date": "27 Dec 2007",
+        "warmth_raw": 32.16,
+        "normalized": 0.25
+    },
+    {
+        "time": 53.9,
+        "date": "27 Dec 2007",
+        "warmth_raw": 32.25,
+        "normalized": 0.26
+    },
+    {
+        "time": 53.93,
+        "date": "28 Dec 2007",
+        "warmth_raw": 32.06,
+        "normalized": 0.23
+    },
+    {
+        "time": 53.97,
+        "date": "28 Dec 2007",
+        "warmth_raw": 32.14,
+        "normalized": 0.24
+    },
+    {
+        "time": 54.0,
+        "date": "28 Dec 2007",
+        "warmth_raw": 31.95,
+        "normalized": 0.22
+    },
+    {
+        "time": 54.03,
+        "date": "28 Dec 2007",
+        "warmth_raw": 31.92,
+        "normalized": 0.21
+    },
+    {
+        "time": 54.07,
+        "date": "28 Dec 2007",
+        "warmth_raw": 32.02,
+        "normalized": 0.23
+    },
+    {
+        "time": 54.1,
+        "date": "29 Dec 2007",
+        "warmth_raw": 31.97,
+        "normalized": 0.22
+    },
+    {
+        "time": 54.13,
+        "date": "29 Dec 2007",
+        "warmth_raw": 32.1,
+        "normalized": 0.24
+    },
+    {
+        "time": 54.17,
+        "date": "29 Dec 2007",
+        "warmth_raw": 32.02,
+        "normalized": 0.23
+    },
+    {
+        "time": 54.2,
+        "date": "29 Dec 2007",
+        "warmth_raw": 32.07,
+        "normalized": 0.24
+    },
+    {
+        "time": 54.23,
+        "date": "29 Dec 2007",
+        "warmth_raw": 32.08,
+        "normalized": 0.24
+    },
+    {
+        "time": 54.27,
+        "date": "29 Dec 2007",
+        "warmth_raw": 32.18,
+        "normalized": 0.25
+    },
+    {
+        "time": 54.3,
+        "date": "30 Dec 2007",
+        "warmth_raw": 32.18,
+        "normalized": 0.25
+    },
+    {
+        "time": 54.33,
+        "date": "30 Dec 2007",
+        "warmth_raw": 32.39,
+        "normalized": 0.28
+    },
+    {
+        "time": 54.37,
+        "date": "30 Dec 2007",
+        "warmth_raw": 32.36,
+        "normalized": 0.27
+    },
+    {
+        "time": 54.4,
+        "date": "30 Dec 2007",
+        "warmth_raw": 32.52,
+        "normalized": 0.3
+    },
+    {
+        "time": 54.43,
+        "date": "30 Dec 2007",
+        "warmth_raw": 32.62,
+        "normalized": 0.31
+    },
+    {
+        "time": 54.47,
+        "date": "30 Dec 2007",
+        "warmth_raw": 32.69,
+        "normalized": 0.32
+    },
+    {
+        "time": 54.5,
+        "date": "31 Dec 2007",
+        "warmth_raw": 32.75,
+        "normalized": 0.33
+    },
+    {
+        "time": 54.53,
+        "date": "31 Dec 2007",
+        "warmth_raw": 32.82,
+        "normalized": 0.34
+    },
+    {
+        "time": 54.57,
+        "date": "31 Dec 2007",
+        "warmth_raw": 32.72,
+        "normalized": 0.32
+    },
+    {
+        "time": 54.6,
+        "date": "31 Dec 2007",
+        "warmth_raw": 33.03,
+        "normalized": 0.37
+    },
+    {
+        "time": 54.63,
+        "date": "31 Dec 2007",
+        "warmth_raw": 32.99,
+        "normalized": 0.36
+    },
+    {
+        "time": 54.67,
+        "date": "31 Dec 2007",
+        "warmth_raw": 33.0,
+        "normalized": 0.36
+    },
+    {
+        "time": 54.7,
+        "date": "01 Jan 2008",
+        "warmth_raw": 33.09,
+        "normalized": 0.37
+    },
+    {
+        "time": 54.73,
+        "date": "01 Jan 2008",
+        "warmth_raw": 32.94,
+        "normalized": 0.35
+    },
+    {
+        "time": 54.77,
+        "date": "01 Jan 2008",
+        "warmth_raw": 33.21,
+        "normalized": 0.39
+    },
+    {
+        "time": 54.8,
+        "date": "01 Jan 2008",
+        "warmth_raw": 33.37,
+        "normalized": 0.41
+    },
+    {
+        "time": 54.83,
+        "date": "01 Jan 2008",
+        "warmth_raw": 33.42,
+        "normalized": 0.42
+    },
+    {
+        "time": 54.87,
+        "date": "01 Jan 2008",
+        "warmth_raw": 33.79,
+        "normalized": 0.47
+    },
+    {
+        "time": 54.9,
+        "date": "02 Jan 2008",
+        "warmth_raw": 33.87,
+        "normalized": 0.48
+    },
+    {
+        "time": 54.93,
+        "date": "02 Jan 2008",
+        "warmth_raw": 33.93,
+        "normalized": 0.49
+    },
+    {
+        "time": 54.97,
+        "date": "02 Jan 2008",
+        "warmth_raw": 34.05,
+        "normalized": 0.5
+    },
+    {
+        "time": 55.0,
+        "date": "02 Jan 2008",
+        "warmth_raw": 33.97,
+        "normalized": 0.49
+    },
+    {
+        "time": 55.03,
+        "date": "02 Jan 2008",
+        "warmth_raw": 33.89,
+        "normalized": 0.48
+    },
+    {
+        "time": 55.07,
+        "date": "03 Jan 2008",
+        "warmth_raw": 33.98,
+        "normalized": 0.49
+    },
+    {
+        "time": 55.1,
+        "date": "03 Jan 2008",
+        "warmth_raw": 34.11,
+        "normalized": 0.51
+    },
+    {
+        "time": 55.13,
+        "date": "03 Jan 2008",
+        "warmth_raw": 34.43,
+        "normalized": 0.56
+    },
+    {
+        "time": 55.17,
+        "date": "03 Jan 2008",
+        "warmth_raw": 34.54,
+        "normalized": 0.57
+    },
+    {
+        "time": 55.2,
+        "date": "03 Jan 2008",
+        "warmth_raw": 34.62,
+        "normalized": 0.58
+    },
+    {
+        "time": 55.23,
+        "date": "03 Jan 2008",
+        "warmth_raw": 34.63,
+        "normalized": 0.58
+    },
+    {
+        "time": 55.27,
+        "date": "04 Jan 2008",
+        "warmth_raw": 34.66,
+        "normalized": 0.59
+    },
+    {
+        "time": 55.3,
+        "date": "04 Jan 2008",
+        "warmth_raw": 34.79,
+        "normalized": 0.6
+    },
+    {
+        "time": 55.33,
+        "date": "04 Jan 2008",
+        "warmth_raw": 34.67,
+        "normalized": 0.59
+    },
+    {
+        "time": 55.37,
+        "date": "04 Jan 2008",
+        "warmth_raw": 34.76,
+        "normalized": 0.6
+    },
+    {
+        "time": 55.4,
+        "date": "04 Jan 2008",
+        "warmth_raw": 35.01,
+        "normalized": 0.63
+    },
+    {
+        "time": 55.43,
+        "date": "04 Jan 2008",
+        "warmth_raw": 35.0,
+        "normalized": 0.63
+    },
+    {
+        "time": 55.47,
+        "date": "05 Jan 2008",
+        "warmth_raw": 35.15,
+        "normalized": 0.65
+    },
+    {
+        "time": 55.5,
+        "date": "05 Jan 2008",
+        "warmth_raw": 35.36,
+        "normalized": 0.68
+    },
+    {
+        "time": 55.53,
+        "date": "05 Jan 2008",
+        "warmth_raw": 35.34,
+        "normalized": 0.68
+    },
+    {
+        "time": 55.57,
+        "date": "05 Jan 2008",
+        "warmth_raw": 35.4,
+        "normalized": 0.69
+    },
+    {
+        "time": 55.6,
+        "date": "05 Jan 2008",
+        "warmth_raw": 35.37,
+        "normalized": 0.68
+    },
+    {
+        "time": 55.63,
+        "date": "05 Jan 2008",
+        "warmth_raw": 35.36,
+        "normalized": 0.68
+    },
+    {
+        "time": 55.67,
+        "date": "06 Jan 2008",
+        "warmth_raw": 35.24,
+        "normalized": 0.67
+    },
+    {
+        "time": 55.7,
+        "date": "06 Jan 2008",
+        "warmth_raw": 35.36,
+        "normalized": 0.68
+    },
+    {
+        "time": 55.73,
+        "date": "06 Jan 2008",
+        "warmth_raw": 35.32,
+        "normalized": 0.68
+    },
+    {
+        "time": 55.77,
+        "date": "06 Jan 2008",
+        "warmth_raw": 35.56,
+        "normalized": 0.71
+    },
+    {
+        "time": 55.8,
+        "date": "06 Jan 2008",
+        "warmth_raw": 35.61,
+        "normalized": 0.72
+    },
+    {
+        "time": 55.83,
+        "date": "06 Jan 2008",
+        "warmth_raw": 35.38,
+        "normalized": 0.68
+    },
+    {
+        "time": 55.87,
+        "date": "07 Jan 2008",
+        "warmth_raw": 35.43,
+        "normalized": 0.69
+    },
+    {
+        "time": 55.9,
+        "date": "07 Jan 2008",
+        "warmth_raw": 35.39,
+        "normalized": 0.69
+    },
+    {
+        "time": 55.93,
+        "date": "07 Jan 2008",
+        "warmth_raw": 35.37,
+        "normalized": 0.68
+    },
+    {
+        "time": 55.97,
+        "date": "07 Jan 2008",
+        "warmth_raw": 35.4,
+        "normalized": 0.69
+    },
+    {
+        "time": 56.0,
+        "date": "07 Jan 2008",
+        "warmth_raw": 36.74,
+        "normalized": 0.87
+    },
+    {
+        "time": 56.03,
+        "date": "07 Jan 2008",
+        "warmth_raw": 37.01,
+        "normalized": 0.91
+    },
+    {
+        "time": 56.07,
+        "date": "08 Jan 2008",
+        "warmth_raw": 37.05,
+        "normalized": 0.91
+    },
+    {
+        "time": 56.1,
+        "date": "08 Jan 2008",
+        "warmth_raw": 37.09,
+        "normalized": 0.92
+    },
+    {
+        "time": 56.13,
+        "date": "08 Jan 2008",
+        "warmth_raw": 37.1,
+        "normalized": 0.92
+    },
+    {
+        "time": 56.17,
+        "date": "08 Jan 2008",
+        "warmth_raw": 37.1,
+        "normalized": 0.92
+    },
+    {
+        "time": 56.2,
+        "date": "08 Jan 2008",
+        "warmth_raw": 37.13,
+        "normalized": 0.92
+    },
+    {
+        "time": 56.23,
+        "date": "09 Jan 2008",
+        "warmth_raw": 37.06,
+        "normalized": 0.91
+    },
+    {
+        "time": 56.27,
+        "date": "09 Jan 2008",
+        "warmth_raw": 37.0,
+        "normalized": 0.9
+    },
+    {
+        "time": 56.3,
+        "date": "09 Jan 2008",
+        "warmth_raw": 37.08,
+        "normalized": 0.92
+    },
+    {
+        "time": 56.33,
+        "date": "09 Jan 2008",
+        "warmth_raw": 36.86,
+        "normalized": 0.89
+    },
+    {
+        "time": 56.37,
+        "date": "09 Jan 2008",
+        "warmth_raw": 36.91,
+        "normalized": 0.89
+    },
+    {
+        "time": 56.4,
+        "date": "09 Jan 2008",
+        "warmth_raw": 36.93,
+        "normalized": 0.9
+    },
+    {
+        "time": 56.43,
+        "date": "10 Jan 2008",
+        "warmth_raw": 36.85,
+        "normalized": 0.88
+    },
+    {
+        "time": 56.47,
+        "date": "10 Jan 2008",
+        "warmth_raw": 36.78,
+        "normalized": 0.87
+    },
+    {
+        "time": 56.5,
+        "date": "10 Jan 2008",
+        "warmth_raw": 36.66,
+        "normalized": 0.86
+    },
+    {
+        "time": 56.53,
+        "date": "10 Jan 2008",
+        "warmth_raw": 36.79,
+        "normalized": 0.88
+    },
+    {
+        "time": 56.57,
+        "date": "10 Jan 2008",
+        "warmth_raw": 36.68,
+        "normalized": 0.86
+    },
+    {
+        "time": 56.6,
+        "date": "10 Jan 2008",
+        "warmth_raw": 36.67,
+        "normalized": 0.86
+    },
+    {
+        "time": 56.63,
+        "date": "11 Jan 2008",
+        "warmth_raw": 36.41,
+        "normalized": 0.82
+    },
+    {
+        "time": 56.67,
+        "date": "11 Jan 2008",
+        "warmth_raw": 36.58,
+        "normalized": 0.85
+    },
+    {
+        "time": 56.7,
+        "date": "11 Jan 2008",
+        "warmth_raw": 36.57,
+        "normalized": 0.85
+    },
+    {
+        "time": 56.73,
+        "date": "11 Jan 2008",
+        "warmth_raw": 36.39,
+        "normalized": 0.82
+    },
+    {
+        "time": 56.77,
+        "date": "11 Jan 2008",
+        "warmth_raw": 36.39,
+        "normalized": 0.82
+    },
+    {
+        "time": 56.8,
+        "date": "11 Jan 2008",
+        "warmth_raw": 36.41,
+        "normalized": 0.82
+    },
+    {
+        "time": 56.83,
+        "date": "12 Jan 2008",
+        "warmth_raw": 36.11,
+        "normalized": 0.78
+    },
+    {
+        "time": 56.87,
+        "date": "12 Jan 2008",
+        "warmth_raw": 36.2,
+        "normalized": 0.8
+    },
+    {
+        "time": 56.9,
+        "date": "12 Jan 2008",
+        "warmth_raw": 36.02,
+        "normalized": 0.77
+    },
+    {
+        "time": 56.93,
+        "date": "12 Jan 2008",
+        "warmth_raw": 36.09,
+        "normalized": 0.78
+    },
+    {
+        "time": 56.97,
+        "date": "12 Jan 2008",
+        "warmth_raw": 36.21,
+        "normalized": 0.8
+    },
+    {
+        "time": 57.0,
+        "date": "12 Jan 2008",
+        "warmth_raw": 36.41,
+        "normalized": 0.82
+    },
+    {
+        "time": 57.03,
+        "date": "13 Jan 2008",
+        "warmth_raw": 36.4,
+        "normalized": 0.82
+    },
+    {
+        "time": 57.07,
+        "date": "13 Jan 2008",
+        "warmth_raw": 36.23,
+        "normalized": 0.8
+    },
+    {
+        "time": 57.1,
+        "date": "13 Jan 2008",
+        "warmth_raw": 36.23,
+        "normalized": 0.8
+    },
+    {
+        "time": 57.13,
+        "date": "13 Jan 2008",
+        "warmth_raw": 36.18,
+        "normalized": 0.79
+    },
+    {
+        "time": 57.17,
+        "date": "13 Jan 2008",
+        "warmth_raw": 36.16,
+        "normalized": 0.79
+    },
+    {
+        "time": 57.2,
+        "date": "14 Jan 2008",
+        "warmth_raw": 36.25,
+        "normalized": 0.8
+    },
+    {
+        "time": 57.23,
+        "date": "14 Jan 2008",
+        "warmth_raw": 36.31,
+        "normalized": 0.81
+    },
+    {
+        "time": 57.27,
+        "date": "14 Jan 2008",
+        "warmth_raw": 36.34,
+        "normalized": 0.82
+    },
+    {
+        "time": 57.3,
+        "date": "14 Jan 2008",
+        "warmth_raw": 36.37,
+        "normalized": 0.82
+    },
+    {
+        "time": 57.33,
+        "date": "14 Jan 2008",
+        "warmth_raw": 36.37,
+        "normalized": 0.82
+    },
+    {
+        "time": 57.37,
+        "date": "14 Jan 2008",
+        "warmth_raw": 36.4,
+        "normalized": 0.82
+    },
+    {
+        "time": 57.4,
+        "date": "15 Jan 2008",
+        "warmth_raw": 36.39,
+        "normalized": 0.82
+    },
+    {
+        "time": 57.43,
+        "date": "15 Jan 2008",
+        "warmth_raw": 36.19,
+        "normalized": 0.79
+    },
+    {
+        "time": 57.47,
+        "date": "15 Jan 2008",
+        "warmth_raw": 36.21,
+        "normalized": 0.8
+    },
+    {
+        "time": 57.5,
+        "date": "15 Jan 2008",
+        "warmth_raw": 36.19,
+        "normalized": 0.79
+    },
+    {
+        "time": 57.53,
+        "date": "15 Jan 2008",
+        "warmth_raw": 36.1,
+        "normalized": 0.78
+    },
+    {
+        "time": 57.57,
+        "date": "15 Jan 2008",
+        "warmth_raw": 36.07,
+        "normalized": 0.78
+    },
+    {
+        "time": 57.6,
+        "date": "16 Jan 2008",
+        "warmth_raw": 35.86,
+        "normalized": 0.75
+    },
+    {
+        "time": 57.63,
+        "date": "16 Jan 2008",
+        "warmth_raw": 35.91,
+        "normalized": 0.76
+    },
+    {
+        "time": 57.67,
+        "date": "16 Jan 2008",
+        "warmth_raw": 35.92,
+        "normalized": 0.76
+    },
+    {
+        "time": 57.7,
+        "date": "16 Jan 2008",
+        "warmth_raw": 36.01,
+        "normalized": 0.77
+    },
+    {
+        "time": 57.73,
+        "date": "16 Jan 2008",
+        "warmth_raw": 35.99,
+        "normalized": 0.77
+    },
+    {
+        "time": 57.77,
+        "date": "16 Jan 2008",
+        "warmth_raw": 35.6,
+        "normalized": 0.71
+    },
+    {
+        "time": 57.8,
+        "date": "17 Jan 2008",
+        "warmth_raw": 35.58,
+        "normalized": 0.71
+    },
+    {
+        "time": 57.83,
+        "date": "17 Jan 2008",
+        "warmth_raw": 35.61,
+        "normalized": 0.72
+    },
+    {
+        "time": 57.87,
+        "date": "17 Jan 2008",
+        "warmth_raw": 35.7,
+        "normalized": 0.73
+    },
+    {
+        "time": 57.9,
+        "date": "17 Jan 2008",
+        "warmth_raw": 35.65,
+        "normalized": 0.72
+    },
+    {
+        "time": 57.93,
+        "date": "17 Jan 2008",
+        "warmth_raw": 35.63,
+        "normalized": 0.72
+    },
+    {
+        "time": 57.97,
+        "date": "17 Jan 2008",
+        "warmth_raw": 35.69,
+        "normalized": 0.73
+    },
+    {
+        "time": 58.0,
+        "date": "18 Jan 2008",
+        "warmth_raw": 35.83,
+        "normalized": 0.75
+    },
+    {
+        "time": 58.03,
+        "date": "18 Jan 2008",
+        "warmth_raw": 35.68,
+        "normalized": 0.73
+    },
+    {
+        "time": 58.07,
+        "date": "18 Jan 2008",
+        "warmth_raw": 35.69,
+        "normalized": 0.73
+    },
+    {
+        "time": 58.1,
+        "date": "18 Jan 2008",
+        "warmth_raw": 35.66,
+        "normalized": 0.72
+    },
+    {
+        "time": 58.13,
+        "date": "18 Jan 2008",
+        "warmth_raw": 35.56,
+        "normalized": 0.71
+    },
+    {
+        "time": 58.17,
+        "date": "19 Jan 2008",
+        "warmth_raw": 35.48,
+        "normalized": 0.7
+    },
+    {
+        "time": 58.2,
+        "date": "19 Jan 2008",
+        "warmth_raw": 35.53,
+        "normalized": 0.71
+    },
+    {
+        "time": 58.23,
+        "date": "19 Jan 2008",
+        "warmth_raw": 35.54,
+        "normalized": 0.71
+    },
+    {
+        "time": 58.27,
+        "date": "19 Jan 2008",
+        "warmth_raw": 35.62,
+        "normalized": 0.72
+    },
+    {
+        "time": 58.3,
+        "date": "19 Jan 2008",
+        "warmth_raw": 35.42,
+        "normalized": 0.69
+    },
+    {
+        "time": 58.33,
+        "date": "19 Jan 2008",
+        "warmth_raw": 35.53,
+        "normalized": 0.71
+    },
+    {
+        "time": 58.37,
+        "date": "20 Jan 2008",
+        "warmth_raw": 35.61,
+        "normalized": 0.72
+    },
+    {
+        "time": 58.4,
+        "date": "20 Jan 2008",
+        "warmth_raw": 35.67,
+        "normalized": 0.72
+    },
+    {
+        "time": 58.43,
+        "date": "20 Jan 2008",
+        "warmth_raw": 35.66,
+        "normalized": 0.72
+    },
+    {
+        "time": 58.47,
+        "date": "20 Jan 2008",
+        "warmth_raw": 35.49,
+        "normalized": 0.7
+    },
+    {
+        "time": 58.5,
+        "date": "20 Jan 2008",
+        "warmth_raw": 35.47,
+        "normalized": 0.7
+    },
+    {
+        "time": 58.53,
+        "date": "20 Jan 2008",
+        "warmth_raw": 35.46,
+        "normalized": 0.7
+    },
+    {
+        "time": 58.57,
+        "date": "21 Jan 2008",
+        "warmth_raw": 35.36,
+        "normalized": 0.68
+    },
+    {
+        "time": 58.6,
+        "date": "21 Jan 2008",
+        "warmth_raw": 35.27,
+        "normalized": 0.67
+    },
+    {
+        "time": 58.63,
+        "date": "21 Jan 2008",
+        "warmth_raw": 35.28,
+        "normalized": 0.67
+    },
+    {
+        "time": 58.67,
+        "date": "21 Jan 2008",
+        "warmth_raw": 35.16,
+        "normalized": 0.65
+    },
+    {
+        "time": 58.7,
+        "date": "21 Jan 2008",
+        "warmth_raw": 35.19,
+        "normalized": 0.66
+    },
+    {
+        "time": 58.73,
+        "date": "21 Jan 2008",
+        "warmth_raw": 35.22,
+        "normalized": 0.66
+    },
+    {
+        "time": 58.77,
+        "date": "22 Jan 2008",
+        "warmth_raw": 35.03,
+        "normalized": 0.64
+    },
+    {
+        "time": 58.8,
+        "date": "22 Jan 2008",
+        "warmth_raw": 35.13,
+        "normalized": 0.65
+    },
+    {
+        "time": 58.83,
+        "date": "22 Jan 2008",
+        "warmth_raw": 35.06,
+        "normalized": 0.64
+    },
+    {
+        "time": 58.87,
+        "date": "22 Jan 2008",
+        "warmth_raw": 35.28,
+        "normalized": 0.67
+    },
+    {
+        "time": 58.9,
+        "date": "22 Jan 2008",
+        "warmth_raw": 35.16,
+        "normalized": 0.65
+    },
+    {
+        "time": 58.93,
+        "date": "22 Jan 2008",
+        "warmth_raw": 35.21,
+        "normalized": 0.66
+    },
+    {
+        "time": 58.97,
+        "date": "23 Jan 2008",
+        "warmth_raw": 35.3,
+        "normalized": 0.67
+    },
+    {
+        "time": 59.0,
+        "date": "23 Jan 2008",
+        "warmth_raw": 35.18,
+        "normalized": 0.66
+    },
+    {
+        "time": 59.03,
+        "date": "23 Jan 2008",
+        "warmth_raw": 35.23,
+        "normalized": 0.66
+    },
+    {
+        "time": 59.07,
+        "date": "23 Jan 2008",
+        "warmth_raw": 35.34,
+        "normalized": 0.68
+    },
+    {
+        "time": 59.1,
+        "date": "23 Jan 2008",
+        "warmth_raw": 35.27,
+        "normalized": 0.67
+    },
+    {
+        "time": 59.13,
+        "date": "23 Jan 2008",
+        "warmth_raw": 35.24,
+        "normalized": 0.67
+    },
+    {
+        "time": 59.17,
+        "date": "24 Jan 2008",
+        "warmth_raw": 35.21,
+        "normalized": 0.66
+    },
+    {
+        "time": 59.2,
+        "date": "24 Jan 2008",
+        "warmth_raw": 35.07,
+        "normalized": 0.64
+    },
+    {
+        "time": 59.23,
+        "date": "24 Jan 2008",
+        "warmth_raw": 35.3,
+        "normalized": 0.67
+    },
+    {
+        "time": 59.27,
+        "date": "24 Jan 2008",
+        "warmth_raw": 35.23,
+        "normalized": 0.66
+    },
+    {
+        "time": 59.3,
+        "date": "24 Jan 2008",
+        "warmth_raw": 35.41,
+        "normalized": 0.69
+    },
+    {
+        "time": 59.33,
+        "date": "24 Jan 2008",
+        "warmth_raw": 35.47,
+        "normalized": 0.7
+    },
+    {
+        "time": 59.37,
+        "date": "25 Jan 2008",
+        "warmth_raw": 35.39,
+        "normalized": 0.69
+    },
+    {
+        "time": 59.4,
+        "date": "25 Jan 2008",
+        "warmth_raw": 35.37,
+        "normalized": 0.68
+    },
+    {
+        "time": 59.43,
+        "date": "25 Jan 2008",
+        "warmth_raw": 35.33,
+        "normalized": 0.68
+    },
+    {
+        "time": 59.47,
+        "date": "25 Jan 2008",
+        "warmth_raw": 35.33,
+        "normalized": 0.68
+    },
+    {
+        "time": 59.5,
+        "date": "25 Jan 2008",
+        "warmth_raw": 35.28,
+        "normalized": 0.67
+    },
+    {
+        "time": 59.53,
+        "date": "26 Jan 2008",
+        "warmth_raw": 35.3,
+        "normalized": 0.67
+    },
+    {
+        "time": 59.57,
+        "date": "26 Jan 2008",
+        "warmth_raw": 35.29,
+        "normalized": 0.67
+    },
+    {
+        "time": 59.6,
+        "date": "26 Jan 2008",
+        "warmth_raw": 35.32,
+        "normalized": 0.68
+    },
+    {
+        "time": 59.63,
+        "date": "26 Jan 2008",
+        "warmth_raw": 35.28,
+        "normalized": 0.67
+    },
+    {
+        "time": 59.67,
+        "date": "26 Jan 2008",
+        "warmth_raw": 35.24,
+        "normalized": 0.67
+    },
+    {
+        "time": 59.7,
+        "date": "26 Jan 2008",
+        "warmth_raw": 35.31,
+        "normalized": 0.68
+    },
+    {
+        "time": 59.73,
+        "date": "27 Jan 2008",
+        "warmth_raw": 35.08,
+        "normalized": 0.64
+    },
+    {
+        "time": 59.77,
+        "date": "27 Jan 2008",
+        "warmth_raw": 35.0,
+        "normalized": 0.63
+    },
+    {
+        "time": 59.8,
+        "date": "27 Jan 2008",
+        "warmth_raw": 34.93,
+        "normalized": 0.62
+    },
+    {
+        "time": 59.83,
+        "date": "27 Jan 2008",
+        "warmth_raw": 34.98,
+        "normalized": 0.63
+    },
+    {
+        "time": 59.87,
+        "date": "27 Jan 2008",
+        "warmth_raw": 34.99,
+        "normalized": 0.63
+    },
+    {
+        "time": 59.9,
+        "date": "27 Jan 2008",
+        "warmth_raw": 35.07,
+        "normalized": 0.64
+    },
+    {
+        "time": 59.93,
+        "date": "28 Jan 2008",
+        "warmth_raw": 34.83,
+        "normalized": 0.61
+    },
+    {
+        "time": 59.97,
+        "date": "28 Jan 2008",
+        "warmth_raw": 34.84,
+        "normalized": 0.61
+    },
+    {
+        "time": 60.0,
+        "date": "28 Jan 2008",
+        "warmth_raw": 35.5,
+        "normalized": 0.7
+    },
+    {
+        "time": 60.03,
+        "date": "28 Jan 2008",
+        "warmth_raw": 35.55,
+        "normalized": 0.71
+    },
+    {
+        "time": 60.07,
+        "date": "28 Jan 2008",
+        "warmth_raw": 35.54,
+        "normalized": 0.71
+    },
+    {
+        "time": 60.1,
+        "date": "28 Jan 2008",
+        "warmth_raw": 35.54,
+        "normalized": 0.71
+    },
+    {
+        "time": 60.13,
+        "date": "29 Jan 2008",
+        "warmth_raw": 35.66,
+        "normalized": 0.72
+    },
+    {
+        "time": 60.17,
+        "date": "29 Jan 2008",
+        "warmth_raw": 35.7,
+        "normalized": 0.73
+    },
+    {
+        "time": 60.2,
+        "date": "29 Jan 2008",
+        "warmth_raw": 35.75,
+        "normalized": 0.74
+    },
+    {
+        "time": 60.23,
+        "date": "29 Jan 2008",
+        "warmth_raw": 35.47,
+        "normalized": 0.7
+    },
+    {
+        "time": 60.27,
+        "date": "29 Jan 2008",
+        "warmth_raw": 35.52,
+        "normalized": 0.7
+    },
+    {
+        "time": 60.3,
+        "date": "29 Jan 2008",
+        "warmth_raw": 35.48,
+        "normalized": 0.7
+    },
+    {
+        "time": 60.33,
+        "date": "30 Jan 2008",
+        "warmth_raw": 35.54,
+        "normalized": 0.71
+    },
+    {
+        "time": 60.37,
+        "date": "30 Jan 2008",
+        "warmth_raw": 35.6,
+        "normalized": 0.71
+    },
+    {
+        "time": 60.4,
+        "date": "30 Jan 2008",
+        "warmth_raw": 35.51,
+        "normalized": 0.7
+    },
+    {
+        "time": 60.43,
+        "date": "30 Jan 2008",
+        "warmth_raw": 35.52,
+        "normalized": 0.7
+    },
+    {
+        "time": 60.47,
+        "date": "30 Jan 2008",
+        "warmth_raw": 35.48,
+        "normalized": 0.7
+    },
+    {
+        "time": 60.5,
+        "date": "31 Jan 2008",
+        "warmth_raw": 35.51,
+        "normalized": 0.7
+    },
+    {
+        "time": 60.53,
+        "date": "31 Jan 2008",
+        "warmth_raw": 35.49,
+        "normalized": 0.7
+    },
+    {
+        "time": 60.57,
+        "date": "31 Jan 2008",
+        "warmth_raw": 35.43,
+        "normalized": 0.69
+    },
+    {
+        "time": 60.6,
+        "date": "31 Jan 2008",
+        "warmth_raw": 35.49,
+        "normalized": 0.7
+    },
+    {
+        "time": 60.63,
+        "date": "31 Jan 2008",
+        "warmth_raw": 35.59,
+        "normalized": 0.71
+    },
+    {
+        "time": 60.67,
+        "date": "31 Jan 2008",
+        "warmth_raw": 35.62,
+        "normalized": 0.72
+    },
+    {
+        "time": 60.7,
+        "date": "01 Feb 2008",
+        "warmth_raw": 35.58,
+        "normalized": 0.71
+    },
+    {
+        "time": 60.73,
+        "date": "01 Feb 2008",
+        "warmth_raw": 35.46,
+        "normalized": 0.7
+    },
+    {
+        "time": 60.77,
+        "date": "01 Feb 2008",
+        "warmth_raw": 35.45,
+        "normalized": 0.69
+    },
+    {
+        "time": 60.8,
+        "date": "01 Feb 2008",
+        "warmth_raw": 35.42,
+        "normalized": 0.69
+    },
+    {
+        "time": 60.83,
+        "date": "01 Feb 2008",
+        "warmth_raw": 35.46,
+        "normalized": 0.7
+    },
+    {
+        "time": 60.87,
+        "date": "01 Feb 2008",
+        "warmth_raw": 35.47,
+        "normalized": 0.7
+    },
+    {
+        "time": 60.9,
+        "date": "02 Feb 2008",
+        "warmth_raw": 35.5,
+        "normalized": 0.7
+    },
+    {
+        "time": 60.93,
+        "date": "02 Feb 2008",
+        "warmth_raw": 35.69,
+        "normalized": 0.73
+    },
+    {
+        "time": 60.97,
+        "date": "02 Feb 2008",
+        "warmth_raw": 35.75,
+        "normalized": 0.74
+    },
+    {
+        "time": 61.0,
+        "date": "02 Feb 2008",
+        "warmth_raw": 35.74,
+        "normalized": 0.73
+    },
+    {
+        "time": 61.03,
+        "date": "02 Feb 2008",
+        "warmth_raw": 35.84,
+        "normalized": 0.75
+    },
+    {
+        "time": 61.07,
+        "date": "02 Feb 2008",
+        "warmth_raw": 35.8,
+        "normalized": 0.74
+    },
+    {
+        "time": 61.1,
+        "date": "03 Feb 2008",
+        "warmth_raw": 35.87,
+        "normalized": 0.75
+    },
+    {
+        "time": 61.13,
+        "date": "03 Feb 2008",
+        "warmth_raw": 35.81,
+        "normalized": 0.74
+    },
+    {
+        "time": 61.17,
+        "date": "03 Feb 2008",
+        "warmth_raw": 35.85,
+        "normalized": 0.75
+    },
+    {
+        "time": 61.2,
+        "date": "03 Feb 2008",
+        "warmth_raw": 35.97,
+        "normalized": 0.76
+    },
+    {
+        "time": 61.23,
+        "date": "03 Feb 2008",
+        "warmth_raw": 35.96,
+        "normalized": 0.76
+    },
+    {
+        "time": 61.27,
+        "date": "03 Feb 2008",
+        "warmth_raw": 35.86,
+        "normalized": 0.75
+    },
+    {
+        "time": 61.3,
+        "date": "04 Feb 2008",
+        "warmth_raw": 35.89,
+        "normalized": 0.75
+    },
+    {
+        "time": 61.33,
+        "date": "04 Feb 2008",
+        "warmth_raw": 35.78,
+        "normalized": 0.74
+    },
+    {
+        "time": 61.37,
+        "date": "04 Feb 2008",
+        "warmth_raw": 35.74,
+        "normalized": 0.73
+    },
+    {
+        "time": 61.4,
+        "date": "04 Feb 2008",
+        "warmth_raw": 35.86,
+        "normalized": 0.75
+    },
+    {
+        "time": 61.43,
+        "date": "04 Feb 2008",
+        "warmth_raw": 35.87,
+        "normalized": 0.75
+    },
+    {
+        "time": 61.47,
+        "date": "05 Feb 2008",
+        "warmth_raw": 35.85,
+        "normalized": 0.75
+    },
+    {
+        "time": 61.5,
+        "date": "05 Feb 2008",
+        "warmth_raw": 35.85,
+        "normalized": 0.75
+    },
+    {
+        "time": 61.53,
+        "date": "05 Feb 2008",
+        "warmth_raw": 36.09,
+        "normalized": 0.78
+    },
+    {
+        "time": 61.57,
+        "date": "05 Feb 2008",
+        "warmth_raw": 36.13,
+        "normalized": 0.79
+    },
+    {
+        "time": 61.6,
+        "date": "05 Feb 2008",
+        "warmth_raw": 36.19,
+        "normalized": 0.79
+    },
+    {
+        "time": 61.63,
+        "date": "05 Feb 2008",
+        "warmth_raw": 36.21,
+        "normalized": 0.8
+    },
+    {
+        "time": 61.67,
+        "date": "06 Feb 2008",
+        "warmth_raw": 36.16,
+        "normalized": 0.79
+    },
+    {
+        "time": 61.7,
+        "date": "06 Feb 2008",
+        "warmth_raw": 36.39,
+        "normalized": 0.82
+    },
+    {
+        "time": 61.73,
+        "date": "06 Feb 2008",
+        "warmth_raw": 36.45,
+        "normalized": 0.83
+    },
+    {
+        "time": 61.77,
+        "date": "06 Feb 2008",
+        "warmth_raw": 36.45,
+        "normalized": 0.83
+    },
+    {
+        "time": 61.8,
+        "date": "06 Feb 2008",
+        "warmth_raw": 36.34,
+        "normalized": 0.82
+    },
+    {
+        "time": 61.83,
+        "date": "06 Feb 2008",
+        "warmth_raw": 36.34,
+        "normalized": 0.82
+    },
+    {
+        "time": 61.87,
+        "date": "07 Feb 2008",
+        "warmth_raw": 36.4,
+        "normalized": 0.82
+    },
+    {
+        "time": 61.9,
+        "date": "07 Feb 2008",
+        "warmth_raw": 36.3,
+        "normalized": 0.81
+    },
+    {
+        "time": 61.93,
+        "date": "07 Feb 2008",
+        "warmth_raw": 36.3,
+        "normalized": 0.81
+    },
+    {
+        "time": 61.97,
+        "date": "07 Feb 2008",
+        "warmth_raw": 36.29,
+        "normalized": 0.81
+    },
+    {
+        "time": 62.0,
+        "date": "07 Feb 2008",
+        "warmth_raw": 36.38,
+        "normalized": 0.82
+    },
+    {
+        "time": 62.03,
+        "date": "07 Feb 2008",
+        "warmth_raw": 36.52,
+        "normalized": 0.84
+    },
+    {
+        "time": 62.07,
+        "date": "08 Feb 2008",
+        "warmth_raw": 36.42,
+        "normalized": 0.83
+    },
+    {
+        "time": 62.1,
+        "date": "08 Feb 2008",
+        "warmth_raw": 36.38,
+        "normalized": 0.82
+    },
+    {
+        "time": 62.13,
+        "date": "08 Feb 2008",
+        "warmth_raw": 36.35,
+        "normalized": 0.82
+    },
+    {
+        "time": 62.17,
+        "date": "08 Feb 2008",
+        "warmth_raw": 36.22,
+        "normalized": 0.8
+    },
+    {
+        "time": 62.2,
+        "date": "08 Feb 2008",
+        "warmth_raw": 36.2,
+        "normalized": 0.8
+    },
+    {
+        "time": 62.23,
+        "date": "08 Feb 2008",
+        "warmth_raw": 36.2,
+        "normalized": 0.8
+    },
+    {
+        "time": 62.27,
+        "date": "09 Feb 2008",
+        "warmth_raw": 36.3,
+        "normalized": 0.81
+    },
+    {
+        "time": 62.3,
+        "date": "09 Feb 2008",
+        "warmth_raw": 36.25,
+        "normalized": 0.8
+    },
+    {
+        "time": 62.33,
+        "date": "09 Feb 2008",
+        "warmth_raw": 36.26,
+        "normalized": 0.8
+    },
+    {
+        "time": 62.37,
+        "date": "09 Feb 2008",
+        "warmth_raw": 36.31,
+        "normalized": 0.81
+    },
+    {
+        "time": 62.4,
+        "date": "09 Feb 2008",
+        "warmth_raw": 36.26,
+        "normalized": 0.8
+    },
+    {
+        "time": 62.43,
+        "date": "09 Feb 2008",
+        "warmth_raw": 36.37,
+        "normalized": 0.82
+    },
+    {
+        "time": 62.47,
+        "date": "10 Feb 2008",
+        "warmth_raw": 36.47,
+        "normalized": 0.83
+    },
+    {
+        "time": 62.5,
+        "date": "10 Feb 2008",
+        "warmth_raw": 36.42,
+        "normalized": 0.83
+    },
+    {
+        "time": 62.53,
+        "date": "10 Feb 2008",
+        "warmth_raw": 36.44,
+        "normalized": 0.83
+    },
+    {
+        "time": 62.57,
+        "date": "10 Feb 2008",
+        "warmth_raw": 36.25,
+        "normalized": 0.8
+    },
+    {
+        "time": 62.6,
+        "date": "10 Feb 2008",
+        "warmth_raw": 36.17,
+        "normalized": 0.79
+    },
+    {
+        "time": 62.63,
+        "date": "11 Feb 2008",
+        "warmth_raw": 36.25,
+        "normalized": 0.8
+    },
+    {
+        "time": 62.67,
+        "date": "11 Feb 2008",
+        "warmth_raw": 36.31,
+        "normalized": 0.81
+    },
+    {
+        "time": 62.7,
+        "date": "11 Feb 2008",
+        "warmth_raw": 36.35,
+        "normalized": 0.82
+    },
+    {
+        "time": 62.73,
+        "date": "11 Feb 2008",
+        "warmth_raw": 36.4,
+        "normalized": 0.82
+    },
+    {
+        "time": 62.77,
+        "date": "11 Feb 2008",
+        "warmth_raw": 36.48,
+        "normalized": 0.83
+    },
+    {
+        "time": 62.8,
+        "date": "11 Feb 2008",
+        "warmth_raw": 36.31,
+        "normalized": 0.81
+    },
+    {
+        "time": 62.83,
+        "date": "12 Feb 2008",
+        "warmth_raw": 36.31,
+        "normalized": 0.81
+    },
+    {
+        "time": 62.87,
+        "date": "12 Feb 2008",
+        "warmth_raw": 36.3,
+        "normalized": 0.81
+    },
+    {
+        "time": 62.9,
+        "date": "12 Feb 2008",
+        "warmth_raw": 36.34,
+        "normalized": 0.82
+    },
+    {
+        "time": 62.93,
+        "date": "12 Feb 2008",
+        "warmth_raw": 36.27,
+        "normalized": 0.81
+    },
+    {
+        "time": 62.97,
+        "date": "12 Feb 2008",
+        "warmth_raw": 36.17,
+        "normalized": 0.79
+    },
+    {
+        "time": 63.0,
+        "date": "12 Feb 2008",
+        "warmth_raw": 36.05,
+        "normalized": 0.78
+    },
+    {
+        "time": 63.03,
+        "date": "13 Feb 2008",
+        "warmth_raw": 35.94,
+        "normalized": 0.76
+    },
+    {
+        "time": 63.07,
+        "date": "13 Feb 2008",
+        "warmth_raw": 35.88,
+        "normalized": 0.75
+    },
+    {
+        "time": 63.1,
+        "date": "13 Feb 2008",
+        "warmth_raw": 35.85,
+        "normalized": 0.75
+    },
+    {
+        "time": 63.13,
+        "date": "13 Feb 2008",
+        "warmth_raw": 35.79,
+        "normalized": 0.74
+    },
+    {
+        "time": 63.17,
+        "date": "13 Feb 2008",
+        "warmth_raw": 35.78,
+        "normalized": 0.74
+    },
+    {
+        "time": 63.2,
+        "date": "13 Feb 2008",
+        "warmth_raw": 35.85,
+        "normalized": 0.75
+    },
+    {
+        "time": 63.23,
+        "date": "14 Feb 2008",
+        "warmth_raw": 35.77,
+        "normalized": 0.74
+    },
+    {
+        "time": 63.27,
+        "date": "14 Feb 2008",
+        "warmth_raw": 35.67,
+        "normalized": 0.72
+    },
+    {
+        "time": 63.3,
+        "date": "14 Feb 2008",
+        "warmth_raw": 35.57,
+        "normalized": 0.71
+    },
+    {
+        "time": 63.33,
+        "date": "14 Feb 2008",
+        "warmth_raw": 35.58,
+        "normalized": 0.71
+    },
+    {
+        "time": 63.37,
+        "date": "14 Feb 2008",
+        "warmth_raw": 35.49,
+        "normalized": 0.7
+    },
+    {
+        "time": 63.4,
+        "date": "14 Feb 2008",
+        "warmth_raw": 35.4,
+        "normalized": 0.69
+    },
+    {
+        "time": 63.43,
+        "date": "15 Feb 2008",
+        "warmth_raw": 35.16,
+        "normalized": 0.65
+    },
+    {
+        "time": 63.47,
+        "date": "15 Feb 2008",
+        "warmth_raw": 35.28,
+        "normalized": 0.67
+    },
+    {
+        "time": 63.5,
+        "date": "15 Feb 2008",
+        "warmth_raw": 35.36,
+        "normalized": 0.68
+    },
+    {
+        "time": 63.53,
+        "date": "15 Feb 2008",
+        "warmth_raw": 35.35,
+        "normalized": 0.68
+    },
+    {
+        "time": 63.57,
+        "date": "15 Feb 2008",
+        "warmth_raw": 35.31,
+        "normalized": 0.68
+    },
+    {
+        "time": 63.6,
+        "date": "16 Feb 2008",
+        "warmth_raw": 35.11,
+        "normalized": 0.65
+    },
+    {
+        "time": 63.63,
+        "date": "16 Feb 2008",
+        "warmth_raw": 35.06,
+        "normalized": 0.64
+    },
+    {
+        "time": 63.67,
+        "date": "16 Feb 2008",
+        "warmth_raw": 34.95,
+        "normalized": 0.63
+    },
+    {
+        "time": 63.7,
+        "date": "16 Feb 2008",
+        "warmth_raw": 34.87,
+        "normalized": 0.62
+    },
+    {
+        "time": 63.73,
+        "date": "16 Feb 2008",
+        "warmth_raw": 34.85,
+        "normalized": 0.61
+    },
+    {
+        "time": 63.77,
+        "date": "16 Feb 2008",
+        "warmth_raw": 34.7,
+        "normalized": 0.59
+    },
+    {
+        "time": 63.8,
+        "date": "17 Feb 2008",
+        "warmth_raw": 34.74,
+        "normalized": 0.6
+    },
+    {
+        "time": 63.83,
+        "date": "17 Feb 2008",
+        "warmth_raw": 34.55,
+        "normalized": 0.57
+    },
+    {
+        "time": 63.87,
+        "date": "17 Feb 2008",
+        "warmth_raw": 34.61,
+        "normalized": 0.58
+    },
+    {
+        "time": 63.9,
+        "date": "17 Feb 2008",
+        "warmth_raw": 34.54,
+        "normalized": 0.57
+    },
+    {
+        "time": 63.93,
+        "date": "17 Feb 2008",
+        "warmth_raw": 34.6,
+        "normalized": 0.58
+    },
+    {
+        "time": 63.97,
+        "date": "17 Feb 2008",
+        "warmth_raw": 34.54,
+        "normalized": 0.57
+    },
+    {
+        "time": 64.0,
+        "date": "18 Feb 2008",
+        "warmth_raw": 34.77,
+        "normalized": 0.6
+    },
+    {
+        "time": 64.03,
+        "date": "18 Feb 2008",
+        "warmth_raw": 34.85,
+        "normalized": 0.61
+    },
+    {
+        "time": 64.07,
+        "date": "18 Feb 2008",
+        "warmth_raw": 34.82,
+        "normalized": 0.61
+    },
+    {
+        "time": 64.1,
+        "date": "18 Feb 2008",
+        "warmth_raw": 34.77,
+        "normalized": 0.6
+    },
+    {
+        "time": 64.13,
+        "date": "18 Feb 2008",
+        "warmth_raw": 34.89,
+        "normalized": 0.62
+    },
+    {
+        "time": 64.17,
+        "date": "18 Feb 2008",
+        "warmth_raw": 34.65,
+        "normalized": 0.59
+    },
+    {
+        "time": 64.2,
+        "date": "19 Feb 2008",
+        "warmth_raw": 34.68,
+        "normalized": 0.59
+    },
+    {
+        "time": 64.23,
+        "date": "19 Feb 2008",
+        "warmth_raw": 34.68,
+        "normalized": 0.59
+    },
+    {
+        "time": 64.27,
+        "date": "19 Feb 2008",
+        "warmth_raw": 34.6,
+        "normalized": 0.58
+    },
+    {
+        "time": 64.3,
+        "date": "19 Feb 2008",
+        "warmth_raw": 34.56,
+        "normalized": 0.57
+    },
+    {
+        "time": 64.33,
+        "date": "19 Feb 2008",
+        "warmth_raw": 34.36,
+        "normalized": 0.55
+    },
+    {
+        "time": 64.37,
+        "date": "19 Feb 2008",
+        "warmth_raw": 34.31,
+        "normalized": 0.54
+    },
+    {
+        "time": 64.4,
+        "date": "20 Feb 2008",
+        "warmth_raw": 34.28,
+        "normalized": 0.54
+    },
+    {
+        "time": 64.43,
+        "date": "20 Feb 2008",
+        "warmth_raw": 34.25,
+        "normalized": 0.53
+    },
+    {
+        "time": 64.47,
+        "date": "20 Feb 2008",
+        "warmth_raw": 34.39,
+        "normalized": 0.55
+    },
+    {
+        "time": 64.5,
+        "date": "20 Feb 2008",
+        "warmth_raw": 34.41,
+        "normalized": 0.55
+    },
+    {
+        "time": 64.53,
+        "date": "20 Feb 2008",
+        "warmth_raw": 34.37,
+        "normalized": 0.55
+    },
+    {
+        "time": 64.57,
+        "date": "21 Feb 2008",
+        "warmth_raw": 34.28,
+        "normalized": 0.54
+    },
+    {
+        "time": 64.6,
+        "date": "21 Feb 2008",
+        "warmth_raw": 34.29,
+        "normalized": 0.54
+    },
+    {
+        "time": 64.63,
+        "date": "21 Feb 2008",
+        "warmth_raw": 34.35,
+        "normalized": 0.54
+    },
+    {
+        "time": 64.67,
+        "date": "21 Feb 2008",
+        "warmth_raw": 34.44,
+        "normalized": 0.56
+    },
+    {
+        "time": 64.7,
+        "date": "21 Feb 2008",
+        "warmth_raw": 34.19,
+        "normalized": 0.52
+    },
+    {
+        "time": 64.73,
+        "date": "21 Feb 2008",
+        "warmth_raw": 34.32,
+        "normalized": 0.54
+    },
+    {
+        "time": 64.77,
+        "date": "22 Feb 2008",
+        "warmth_raw": 34.28,
+        "normalized": 0.54
+    },
+    {
+        "time": 64.8,
+        "date": "22 Feb 2008",
+        "warmth_raw": 34.24,
+        "normalized": 0.53
+    },
+    {
+        "time": 64.83,
+        "date": "22 Feb 2008",
+        "warmth_raw": 34.29,
+        "normalized": 0.54
+    },
+    {
+        "time": 64.87,
+        "date": "22 Feb 2008",
+        "warmth_raw": 34.29,
+        "normalized": 0.54
+    },
+    {
+        "time": 64.9,
+        "date": "22 Feb 2008",
+        "warmth_raw": 34.35,
+        "normalized": 0.54
+    },
+    {
+        "time": 64.93,
+        "date": "22 Feb 2008",
+        "warmth_raw": 34.31,
+        "normalized": 0.54
+    },
+    {
+        "time": 64.97,
+        "date": "23 Feb 2008",
+        "warmth_raw": 34.26,
+        "normalized": 0.53
+    },
+    {
+        "time": 65.0,
+        "date": "23 Feb 2008",
+        "warmth_raw": 34.23,
+        "normalized": 0.53
+    },
+    {
+        "time": 65.03,
+        "date": "23 Feb 2008",
+        "warmth_raw": 34.17,
+        "normalized": 0.52
+    },
+    {
+        "time": 65.07,
+        "date": "23 Feb 2008",
+        "warmth_raw": 34.11,
+        "normalized": 0.51
+    },
+    {
+        "time": 65.1,
+        "date": "23 Feb 2008",
+        "warmth_raw": 34.09,
+        "normalized": 0.51
+    },
+    {
+        "time": 65.13,
+        "date": "23 Feb 2008",
+        "warmth_raw": 34.08,
+        "normalized": 0.51
+    },
+    {
+        "time": 65.17,
+        "date": "24 Feb 2008",
+        "warmth_raw": 33.96,
+        "normalized": 0.49
+    },
+    {
+        "time": 65.2,
+        "date": "24 Feb 2008",
+        "warmth_raw": 34.08,
+        "normalized": 0.51
+    },
+    {
+        "time": 65.23,
+        "date": "24 Feb 2008",
+        "warmth_raw": 34.14,
+        "normalized": 0.52
+    },
+    {
+        "time": 65.27,
+        "date": "24 Feb 2008",
+        "warmth_raw": 34.03,
+        "normalized": 0.5
+    },
+    {
+        "time": 65.3,
+        "date": "24 Feb 2008",
+        "warmth_raw": 34.02,
+        "normalized": 0.5
+    },
+    {
+        "time": 65.33,
+        "date": "24 Feb 2008",
+        "warmth_raw": 34.06,
+        "normalized": 0.51
+    },
+    {
+        "time": 65.37,
+        "date": "25 Feb 2008",
+        "warmth_raw": 34.0,
+        "normalized": 0.5
+    },
+    {
+        "time": 65.4,
+        "date": "25 Feb 2008",
+        "warmth_raw": 34.06,
+        "normalized": 0.51
+    },
+    {
+        "time": 65.43,
+        "date": "25 Feb 2008",
+        "warmth_raw": 34.02,
+        "normalized": 0.5
+    },
+    {
+        "time": 65.47,
+        "date": "25 Feb 2008",
+        "warmth_raw": 34.04,
+        "normalized": 0.5
+    },
+    {
+        "time": 65.5,
+        "date": "25 Feb 2008",
+        "warmth_raw": 34.12,
+        "normalized": 0.51
+    },
+    {
+        "time": 65.53,
+        "date": "25 Feb 2008",
+        "warmth_raw": 34.0,
+        "normalized": 0.5
+    },
+    {
+        "time": 65.57,
+        "date": "26 Feb 2008",
+        "warmth_raw": 34.09,
+        "normalized": 0.51
+    },
+    {
+        "time": 65.6,
+        "date": "26 Feb 2008",
+        "warmth_raw": 33.87,
+        "normalized": 0.48
+    },
+    {
+        "time": 65.63,
+        "date": "26 Feb 2008",
+        "warmth_raw": 33.93,
+        "normalized": 0.49
+    },
+    {
+        "time": 65.67,
+        "date": "26 Feb 2008",
+        "warmth_raw": 33.99,
+        "normalized": 0.5
+    },
+    {
+        "time": 65.7,
+        "date": "26 Feb 2008",
+        "warmth_raw": 34.09,
+        "normalized": 0.51
+    },
+    {
+        "time": 65.73,
+        "date": "27 Feb 2008",
+        "warmth_raw": 34.13,
+        "normalized": 0.51
+    },
+    {
+        "time": 65.77,
+        "date": "27 Feb 2008",
+        "warmth_raw": 33.95,
+        "normalized": 0.49
+    },
+    {
+        "time": 65.8,
+        "date": "27 Feb 2008",
+        "warmth_raw": 34.04,
+        "normalized": 0.5
+    },
+    {
+        "time": 65.83,
+        "date": "27 Feb 2008",
+        "warmth_raw": 33.98,
+        "normalized": 0.49
+    },
+    {
+        "time": 65.87,
+        "date": "27 Feb 2008",
+        "warmth_raw": 34.05,
+        "normalized": 0.5
+    },
+    {
+        "time": 65.9,
+        "date": "27 Feb 2008",
+        "warmth_raw": 34.12,
+        "normalized": 0.51
+    },
+    {
+        "time": 65.93,
+        "date": "28 Feb 2008",
+        "warmth_raw": 33.98,
+        "normalized": 0.49
+    },
+    {
+        "time": 65.97,
+        "date": "28 Feb 2008",
+        "warmth_raw": 33.95,
+        "normalized": 0.49
+    },
+    {
+        "time": 66.0,
+        "date": "28 Feb 2008",
+        "warmth_raw": 34.11,
+        "normalized": 0.51
+    },
+    {
+        "time": 66.03,
+        "date": "28 Feb 2008",
+        "warmth_raw": 34.2,
+        "normalized": 0.52
+    },
+    {
+        "time": 66.07,
+        "date": "28 Feb 2008",
+        "warmth_raw": 34.35,
+        "normalized": 0.54
+    },
+    {
+        "time": 66.1,
+        "date": "28 Feb 2008",
+        "warmth_raw": 34.3,
+        "normalized": 0.54
+    },
+    {
+        "time": 66.13,
+        "date": "29 Feb 2008",
+        "warmth_raw": 34.29,
+        "normalized": 0.54
+    },
+    {
+        "time": 66.17,
+        "date": "29 Feb 2008",
+        "warmth_raw": 34.31,
+        "normalized": 0.54
+    },
+    {
+        "time": 66.2,
+        "date": "29 Feb 2008",
+        "warmth_raw": 34.37,
+        "normalized": 0.55
+    },
+    {
+        "time": 66.23,
+        "date": "29 Feb 2008",
+        "warmth_raw": 34.41,
+        "normalized": 0.55
+    },
+    {
+        "time": 66.27,
+        "date": "29 Feb 2008",
+        "warmth_raw": 34.41,
+        "normalized": 0.55
+    },
+    {
+        "time": 66.3,
+        "date": "29 Feb 2008",
+        "warmth_raw": 34.4,
+        "normalized": 0.55
+    },
+    {
+        "time": 66.33,
+        "date": "01 Mar 2008",
+        "warmth_raw": 34.66,
+        "normalized": 0.59
+    },
+    {
+        "time": 66.37,
+        "date": "01 Mar 2008",
+        "warmth_raw": 34.69,
+        "normalized": 0.59
+    },
+    {
+        "time": 66.4,
+        "date": "01 Mar 2008",
+        "warmth_raw": 34.67,
+        "normalized": 0.59
+    },
+    {
+        "time": 66.43,
+        "date": "01 Mar 2008",
+        "warmth_raw": 34.61,
+        "normalized": 0.58
+    },
+    {
+        "time": 66.47,
+        "date": "01 Mar 2008",
+        "warmth_raw": 34.71,
+        "normalized": 0.59
+    },
+    {
+        "time": 66.5,
+        "date": "01 Mar 2008",
+        "warmth_raw": 34.46,
+        "normalized": 0.56
+    },
+    {
+        "time": 66.53,
+        "date": "02 Mar 2008",
+        "warmth_raw": 34.48,
+        "normalized": 0.56
+    },
+    {
+        "time": 66.57,
+        "date": "02 Mar 2008",
+        "warmth_raw": 34.48,
+        "normalized": 0.56
+    },
+    {
+        "time": 66.6,
+        "date": "02 Mar 2008",
+        "warmth_raw": 34.69,
+        "normalized": 0.59
+    },
+    {
+        "time": 66.63,
+        "date": "02 Mar 2008",
+        "warmth_raw": 34.74,
+        "normalized": 0.6
+    },
+    {
+        "time": 66.67,
+        "date": "02 Mar 2008",
+        "warmth_raw": 34.68,
+        "normalized": 0.59
+    }
+];
 let updateInterval = null;
 let isPlaying = false;
 let isMuted = false;
@@ -69,16 +12076,14 @@ audioGuideBtn.addEventListener("click", speakGuide);
 // 5. CHARGEMENT DES DONNÉES
 async function loadData() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/khadijamenouni/ocean-fever-jukebox/main/clean_data.json');
-        oceanData = await response.json();
+        // Les données sont déjà dans la variable oceanData !
         daySlider.max = oceanData.length - 1;
         daySlider.value = 0;
         guideText.innerText = "✅ Data ready. Click Play or use the slider.";
     } catch (error) {
-        guideText.innerText = "⚠️ Error: Could not load JSON data.";
+        guideText.innerText = "⚠️ Error.";
     }
 }
-
 // 6. SYNCHRONISATION AUTOMATIQUE
 function updateInterface() {
     if (!video || !oceanData.length) return;
