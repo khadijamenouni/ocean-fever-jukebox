@@ -69,7 +69,7 @@ audioGuideBtn.addEventListener("click", speakGuide);
 // 5. CHARGEMENT DES DONNÉES
 async function loadData() {
     try {
-        const response = await fetch('../01_Data/clean_data.json');
+        const response = await fetch('clean_data.json');
         oceanData = await response.json();
         daySlider.max = oceanData.length - 1;
         daySlider.value = 0;
