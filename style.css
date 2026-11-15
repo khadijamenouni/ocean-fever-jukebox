@@ -1,0 +1,171 @@
+/* --- RÉINITIALISATION --- */
+body {
+    background-color: #021124;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   🌍 SPLASH SCREEN (ÉCRAN DE DÉMARRAGE) 🌍
+   ========================================== */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #0a2a43 0%, #021124 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease-out;
+}
+
+/* Animation du logo de la Terre */
+.earth-logo {
+    font-size: 120px;
+    line-height: 1;
+    margin-bottom: 20px;
+    animation: pulseGlow 2s infinite alternate;
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(1); text-shadow: 0 0 20px rgba(0, 229, 255, 0.5); }
+    100% { transform: scale(1.1); text-shadow: 0 0 50px rgba(0, 229, 255, 1), 0 0 80px rgba(0, 229, 255, 0.5); }
+}
+
+.splash-title {
+    color: #00e5ff;
+    font-size: 48px;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+}
+
+.splash-subtitle {
+    color: #a0c4d8;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.splash-info {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #e0f7fa;
+    font-size: 18px;
+    max-width: 600px;
+}
+
+.start-btn {
+    background-color: #00e5ff;
+    color: #021124;
+    border: none;
+    padding: 18px 50px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.8);
+}
+
+/* Classe pour cacher l'application au début */
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+/* Classe pour faire disparaître le splash screen */
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ==========================================
+   APPLICATION PRINCIPALE
+   ========================================== */
+.app-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transition: opacity 1s ease-in;
+}
+
+header { text-align: center; margin: 15px 0; width: 100%; }
+h1 { color: #00e5ff; margin-bottom: 5px; font-size: 32px; text-shadow: 0 0 15px rgba(0, 229, 255, 0.6); }
+header p { color: #a0c4d8; margin-top: 0; font-size: 16px; }
+.secondary-btn { background-color: transparent; border: 2px solid #00e5ff; color: #00e5ff; padding: 8px 15px; border-radius: 25px; cursor: pointer; margin-top: 10px; font-size: 14px; font-weight: bold; transition: 0.3s; }
+.secondary-btn:hover { background-color: #00e5ff; color: #021124; }
+
+/* Layout */
+.dashboard-layout {
+    background-color: #0a2a43;
+    border-top: 3px solid #00e5ff;
+    border-bottom: 3px solid #00e5ff;
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+/* ... (Le reste du CSS de la Vidéo, Légende, Contrôles, etc. reste identique) ... */
+.left-panel { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+.left-panel video { width: 100%; height: auto; max-height: 65vh; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.8); background-color: black; object-fit: contain; }
+.legend { display: flex; justify-content: center; gap: 30px; background-color: #021124; padding: 10px; border-radius: 8px; font-size: 14px; border: 1px solid #1a3a5a; }
+.dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 5px; }
+.dot.cold { background-color: #00aaff; box-shadow: 0 0 8px #00aaff; }
+.dot.hot { background-color: #ff3333; box-shadow: 0 0 8px #ff3333; }
+.audio-visualizer { width: 100%; height: 60px; background-color: rgba(0,0,0,0.5); border-radius: 8px; border: 1px solid #1a3a5a; }
+.control-panel { display: flex; flex-direction: column; gap: 15px; }
+.guide-section { background-color: rgba(0, 229, 255, 0.1); border-left: 5px solid #00e5ff; padding: 12px; border-radius: 8px; font-size: 15px; color: #e0f7fa; min-height: 50px; display: flex; align-items: center; }
+.data-section { display: flex; justify-content: space-between; gap: 15px;}
+.data-box { flex: 1; background-color: #021124; padding: 12px; border-radius: 12px; border: 2px solid #005577; text-align: center; }
+.label { display: block; font-size: 13px; color: #a0c4d8; margin-bottom: 5px; text-transform: uppercase; }
+#yearDisplay { font-size: 26px; font-weight: bold; color: white; }
+#statusDisplay { font-size: 26px; font-weight: bold; color: #ffaa00; }
+.progress-section { display: flex; align-items: center; gap: 10px; margin-top: -5px; }
+.progress-bar-bg { flex-grow: 1; height: 10px; background-color: #1a3a5a; border-radius: 10px; overflow: hidden; }
+#progressFill { height: 100%; width: 0%; background-color: #00e5ff; }
+#currentTime { font-family: monospace; font-size: 14px; color: #a0c4d8; min-width: 45px; font-weight: bold;}
+button { background-color: #00e5ff; color: #021124; border: none; padding: 10px 15px; font-size: 15px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(0, 229, 255, 0.2); }
+button:hover { background-color: #ffffff; transform: translateY(-2px); }
+.controls-section { display: flex; justify-content: center; gap: 10px; }
+.audio-controls-section { display: flex; justify-content: center; align-items: center; gap: 10px; }
+.volume-container { display: flex; align-items: center; gap: 10px; background-color: #021124; padding: 10px 15px; border-radius: 8px; font-size: 14px; border: 1px solid #1a3a5a; flex-grow: 1; }
+.volume-container input { width: 100%; }
+.compare-btn { background-color: #ffaa00; width: 100%; font-size: 15px; padding: 12px; }
+.compare-btn:hover { background-color: #ffcc00; }
+.exploration-section { background-color: #021124; padding: 15px; border-radius: 12px; text-align: center; border: 2px dashed #00e5ff; }
+.exploration-section label { display: block; font-weight: bold; color: #00e5ff; margin-bottom: 10px; font-size: 15px; }
+#daySlider { width: 100%; cursor: pointer; accent-color: #00e5ff; height: 10px; }
+.slider-hint { font-size: 12px; color: #a0c4d8; margin-top: 8px; margin-bottom: 0; }
+
+@media (max-width: 1024px) {
+    .dashboard-layout { grid-template-columns: 1fr; padding: 15px; gap: 15px; }
+    .left-panel video { max-height: 40vh; }
+}

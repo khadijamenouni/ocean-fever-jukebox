@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ocean's Fever - NASA Jukebox</title>
+    
+    <!-- 🌍 Favicon (Correction de l'erreur 404) 🌍 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
+
+    <!-- 🌟 1. META TAGS PWA 🌟 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00e5ff">
+    <!-- Correction de l'avertissement de dépréciation -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Librairie Audio Tone.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 🌍 SPLASH SCREEN (ÉCRAN DE DÉMARRAGE) 🌍 -->
+    <div id="splashScreen" class="splash-screen">
+        <div class="earth-logo">🌍</div>
+        <h1 class="splash-title">The Ocean's Fever</h1>
+        <p class="splash-subtitle">NASA Space Apps Challenge</p>
+        <div class="splash-info">
+            <p>Experience climate change through sound.</p>
+            <p><small>Use the controls to listen to the ocean's temperature over time.</small></p>
+        </div>
+        <button id="startAppBtn" class="start-btn">Enter the Experience</button>
+    </div>
+
+    <!-- APPLICATION PRINCIPALE -->
+    <div id="appContent" class="app-content hidden">
+        <header>
+            <h1>🌊 The Ocean's Fever</h1>
+            <p>Listen to Climate Change (NASA EIC Data)</p>
+            <button id="audioGuideBtn" class="secondary-btn" aria-label="Listen to audio instructions">🔊 Listen to Audio Guide</button>
+        </header>
+
+        <main id="mainContainer" class="dashboard-layout">
+            
+            <!-- COLONNE GAUCHE : VIDÉO, LÉGENDE, VISUALISEUR -->
+            <section class="left-panel">
+                <video id="nasaVideo" muted loop playsinline aria-label="NASA visualization of ocean temperatures">
+                    <source src="../01_Data/video_ocean.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <div class="legend">
+                    <span><span class="dot cold"></span> Cold Ocean (Low Heat)</span>
+                    <span><span class="dot hot"></span> Hot Ocean (High Heat)</span>
+                </div>
+
+                <canvas id="visualizer" class="audio-visualizer" width="800" height="60" aria-hidden="true"></canvas>
+            </section>
+
+            <!-- COLONNE DROITE : TOUS LES CONTRÔLES -->
+            <section class="control-panel">
+                
+                <div class="guide-section">
+                    <p id="guideText" aria-live="polite">👋 Ready. Click Play or use the slider below.</p>
+                </div>
+
+                <div class="data-section">
+                    <div class="data-box">
+                        <span class="label">Date:</span>
+                        <span id="yearDisplay" aria-live="polite" title="Current Date">----</span>
+                    </div>
+                    <div class="data-box">
+                        <span class="label">Heat Level:</span>
+                        <span id="statusDisplay" aria-live="polite" title="Heat Intensity">0%</span>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-bar-bg">
+                        <div id="progressFill"></div>
+                    </div>
+                    <span id="currentTime">0.0s</span>
+                </div>
+
+                <!-- Boutons Play/Pause/Stop -->
+                <div class="controls-section">
+                    <button id="playBtn" aria-label="Play audio and video" title="Play Timeline">▶️ Play</button>
+                    <button id="pauseBtn" aria-label="Pause playback" title="Pause">⏸️ Pause</button>
+                    <button id="stopBtn" aria-label="Stop and reset" title="Stop">⏹️ Stop</button>
+                </div>
+
+                <!-- Contrôles Audio -->
+                <div class="audio-controls-section">
+                    <button id="muteBtn" aria-label="Mute audio" title="Mute/Unmute">🔊 Sound On</button>
+                    <div class="volume-container">
+                        <label for="volumeControl" aria-label="Volume control">🔊 Volume</label>
+                        <input type="range" id="volumeControl" min="0" max="100" value="50">
+                        <span id="volumeValue">50%</span>
+                    </div>
+                </div>
+
+                <!-- Bouton Comparaison -->
+                <button id="compareBtn" class="compare-btn" title="Listen to the difference between 2007 and 2008">
+                    ⚖️ Compare Start (2007) vs End (2008)
+                </button>
+
+                <!-- Slider d'exploration -->
+                <div class="exploration-section">
+                    <label for="daySlider">🗓️ Explore Day by Day:</label>
+                    <input type="range" id="daySlider" min="0" max="100" value="0" aria-label="Select a specific day">
+                    <p class="slider-hint">Drag to choose a specific date and hear its unique sound.</p>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <!-- Le moteur principal de l'application -->
+    <script src="app.js"></script>
+
+    <!-- 🌟 2. ENREGISTREMENT DU SERVICE WORKER 🌟 -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(registration => {
+                        console.log('✅ Service Worker enregistré avec succès ! Portée :', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('❌ Erreur Service Worker :', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
